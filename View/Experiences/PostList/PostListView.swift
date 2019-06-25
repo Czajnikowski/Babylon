@@ -36,7 +36,7 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
                 .navigationBarTitle(Text("Posts"))
                 .navigationBarItems(
                     trailing: Button(action: viewModel.reloadData) {
-                        Text("Refresh")
+                        Image(systemName: "arrow.counterclockwise")
                     }
                 )
         }
