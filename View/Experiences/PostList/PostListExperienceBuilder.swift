@@ -9,8 +9,12 @@
 import SwiftUI
 
 public final class PostListExperienceBuilder {
+    public static func buildMockedViewController() -> UIViewController {
+        return buildViewController(viewModel: MockedPostListViewModel())
+    }
+    
     public static func buildViewController<ViewModel>(viewModel: ViewModel) -> UIViewController
-        where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
-            return UIHostingController(rootView: PostListView(viewModel: viewModel))
+    where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
+        return UIHostingController(rootView: PostListView(viewModel: viewModel))
     }
 }
