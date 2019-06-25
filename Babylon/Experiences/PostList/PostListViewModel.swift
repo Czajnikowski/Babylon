@@ -25,17 +25,9 @@ extension PostListViewModel: ChangeReporting {
 }
 
 extension PostListViewModel: PostListViewModelRepresenting {
-    func onRefresh() {
-        reloadData()
-    }
-    
-    func onAppear() {
-        reloadData()
-    }
-    
-    private func reloadData() {
+    func reloadData() {
         subscriber?.cancel()
-        
+
         let request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
         subscriber = URLSession.shared.dataTaskPublisher(for: request)
             .map { data, _ in data }

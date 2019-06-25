@@ -21,8 +21,7 @@ public struct PostRowModel: Identifiable {
 public protocol PostListViewModelRepresenting: class {
     var rowModels: [PostRowModel] { get }
     
-    func onAppear()
-    func onRefresh()
+    func reloadData()
 }
 
 struct PostListView<ViewModel>: View
@@ -36,11 +35,11 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
             }
                 .navigationBarTitle(Text("Posts"))
                 .navigationBarItems(
-                    trailing: Button(action: viewModel.onRefresh) {
+                    trailing: Button(action: viewModel.reloadData) {
                         Text("Refresh")
                     }
                 )
         }
-            .onAppear(perform: viewModel.onAppear)
+            .onAppear(perform: viewModel.reloadData)
     }
 }

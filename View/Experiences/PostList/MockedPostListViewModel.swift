@@ -23,15 +23,7 @@ extension MockedPostListViewModel: BindableObject {
 }
 
 extension MockedPostListViewModel: PostListViewModelRepresenting {
-    func onRefresh() {
-        reloadData()
-    }
-    
-    func onAppear() {
-        reloadData()
-    }
-    
-    private func reloadData() {
+    func reloadData() {
         rowModels.append(PostRowModel(id: 1, title: "Yo"))
     }
 }
