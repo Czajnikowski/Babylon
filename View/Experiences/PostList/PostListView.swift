@@ -6,6 +6,7 @@
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 
 public struct PostRowModel: Identifiable {
@@ -20,13 +21,14 @@ public struct PostRowModel: Identifiable {
 
 public protocol PostListViewModelRepresenting: class {
     var rowModels: [PostRowModel] { get }
+    var alertMessage: String? { get set }
     
     func reloadData()
 }
 
 struct PostListView<ViewModel>: View
 where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
-    @ObjectBinding var viewModel: ViewModel
+    @ObjectBinding private var viewModel: ViewModel
     
     var body: some View {
         NavigationView {
@@ -39,7 +41,24 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
                         Image(systemName: "arrow.counterclockwise")
                     }
                 )
+                .presentation(alertMessageBinding) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(viewModel.alertMessage ?? "Unknown error")
+                    )
+                }
         }
             .onAppear(perform: viewModel.reloadData)
+    }
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    private var alertMessageBinding: Binding<Bool> {
+        return Binding(
+            getValue: { self.viewModel.alertMessage != nil },
+            setValue: { if !$0 { self.viewModel.alertMessage = nil } }
+        )
     }
 }

@@ -9,16 +9,26 @@
 import Combine
 import View
 
-class PostListViewModel {
-    private var subscriber: AnyCancellable?
+final class PostListViewModel {
+    var alertMessage: String? {
+        didSet { sendChange() }
+    }
     
     var rowModels = [PostRowModel]() {
-        didSet {
-            didChange.send(self)
-        }
+        didSet { sendChange() }
     }
     
     var didChange = PassthroughSubject<PostListViewModel, Never>()
+    
+    private var subscriber: Cancellable?
+    
+    deinit {
+        subscriber?.cancel()
+    }
+    
+    private func sendChange() {
+        didChange.send(self)
+    }
 }
 
 extension PostListViewModel: ChangeReporting {
@@ -33,9 +43,18 @@ extension PostListViewModel: PostListViewModelRepresenting {
             .map { data, _ in data }
             .replaceError(with: Data())
             .decode(type: [PostDTO].self, decoder: JSONDecoder())
-            .replaceError(with: [])
             .map { $0.map(PostRowModel.init) }
             .receive(on: DispatchQueue.main)
-            .assign(to: \.rowModels, on: self)
+            .sink(
+                receiveCompletion: { [weak self] completion in
+                    switch completion {
+                    case .finished:
+                        print("finished!")
+                    case let .failure(error):
+                        self?.alertMessage = "\(error)"
+                    }
+                },
+                receiveValue: { [weak self] in self?.rowModels = $0 }
+        )
     }
 }

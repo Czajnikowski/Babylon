@@ -9,14 +9,20 @@
 import Combine
 import SwiftUI
 
-class MockedPostListViewModel {
+final class MockedPostListViewModel {
+    var alertMessage: String? {
+        didSet { sendChange() }
+    }
+    
     var rowModels = [PostRowModel]() {
-        didSet {
-            didChange.send(self)
-        }
+        didSet { sendChange() }
     }
     
     var didChange = PassthroughSubject<MockedPostListViewModel, Never>()
+    
+    private func sendChange() {
+        didChange.send(self)
+    }
 }
 
 extension MockedPostListViewModel: BindableObject {
@@ -24,6 +30,7 @@ extension MockedPostListViewModel: BindableObject {
 
 extension MockedPostListViewModel: PostListViewModelRepresenting {
     func reloadData() {
+        alertMessage = "yo!"
         rowModels.append(PostRowModel(id: 1, title: "Yo"))
     }
 }
