@@ -6,11 +6,23 @@
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
+import Networking
 import UIKit
 import View
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    
+    private let api: API = {
+        let urlCache = URLCache(
+            memoryCapacity: 4 * 1024 * 1024,
+            diskCapacity: 20 * 1024 * 1024,
+            diskPath: nil
+        )
+        URLCache.shared = urlCache
+        
+        return API(session: URLSession.shared)
+    }()
 
     func scene(
         _ scene: UIScene,
@@ -22,7 +34,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             
             window.rootViewController = PostListExperienceBuilder.buildViewController(
-                viewModel: PostListViewModel()
+                viewModel: PostListViewModel(api: api)
             )
             
             self.window = window

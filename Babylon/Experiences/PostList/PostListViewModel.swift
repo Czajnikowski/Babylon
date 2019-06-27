@@ -7,6 +7,7 @@
 //
 
 import Combine
+import Networking
 import View
 
 final class PostListViewModel {
@@ -20,10 +21,15 @@ final class PostListViewModel {
     
     var didChange = PassthroughSubject<PostListViewModel, Never>()
     
-    private var subscriber: Cancellable?
+    private let api: API
+    private var loadDataSubscriber: Cancellable?
+    
+    init(api: API) {
+        self.api = api
+    }
     
     deinit {
-        subscriber?.cancel()
+        loadDataSubscriber?.cancel()
     }
     
     private func sendChange() {
@@ -36,25 +42,22 @@ extension PostListViewModel: ChangeReporting {
 
 extension PostListViewModel: PostListViewModelRepresenting {
     func reloadData() {
-        subscriber?.cancel()
+        loadDataSubscriber?.cancel()
 
-        let request = URLRequest(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
-        subscriber = URLSession.shared.dataTaskPublisher(for: request)
-            .map { data, _ in data }
-            .replaceError(with: Data())
+        loadDataSubscriber = api
+            .dataPublisher(for: "https://jsonplaceholder.typicode.com/posts")
             .decode(type: [PostDTO].self, decoder: JSONDecoder())
             .map { $0.map(PostRowModel.init) }
             .receive(on: DispatchQueue.main)
             .sink(
-                receiveCompletion: { [weak self] completion in
-                    switch completion {
-                    case .finished:
-                        print("finished!")
-                    case let .failure(error):
-                        self?.alertMessage = "\(error)"
+                receiveCompletion: {
+                    if case let .failure(error) = $0 {
+                        self.alertMessage = "\(error)"
                     }
                 },
-                receiveValue: { [weak self] in self?.rowModels = $0 }
-        )
+                receiveValue: { [weak self] in
+                    self?.rowModels = $0
+                }
+            )
     }
 }
