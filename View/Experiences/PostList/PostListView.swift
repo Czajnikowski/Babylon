@@ -37,7 +37,7 @@ where ViewModel: PostListViewModelRepresenting {
             List(viewModel.postRowModels) { postRowModel in
                 NavigationButton(
                     destination: PostDetailsView(
-                        viewModel: self.postDetailsViewModelBuilder!.build(forPostWithId: postRowModel.id)
+                        viewModel: self.postDetailsViewModelBuilder?.build(forPostWithId: postRowModel.id) ?? ChangePropagatingPostDetailsViewModelBuilder { _ in MockedPostDetailsViewModel() }.build(forPostWithId: 0)
                     )
                 ) {
                     Text(postRowModel.title)
