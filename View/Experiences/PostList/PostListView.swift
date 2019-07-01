@@ -35,11 +35,16 @@ where ViewModel: PostListViewModelRepresenting {
     var body: some View {
         NavigationView {
             List(viewModel.postRowModels) { postRowModel in
-                NavigationButton(
-                    destination: PostDetailsView(
-                        viewModel: self.postDetailsViewModelBuilder?.build(forPostWithId: postRowModel.id) ?? ChangePropagatingPostDetailsViewModelBuilder { _ in MockedPostDetailsViewModel() }.build(forPostWithId: 0)
-                    )
-                ) {
+                self.postDetailsViewModelBuilder.map { builder in
+                    NavigationButton(
+                        destination: PostDetailsView(
+                            viewModel: builder.build(forPostWithId: postRowModel.id)
+                        )
+                    ) {
+                        Text(postRowModel.title)
+                    }
+                }
+                if self.postDetailsViewModelBuilder == nil {
                     Text(postRowModel.title)
                 }
             }
