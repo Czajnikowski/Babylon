@@ -10,8 +10,5 @@ public struct PostDTO: Codable {
     let id: Int
     let userId: Int
     let title: String
-}
-
-struct UserDTO: Codable {
-    let username: String
+    let body: String
 }

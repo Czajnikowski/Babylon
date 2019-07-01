@@ -11,4 +11,5 @@ import Combine
 public protocol APIProviding {
     func postsDataPublisher() -> AnyPublisher<Data, URLError>
     func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError>
+    func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError>
 }

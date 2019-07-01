@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AE09044F22C208A800720EF9 /* ViewBindableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09044E22C208A800720EF9 /* ViewBindableObject.swift */; };
 		AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */; };
+		AE161C8022CA502800A6D9F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C7F22CA502800A6D9F0 /* User.swift */; };
+		AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C8122CA503400A6D9F0 /* Comment.swift */; };
 		AE2980A522C65E9500DD2324 /* PostDTO+dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */; };
 		AE2980A722C77AD500DD2324 /* DispatchQueue+didChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A622C77AD500DD2324 /* DispatchQueue+didChange.swift */; };
 		AE2980AA22C9FAF200DD2324 /* BabylonError+alertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A922C9FAF200DD2324 /* BabylonError+alertMessage.swift */; };
@@ -109,6 +111,8 @@
 		AE05C97222C51A5100C0E22F /* BabylonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonError.swift; sourceTree = "<group>"; };
 		AE09044E22C208A800720EF9 /* ViewBindableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBindableObject.swift; sourceTree = "<group>"; };
 		AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListExperienceBuilder.swift; sourceTree = "<group>"; };
+		AE161C7F22CA502800A6D9F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AE161C8122CA503400A6D9F0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDTO+dummy.swift"; sourceTree = "<group>"; };
 		AE2980A622C77AD500DD2324 /* DispatchQueue+didChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+didChange.swift"; sourceTree = "<group>"; };
 		AE2980A922C9FAF200DD2324 /* BabylonError+alertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabylonError+alertMessage.swift"; sourceTree = "<group>"; };
@@ -419,7 +423,9 @@
 		AE97772422C22227003C943B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AE161C8122CA503400A6D9F0 /* Comment.swift */,
 				AE97772622C2224E003C943B /* Post.swift */,
+				AE161C7F22CA502800A6D9F0 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -714,6 +720,8 @@
 				AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */,
 				AE8C074722C61479006F74E0 /* PostListViewModel.swift in Sources */,
 				AE8C074D22C61887006F74E0 /* API+APIProviding.swift in Sources */,
+				AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */,
+				AE161C8022CA502800A6D9F0 /* User.swift in Sources */,
 				AE8C074922C61479006F74E0 /* Post.swift in Sources */,
 				AE8C076022C646C6006F74E0 /* PostListViewModelBuilder.swift in Sources */,
 				AE8C075E22C628F5006F74E0 /* Error+BabylonError.swift in Sources */,

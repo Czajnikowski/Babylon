@@ -18,8 +18,8 @@ final class PostDetailsViewModel {
         return user.map {
             PostDetailsViewState(
                 author: $0.username,
-                description: "None yet",
-                numberOfComments: 0
+                description: post.body,
+                numberOfComments: numberOfComments ?? 0
             )
         }
     }
@@ -28,13 +28,12 @@ final class PostDetailsViewModel {
     
     private var loadDataSubscriber: Cancellable?
     
-    private let post: PostDTO
     private let api: APIProviding
     private let didChangeDispatchQueue: DispatchQueue = .main
     
-    private var user: UserDTO? {
-        didSet { sendChange.send() }
-    }
+    private let post: PostDTO
+    private var user: UserDTO?
+    private var numberOfComments: Int?
     
     init(post: PostDTO, api: APIProviding) {
         self.post = post
@@ -46,22 +45,42 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting {
     func loadData() {
         loadDataSubscriber?.cancel()
         
-        loadDataSubscriber = api
-            .userDataPublisher(forUserWithId: post.userId)
-            .mapError { return $0.toBabylonError(.networking) }
-            .decode(type: UserDTO.self, decoder: JSONDecoder())
-            .mapError { $0.toBabylonError(.parsing) }
-            .receive(on: didChangeDispatchQueue)
+        loadDataSubscriber = Publishers
+            .Zip(loadUser(), loadComments())
             .sink(
                 receiveCompletion: { [weak self] in
                     if case let .failure(error) = $0 {
                         self?.error = error
                     }
                 },
-                receiveValue: { [weak self] in
-                    self?.user = $0
+                receiveValue: { [weak self] (user, numberOfComments) in
+                    self?.user = user
+                    self?.numberOfComments = numberOfComments
+                    
+                    self?.sendChange.send()
                 }
         )
+    }
+    
+    private func loadUser() -> AnyPublisher<UserDTO, BabylonError> {
+        return api
+            .userDataPublisher(forUserWithId: post.userId)
+            .mapError { return $0.toBabylonError(.networking) }
+            .decode(type: UserDTO.self, decoder: JSONDecoder())
+            .mapError { $0.toBabylonError(.parsing) }
+            .receive(on: didChangeDispatchQueue)
+            .eraseToAnyPublisher()
+    }
+    
+    private func loadComments() -> AnyPublisher<Int, BabylonError> {
+        return api
+            .commentDataPublisher(forPostWithId: post.id)
+            .mapError { return $0.toBabylonError(.networking) }
+            .decode(type: [CommentDTO].self, decoder: JSONDecoder())
+            .mapError { $0.toBabylonError(.parsing) }
+            .map { $0.count }
+            .receive(on: didChangeDispatchQueue)
+            .eraseToAnyPublisher()
     }
 }
 

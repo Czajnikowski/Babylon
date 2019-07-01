@@ -15,12 +15,16 @@ public final class API {
         self.session = session
     }
     
-    public func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
-        return dataPublisher(for: .user(id: userId))
-    }
-    
     public func postsDataPublisher() -> AnyPublisher<Data, URLError> {
         return dataPublisher(for: .posts)
+    }
+    
+    public func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
+        return dataPublisher(for: .user(userId: userId))
+    }
+    
+    public func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError> {
+        return dataPublisher(for: .comment(postId: postId))
     }
     
     private func dataPublisher(
@@ -28,7 +32,7 @@ public final class API {
         reloadCache: Bool = true
         ) -> AnyPublisher<Data, URLError> {
         
-        guard let url = URL(string: endpoint.urlString) else {
+        guard let url = endpoint.url else {
             return Publishers
                 .Fail(outputType: Data.self, failure: URLError(.badURL))
                 .eraseToAnyPublisher()

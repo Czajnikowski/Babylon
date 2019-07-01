@@ -27,6 +27,10 @@ class PostListViewModelTests: XCTestCase {
                 fatalError()
             }
             
+            func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError> {
+                fatalError()
+            }
+            
             func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
@@ -60,12 +64,16 @@ class PostListViewModelTests: XCTestCase {
                     .eraseToAnyPublisher()
             }
             
+            func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
+                return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
+            }
+            
             func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
                 fatalError()
             }
             
-            func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
-                return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
+            func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError> {
+                fatalError()
             }
         }
         

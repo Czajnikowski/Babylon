@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 class ChangePropagatingPostDetailsViewModel: BindableObject {
-    var didChange = PassthroughSubject<PostDetailsViewState, Never>()
+    var didChange = PassthroughSubject<PostDetailsViewState?, Never>()
     
     private var changePropagation: Cancellable?
     
@@ -20,7 +20,7 @@ class ChangePropagatingPostDetailsViewModel: BindableObject {
         self.viewModel = viewModel
         
         changePropagation = viewModel.sendChange.sink { [weak self] in
-            self?.didChange.send(viewModel.state!)
+            self?.didChange.send(viewModel.state)
         }
     }
     

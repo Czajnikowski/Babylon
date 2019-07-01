@@ -9,14 +9,31 @@
 enum Endpoint {
     case
     posts,
-    user(id: Int)
+    user(userId: Int),
+    comment(postId: Int)
     
-    var urlString: String {
+    var url: URL? {
+        return urlComponents.url
+    }
+    
+    private var urlComponents: URLComponents {
+        var urlComponents = URLComponents()
+        
+        urlComponents.scheme = "https"
+        urlComponents.host = "jsonplaceholder.typicode.com"
+        
         switch self {
         case .posts:
-            return "https://jsonplaceholder.typicode.com/posts"
-        case let .user(id):
-            return "https://jsonplaceholder.typicode.com/users/\(id)"
+            urlComponents.path = "/posts"
+        case let .user(userId):
+            urlComponents.path = "/users/\(userId)"
+        case .comment(let postId):
+            urlComponents.path = "/comments"
+            urlComponents.queryItems = [
+                URLQueryItem(name: "postId", value: "\(postId)")
+            ]
         }
+        
+        return urlComponents
     }
 }
