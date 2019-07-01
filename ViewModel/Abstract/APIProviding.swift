@@ -9,6 +9,5 @@
 import Combine
 
 public protocol APIProviding {
-    func loadedPostsDataPublisher() -> AnyPublisher<Data, URLError>
-    func reloadedPostsDataPublisher() -> AnyPublisher<Data, URLError>
+    func postsDataPublisher() -> AnyPublisher<Data, URLError>
 }

@@ -49,17 +49,10 @@ extension PostListViewModel: ViewBindableObject {
 
 extension PostListViewModel: PostListViewModelRepresenting {
     func loadData() {
-        loadData(using: api.loadedPostsDataPublisher())
-    }
-    
-    func reloadData() {
-        loadData(using: api.reloadedPostsDataPublisher())
-    }
-    
-    private func loadData(using postsDataPublisher: AnyPublisher<Data, URLError>) {
         loadDataSubscriber?.cancel()
         
-        loadDataSubscriber = postsDataPublisher
+        loadDataSubscriber = api
+            .postsDataPublisher()
             .mapError { return $0.toBabylonError(.networking) }
             .decode(type: [PostDTO].self, decoder: JSONDecoder())
             .mapError { $0.toBabylonError(.parsing) }

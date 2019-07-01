@@ -14,7 +14,7 @@ import XCTest
 class PostListViewModelTests: XCTestCase {
     func testReloadData_From_FailingAPI_Generates_Error() {
         class FailingAPIStub: APIProviding {
-            func loadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+            func postsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers
                     .Fail(
                         outputType: Data.self,
@@ -23,7 +23,7 @@ class PostListViewModelTests: XCTestCase {
                     .eraseToAnyPublisher()
             }
             
-            func reloadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+            func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
         }
@@ -48,7 +48,7 @@ class PostListViewModelTests: XCTestCase {
     
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
         class SinglePostAPIStub: APIProviding {
-            func loadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+            func postsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers
                     //force!
                     .Just(try! JSONEncoder().encode([PostDTO.dummy]))
@@ -56,7 +56,7 @@ class PostListViewModelTests: XCTestCase {
                     .eraseToAnyPublisher()
             }
             
-            func reloadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+            func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
         }

@@ -8,15 +8,6 @@
 
 import Combine
 
-private enum Endpoint {
-    case
-    posts
-    
-    var urlString: String {
-         return "https://jsonplaceholder.typicode.com/posts"
-    }
-}
-
 public final class API {
     private let session: URLSession
     
@@ -24,17 +15,13 @@ public final class API {
         self.session = session
     }
     
-    public func loadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
-        return dataPublisher(for: .posts, reloadCache: false)
-    }
-    
-    public func reloadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
-        return dataPublisher(for: .posts, reloadCache: true)
+    public func postsDataPublisher() -> AnyPublisher<Data, URLError> {
+        return dataPublisher(for: .posts)
     }
     
     private func dataPublisher(
         for endpoint: Endpoint,
-        reloadCache: Bool
+        reloadCache: Bool = true
         ) -> AnyPublisher<Data, URLError> {
         
         guard let url = URL(string: endpoint.urlString) else {
@@ -43,14 +30,22 @@ public final class API {
                 .eraseToAnyPublisher()
         }
         
-        let urlRequest = URLRequest(
+        return session
+            .dataTaskPublisher(for: .urlRequest(for: url))
+            .catch { [unowned self] _ in
+                self.session
+                    .dataTaskPublisher(for: .urlRequest(for: url, reloadCache: false))
+            }
+            .map { data, _ in data }
+            .eraseToAnyPublisher()
+    }
+}
+
+extension URLRequest {
+    static func urlRequest(for url: URL, reloadCache: Bool = true) -> URLRequest {
+        return URLRequest(
             url: url,
             cachePolicy: reloadCache ? .reloadRevalidatingCacheData : .returnCacheDataElseLoad
         )
-        
-        return session
-            .dataTaskPublisher(for: urlRequest)
-            .map { data, _ in data }
-            .eraseToAnyPublisher()
     }
 }

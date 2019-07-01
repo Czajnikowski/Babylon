@@ -45,6 +45,7 @@
 		AEE5CE9B22C9FF970083B790 /* ChangeSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9A22C9FF970083B790 /* ChangeSending.swift */; };
 		AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */; };
 		AEE5CEA022CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */; };
+		AEE5CEA222CA25450083B790 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CEA122CA25450083B790 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		AEE5CE9A22C9FF970083B790 /* ChangeSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSending.swift; sourceTree = "<group>"; };
 		AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePropagatingPostDetailsViewModelBuilder.swift; sourceTree = "<group>"; };
+		AEE5CEA122CA25450083B790 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +437,7 @@
 		AE97779622C3B372003C943B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				AEE5CEA122CA25450083B790 /* Endpoint.swift */,
 				AE9777A222C3B3F0003C943B /* Networking.swift */,
 				AE9777A122C3B389003C943B /* Supporting */,
 			);
@@ -740,6 +743,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE5CEA222CA25450083B790 /* Endpoint.swift in Sources */,
 				AE9777A322C3B3F0003C943B /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

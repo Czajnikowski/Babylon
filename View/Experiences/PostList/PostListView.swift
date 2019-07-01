@@ -23,7 +23,6 @@ public protocol PostListViewModelRepresenting: ViewBindableObject {
     var error: BabylonError? { get set }
     
     func loadData()
-    func reloadData()
 }
 
 struct PostListView<ViewModel>: View
@@ -50,7 +49,7 @@ where ViewModel: PostListViewModelRepresenting {
             }
                 .navigationBarTitle(Text("Posts"))
                 .navigationBarItems(
-                    trailing: Button(action: viewModel.reloadData) {
+                    trailing: Button(action: viewModel.loadData) {
                         Image(systemName: "arrow.counterclockwise")
                     }
                 )
