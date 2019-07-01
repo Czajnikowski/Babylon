@@ -9,19 +9,16 @@
 import Combine
 import View
 
-public final class MockedPostDetailsViewModel {
-    public var state: PostDetailsViewState? {
+final class MockedPostDetailsViewModel {
+var state: PostDetailsViewState? {
         didSet { sendChange.send() }
     }
     
-    public var sendChange = PassthroughSubject<Void, Never>()
-    
-    public init() {
-    }
+    var sendChange = PassthroughSubject<Void, Never>()
 }
 
 extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
-    public func loadData() {
+    func loadData() {
         state = PostDetailsViewState(
             author: "Some Author",
             description: "Some Description",
@@ -32,4 +29,3 @@ extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
 
 extension MockedPostDetailsViewModel: ChangeSending {
 }
-

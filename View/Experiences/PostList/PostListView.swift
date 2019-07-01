@@ -30,7 +30,7 @@ struct PostListView<ViewModel>: View
 where ViewModel: PostListViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
     
-    private let postDetailsViewModelBuilder: PostDetailsViewModelBuilder?
+    private let postDetailsViewModelBuilder: ChangePropagatingPostDetailsViewModelBuilder?
     
     var body: some View {
         NavigationView {
@@ -66,7 +66,7 @@ where ViewModel: PostListViewModelRepresenting {
         )
     }
     
-    init(viewModel: ViewModel, postDetailsViewModelBuilder: PostDetailsViewModelBuilder?) {
+    init(viewModel: ViewModel, postDetailsViewModelBuilder: ChangePropagatingPostDetailsViewModelBuilder?) {
         self.viewModel = viewModel
         self.postDetailsViewModelBuilder = postDetailsViewModelBuilder
     }

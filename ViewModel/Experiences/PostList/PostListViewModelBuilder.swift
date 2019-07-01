@@ -9,10 +9,19 @@
 import View
 
 public final class PostListViewModelBuilder {
-    public static func buildViewModel(
+    public static func build(
         api: APIProviding
         ) -> some PostListViewModelRepresenting {
         
         return PostListViewModel(api: api)
+    }
+}
+
+public final class PostDetailsViewModelBuilder {
+    public static func build(
+        api: APIProviding
+        ) -> ChangeSending & PostDetailsViewModelRepresenting {
+        
+        return MockedPostDetailsViewModel()
     }
 }

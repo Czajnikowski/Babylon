@@ -38,15 +38,3 @@ extension ChangePropagatingPostDetailsViewModel: PostDetailsViewModelRepresentin
         viewModel.loadData()
     }
 }
-
-public class PostDetailsViewModelBuilder {
-    private let provideViewModelForPostWithId: (Int) -> ChangeSending & PostDetailsViewModelRepresenting
-    
-    public init(_ provideViewModelForPostWithId: @escaping (Int) -> ChangeSending & PostDetailsViewModelRepresenting) {
-        self.provideViewModelForPostWithId = provideViewModelForPostWithId
-    }
-    
-    func build(forPostWithId postId: Int) -> some ViewBindableObject & PostDetailsViewModelRepresenting {
-        return ChangePropagatingPostDetailsViewModel(viewModel: provideViewModelForPostWithId(postId))
-    }
-}

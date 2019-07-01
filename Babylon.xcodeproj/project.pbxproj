@@ -44,6 +44,7 @@
 		AEE5CE9922C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9822C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift */; };
 		AEE5CE9B22C9FF970083B790 /* ChangeSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9A22C9FF970083B790 /* ChangeSending.swift */; };
 		AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */; };
+		AEE5CEA022CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		AEE5CE9822C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePropagatingPostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AEE5CE9A22C9FF970083B790 /* ChangeSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSending.swift; sourceTree = "<group>"; };
 		AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
+		AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePropagatingPostDetailsViewModelBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				AEE5CE9822C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift */,
+				AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */,
 				AE8C076422C64E44006F74E0 /* Mocks */,
 				AE8C076622C64E44006F74E0 /* PostDetailsExperience.playground */,
 				AE8C076322C64E44006F74E0 /* PostDetailsExperienceBuilder.swift */,
@@ -686,6 +689,7 @@
 			files = (
 				AE09044F22C208A800720EF9 /* ViewBindableObject.swift in Sources */,
 				AE8C076A22C65381006F74E0 /* MockedPostDetailsViewModel.swift in Sources */,
+				AEE5CEA022CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift in Sources */,
 				AE8C076922C6537E006F74E0 /* PostDetailsView.swift in Sources */,
 				AE41ECE622C0DE3B00ADD251 /* PostListView.swift in Sources */,
 				AE2980AA22C9FAF200DD2324 /* BabylonError+alertMessage.swift in Sources */,
