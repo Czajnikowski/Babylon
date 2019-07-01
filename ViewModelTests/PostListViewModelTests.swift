@@ -23,6 +23,10 @@ class PostListViewModelTests: XCTestCase {
                     .eraseToAnyPublisher()
             }
             
+            func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
+                fatalError()
+            }
+            
             func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
@@ -54,6 +58,10 @@ class PostListViewModelTests: XCTestCase {
                     .Just(try! JSONEncoder().encode([PostDTO.dummy]))
                     .mapError { _ in URLError(.badURL) }
                     .eraseToAnyPublisher()
+            }
+            
+            func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
+                fatalError()
             }
             
             func repostsDataPublisher() -> AnyPublisher<Data, URLError> {

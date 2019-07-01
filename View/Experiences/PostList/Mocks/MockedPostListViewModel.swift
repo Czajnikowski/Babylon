@@ -30,15 +30,7 @@ extension MockedPostListViewModel: BindableObject {
 
 extension MockedPostListViewModel: PostListViewModelRepresenting {
     func loadData() {
-        addNewRowModel()
-    }
-    
-    func reloadData() {
         error = .networking
-        addNewRowModel()
-    }
-    
-    private func addNewRowModel() {
         postRowModels.append(PostRowModel(id: 1, title: "Yo"))
     }
 }

@@ -9,5 +9,5 @@
 @testable import ViewModel
 
 extension PostDTO {
-    static let dummy = PostDTO(id: 1, title: "Title")
+    static let dummy = PostDTO(id: 1, userId: 1, title: "Title")
 }
