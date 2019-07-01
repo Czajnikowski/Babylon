@@ -21,7 +21,7 @@ final class PostListViewModel {
     
     var didChange = PassthroughSubject<PostListViewModel, Never>()
     
-    private var postDTOs: [PostDTO] = [] {
+    fileprivate var postDTOs: [PostDTO] = [] {
         didSet { sendChange() }
     }
     
@@ -67,5 +67,11 @@ extension PostListViewModel: PostListViewModelRepresenting {
                     self?.postDTOs = $0
                 }
             )
+    }
+}
+
+extension PostListViewModel: PostProviding {
+    func providePost(forPostId postId: Int) -> PostDTO {
+        return postDTOs.first { $0.id == postId }!
     }
 }

@@ -15,6 +15,10 @@ public final class API {
         self.session = session
     }
     
+    public func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
+        return dataPublisher(for: .user(id: userId))
+    }
+    
     public func postsDataPublisher() -> AnyPublisher<Data, URLError> {
         return dataPublisher(for: .posts)
     }

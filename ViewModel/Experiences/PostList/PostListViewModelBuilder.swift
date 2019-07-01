@@ -11,7 +11,7 @@ import View
 public final class PostListViewModelBuilder {
     public static func build(
         api: APIProviding
-        ) -> some PostListViewModelRepresenting {
+        ) -> some PostListViewModelRepresenting & PostProviding {
         
         return PostListViewModel(api: api)
     }
@@ -19,9 +19,14 @@ public final class PostListViewModelBuilder {
 
 public final class PostDetailsViewModelBuilder {
     public static func build(
+        post: PostDTO,
         api: APIProviding
         ) -> ChangeSending & PostDetailsViewModelRepresenting {
         
-        return MockedPostDetailsViewModel()
+        return PostDetailsViewModel(post: post, api: api)
     }
+}
+
+public protocol PostProviding {
+    func providePost(forPostId postId: Int) -> PostDTO
 }

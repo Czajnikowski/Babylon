@@ -8,9 +8,15 @@
 
 enum Endpoint {
     case
-    posts
+    posts,
+    user(id: Int)
     
     var urlString: String {
-        return "https://jsonplaceholder.typicode.com/posts"
+        switch self {
+        case .posts:
+            return "https://jsonplaceholder.typicode.com/posts"
+        case let .user(id):
+            return "https://jsonplaceholder.typicode.com/users/\(id)"
+        }
     }
 }

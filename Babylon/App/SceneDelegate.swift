@@ -34,10 +34,15 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
+            let postListViewModel = PostListViewModelBuilder.build(api: api)
             window.rootViewController = PostListExperienceBuilder.buildViewController(
-                viewModel: PostListViewModelBuilder.build(api: api),
-                postDetailsViewModelProvider: { [unowned self] _ in
-                    return PostDetailsViewModelBuilder.build(api: self.api)
+                viewModel: postListViewModel,
+                postDetailsViewModelProvider: { [unowned self, unowned postListViewModel] postId in
+                    
+                    return PostDetailsViewModelBuilder.build(
+                        post: postListViewModel.providePost(forPostId: postId),
+                        api: self.api
+                    )
                 }
             )
             
