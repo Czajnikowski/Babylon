@@ -28,6 +28,9 @@
 		AE8C075A22C62631006F74E0 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE97779522C3B372003C943B /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE8C075E22C628F5006F74E0 /* Error+BabylonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */; };
 		AE8C076022C646C6006F74E0 /* PostListViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C075F22C646C6006F74E0 /* PostListViewModelBuilder.swift */; };
+		AE8C076822C6537A006F74E0 /* PostDetailsExperienceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C076322C64E44006F74E0 /* PostDetailsExperienceBuilder.swift */; };
+		AE8C076922C6537E006F74E0 /* PostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C076522C64E44006F74E0 /* PostDetailsView.swift */; };
+		AE8C076A22C65381006F74E0 /* MockedPostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */; };
 		AE97770422C2195F003C943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770322C2195F003C943B /* AppDelegate.swift */; };
 		AE97770622C2195F003C943B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770522C2195F003C943B /* SceneDelegate.swift */; };
 		AE97770A22C2195F003C943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE97770922C2195F003C943B /* Assets.xcassets */; };
@@ -113,6 +116,10 @@
 		AE8C075022C618F6006F74E0 /* ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+BabylonError.swift"; sourceTree = "<group>"; };
 		AE8C075F22C646C6006F74E0 /* PostListViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModelBuilder.swift; sourceTree = "<group>"; };
+		AE8C076322C64E44006F74E0 /* PostDetailsExperienceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsExperienceBuilder.swift; sourceTree = "<group>"; };
+		AE8C076522C64E44006F74E0 /* PostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsView.swift; sourceTree = "<group>"; };
+		AE8C076622C64E44006F74E0 /* PostDetailsExperience.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PostDetailsExperience.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedPostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AE97770122C2195F003C943B /* Babylon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Babylon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE97770322C2195F003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE97770522C2195F003C943B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +198,7 @@
 		AE09045022C2098D00720EF9 /* Experiences */ = {
 			isa = PBXGroup;
 			children = (
+				AE8C076222C64E35006F74E0 /* PostDetails */,
 				AE09045422C20A1000720EF9 /* PostList */,
 			);
 			path = Experiences;
@@ -286,6 +294,25 @@
 			isa = PBXGroup;
 			children = (
 				AE97771B22C21FB3003C943B /* MockedPostListViewModel.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AE8C076222C64E35006F74E0 /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				AE8C076422C64E44006F74E0 /* Mocks */,
+				AE8C076622C64E44006F74E0 /* PostDetailsExperience.playground */,
+				AE8C076322C64E44006F74E0 /* PostDetailsExperienceBuilder.swift */,
+				AE8C076522C64E44006F74E0 /* PostDetailsView.swift */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		AE8C076422C64E44006F74E0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -616,7 +643,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE09044F22C208A800720EF9 /* ChangeReporting.swift in Sources */,
+				AE8C076A22C65381006F74E0 /* MockedPostDetailsViewModel.swift in Sources */,
+				AE8C076922C6537E006F74E0 /* PostDetailsView.swift in Sources */,
 				AE41ECE622C0DE3B00ADD251 /* PostListView.swift in Sources */,
+				AE8C076822C6537A006F74E0 /* PostDetailsExperienceBuilder.swift in Sources */,
 				AE97771C22C21FB3003C943B /* MockedPostListViewModel.swift in Sources */,
 				AE8C075322C624B2006F74E0 /* BabylonError.swift in Sources */,
 				AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */,

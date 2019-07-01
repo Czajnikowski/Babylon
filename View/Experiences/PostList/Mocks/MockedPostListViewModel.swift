@@ -14,7 +14,7 @@ final class MockedPostListViewModel {
         didSet { sendChange() }
     }
     
-    var rowModels = [PostRowModel]() {
+    var postRowModels = [PostRowModel]() {
         didSet { sendChange() }
     }
     
@@ -39,7 +39,7 @@ extension MockedPostListViewModel: PostListViewModelRepresenting {
     }
     
     private func addNewRowModel() {
-        rowModels.append(PostRowModel(id: 1, title: "Yo"))
+        postRowModels.append(PostRowModel(id: 1, title: "Yo"))
     }
 }
 

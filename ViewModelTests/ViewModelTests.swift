@@ -14,7 +14,7 @@ import XCTest
 class PostListViewModelTests: XCTestCase {
     func testReloadData_From_FailingAPI_Generates_Error() {
         class FailingAPIStub: APIProviding {
-            func postsDataPublisher() -> AnyPublisher<Data, URLError> {
+            func postsDataPublisher(reloadCache: Bool) -> AnyPublisher<Data, URLError> {
                 return Publishers
                     .Fail(
                         outputType: Data.self,
@@ -34,7 +34,7 @@ class PostListViewModelTests: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.reloadData()
+        viewModel.reloadData(reloadCache: false)
         
         XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 0.1), .completed)
         XCTAssertEqual(viewModel.error, BabylonError.networking)
@@ -44,7 +44,7 @@ class PostListViewModelTests: XCTestCase {
     
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
         class SinglePostAPIStub: APIProviding {
-            func postsDataPublisher() -> AnyPublisher<Data, URLError> {
+            func postsDataPublisher(reloadCache: Bool) -> AnyPublisher<Data, URLError> {
                 return Publishers
                     //force!
                     .Just(try! JSONEncoder().encode([postDTO]))
@@ -63,10 +63,10 @@ class PostListViewModelTests: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.reloadData()
+        viewModel.reloadData(reloadCache: false)
         
         XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 0.1), .completed)
-        XCTAssertEqual(viewModel.rowModels, [PostRowModel(with: postDTO)])
+        XCTAssertEqual(viewModel.postRowModels, [PostRowModel(with: postDTO)])
         
         subscription.cancel()
     }

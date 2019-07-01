@@ -19,7 +19,7 @@ public struct PostRowModel: Identifiable, Equatable {
 }
 
 public protocol PostListViewModelRepresenting: class {
-    var rowModels: [PostRowModel] { get }
+    var postRowModels: [PostRowModel] { get }
     var error: BabylonError? { get set }
     
     func loadData()
@@ -32,8 +32,13 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
     
     var body: some View {
         NavigationView {
-            List(viewModel.rowModels) {
-                Text($0.title)
+            List(viewModel.postRowModels) { postRowModel in
+                NavigationButton(
+                    destination: PostDetailsView(),
+                    onTrigger: { print("yo"); return true }
+                ) {
+                    Text(postRowModel.title)
+                }
             }
                 .navigationBarTitle(Text("Posts"))
                 .navigationBarItems(
@@ -41,7 +46,7 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
                         Image(systemName: "arrow.counterclockwise")
                     }
                 )
-                .presentation(alertMessageBinding) {
+                .presentation(alertPresentationBinding) {
                     Alert(
                         title: Text("Error"),
                         message: Text(viewModel.error?.alertMessage ?? "Unknown error")
@@ -55,7 +60,7 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
         self.viewModel = viewModel
     }
     
-    private var alertMessageBinding: Binding<Bool> {
+    private var alertPresentationBinding: Binding<Bool> {
         return Binding(
             getValue: { self.viewModel.error != nil },
             setValue: { if !$0 { self.viewModel.error = nil } }

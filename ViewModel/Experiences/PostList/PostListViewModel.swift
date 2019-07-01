@@ -15,7 +15,7 @@ final class PostListViewModel {
         didSet { sendChange() }
     }
     
-    var rowModels: [PostRowModel] {
+    var postRowModels: [PostRowModel] {
         return postDTOs.map(PostRowModel.init)
     }
     
