@@ -34,7 +34,7 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
         NavigationView {
             List(viewModel.postRowModels) { postRowModel in
                 NavigationButton(
-                    destination: PostDetailsView(),
+                    destination: PostDetailsView(viewModel: MockedPostDetailsViewModel()),
                     onTrigger: { print("yo"); return true }
                 ) {
                     Text(postRowModel.title)

@@ -1,6 +1,5 @@
 import PlaygroundSupport
-import View
-
 import UIKit
+import View
 
 PlaygroundPage.current.liveView = UINavigationController(rootViewController: PostDetailsExperienceBuilder.buildMockedViewController())

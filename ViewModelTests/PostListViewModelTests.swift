@@ -1,5 +1,5 @@
 //
-//  ViewModelTests.swift
+//  PostListViewModelTests.swift
 //  ViewModelTests
 //
 //  Created by Maciek on 28/06/2019.
@@ -14,7 +14,7 @@ import XCTest
 class PostListViewModelTests: XCTestCase {
     func testReloadData_From_FailingAPI_Generates_Error() {
         class FailingAPIStub: APIProviding {
-            func postsDataPublisher(reloadCache: Bool) -> AnyPublisher<Data, URLError> {
+            func loadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers
                     .Fail(
                         outputType: Data.self,
@@ -22,11 +22,15 @@ class PostListViewModelTests: XCTestCase {
                     )
                     .eraseToAnyPublisher()
             }
+            
+            func reloadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+                return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
+            }
         }
         
         let viewModel = PostListViewModel(
             api: FailingAPIStub(),
-            didChangeReceivingQueue: DispatchQueue(label: "didChangeReceivingQueue")
+            didChangeDispatchQueue: .testQueue
         )
         
         let expectation = XCTestExpectation(description: "ViewModel should send change")
@@ -34,7 +38,7 @@ class PostListViewModelTests: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.reloadData(reloadCache: false)
+        viewModel.loadData()
         
         XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 0.1), .completed)
         XCTAssertEqual(viewModel.error, BabylonError.networking)
@@ -44,18 +48,22 @@ class PostListViewModelTests: XCTestCase {
     
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
         class SinglePostAPIStub: APIProviding {
-            func postsDataPublisher(reloadCache: Bool) -> AnyPublisher<Data, URLError> {
+            func loadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers
                     //force!
-                    .Just(try! JSONEncoder().encode([postDTO]))
+                    .Just(try! JSONEncoder().encode([PostDTO.dummy]))
                     .mapError { _ in URLError(.badURL) }
                     .eraseToAnyPublisher()
+            }
+            
+            func reloadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+                return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
         }
         
         let viewModel = PostListViewModel(
             api: SinglePostAPIStub(),
-            didChangeReceivingQueue: DispatchQueue(label: "didChangeReceivingQueue")
+            didChangeDispatchQueue: .testQueue
         )
         
         let expectation = XCTestExpectation(description: "ViewModel should have row model")
@@ -63,14 +71,11 @@ class PostListViewModelTests: XCTestCase {
             expectation.fulfill()
         }
         
-        viewModel.reloadData(reloadCache: false)
+        viewModel.loadData()
         
         XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 0.1), .completed)
-        XCTAssertEqual(viewModel.postRowModels, [PostRowModel(with: postDTO)])
+        XCTAssertEqual(viewModel.postRowModels, [PostRowModel(with: .dummy)])
         
         subscription.cancel()
     }
 }
-
-
-let postDTO = PostDTO(id: 1, title: "Title")

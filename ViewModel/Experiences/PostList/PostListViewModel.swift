@@ -28,11 +28,11 @@ final class PostListViewModel {
     private var loadDataSubscriber: Cancellable?
     
     private let api: APIProviding
-    private let didChangeReceivingQueue: DispatchQueue
+    private let didChangeDispatchQueue: DispatchQueue
     
-    init(api: APIProviding, didChangeReceivingQueue: DispatchQueue = .main) {
+    init(api: APIProviding, didChangeDispatchQueue: DispatchQueue = .main) {
         self.api = api
-        self.didChangeReceivingQueue = didChangeReceivingQueue
+        self.didChangeDispatchQueue = didChangeDispatchQueue
     }
     
     deinit {
@@ -63,7 +63,7 @@ extension PostListViewModel: PostListViewModelRepresenting {
             .mapError { return $0.toBabylonError(.networking) }
             .decode(type: [PostDTO].self, decoder: JSONDecoder())
             .mapError { $0.toBabylonError(.parsing) }
-            .receive(on: didChangeReceivingQueue)
+            .receive(on: didChangeDispatchQueue)
             .sink(
                 receiveCompletion: { [weak self] in
                     if case let .failure(error) = $0 {

@@ -10,6 +10,6 @@ import SwiftUI
 
 public final class PostDetailsExperienceBuilder {
     public static func buildMockedViewController() -> UIViewController {
-        return UIHostingController(rootView: PostDetailsView())
+        return UIHostingController(rootView: PostDetailsView(viewModel: MockedPostDetailsViewModel()))
     }
 }
