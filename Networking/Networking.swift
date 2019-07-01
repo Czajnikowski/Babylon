@@ -8,6 +8,15 @@
 
 import Combine
 
+private enum Endpoint {
+    case
+    posts
+    
+    var urlString: String {
+         return "https://jsonplaceholder.typicode.com/posts"
+    }
+}
+
 public final class API {
     private let session: URLSession
     
@@ -15,8 +24,12 @@ public final class API {
         self.session = session
     }
     
-    public func dataPublisher(for urlString: String) -> AnyPublisher<Data, URLError> {
-        guard let url = URL(string: urlString) else {
+    public func postsDataPublisher() -> AnyPublisher<Data, URLError> {
+        return dataPublisher(for: .posts)
+    }
+    
+    private func dataPublisher(for endpoint: Endpoint) -> AnyPublisher<Data, URLError> {
+        guard let url = URL(string: endpoint.urlString) else {
             return Publishers
                 .Fail(outputType: Data.self, failure: URLError(.badURL))
                 .eraseToAnyPublisher()

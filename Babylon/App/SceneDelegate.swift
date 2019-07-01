@@ -9,6 +9,7 @@
 import Networking
 import UIKit
 import View
+import ViewModel
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -34,7 +35,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             
             window.rootViewController = PostListExperienceBuilder.buildViewController(
-                viewModel: PostListViewModel(api: api)
+                viewModel: PostListViewModelBuilder.buildViewModel(api: api)
             )
             
             self.window = window

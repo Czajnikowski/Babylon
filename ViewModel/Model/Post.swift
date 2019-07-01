@@ -6,7 +6,7 @@
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
-struct PostDTO: Decodable {
+struct PostDTO: Codable {
     let id: Int
     let title: String
 }

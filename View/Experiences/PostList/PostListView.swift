@@ -6,10 +6,9 @@
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
-import Combine
 import SwiftUI
 
-public struct PostRowModel: Identifiable {
+public struct PostRowModel: Identifiable, Equatable {
     public let id: Int
     public let title: String
     
@@ -21,7 +20,7 @@ public struct PostRowModel: Identifiable {
 
 public protocol PostListViewModelRepresenting: class {
     var rowModels: [PostRowModel] { get }
-    var alertMessage: String? { get set }
+    var error: BabylonError? { get set }
     
     func reloadData()
 }
@@ -44,7 +43,7 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
                 .presentation(alertMessageBinding) {
                     Alert(
                         title: Text("Error"),
-                        message: Text(viewModel.alertMessage ?? "Unknown error")
+                        message: Text(viewModel.error?.alertMessage ?? "Unknown error")
                     )
                 }
         }
@@ -57,8 +56,8 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
     
     private var alertMessageBinding: Binding<Bool> {
         return Binding(
-            getValue: { self.viewModel.alertMessage != nil },
-            setValue: { if !$0 { self.viewModel.alertMessage = nil } }
+            getValue: { self.viewModel.error != nil },
+            setValue: { if !$0 { self.viewModel.error = nil } }
         )
     }
 }

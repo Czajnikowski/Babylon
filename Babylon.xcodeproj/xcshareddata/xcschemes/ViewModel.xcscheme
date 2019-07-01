@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE97770022C2195F003C943B"
-               BuildableName = "Babylon.app"
-               BlueprintName = "Babylon"
+               BlueprintIdentifier = "AE8C072622C6142B006F74E0"
+               BuildableName = "ViewModel.framework"
+               BlueprintName = "ViewModel"
                ReferencedContainer = "container:Babylon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,13 +26,22 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      enableThreadSanitizer = "YES">
+      <AdditionalOptions>
+         <AdditionalOption
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
+      </AdditionalOptions>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE8C071522C578A8006F74E0"
+               BlueprintIdentifier = "AE8C072E22C6142B006F74E0"
                BuildableName = "ViewModelTests.xctest"
                BlueprintName = "ViewModelTests"
                ReferencedContainer = "container:Babylon.xcodeproj">
@@ -50,16 +59,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE97770022C2195F003C943B"
-            BuildableName = "Babylon.app"
-            BlueprintName = "Babylon"
-            ReferencedContainer = "container:Babylon.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -67,16 +66,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE97770022C2195F003C943B"
-            BuildableName = "Babylon.app"
-            BlueprintName = "Babylon"
+            BlueprintIdentifier = "AE8C072622C6142B006F74E0"
+            BuildableName = "ViewModel.framework"
+            BlueprintName = "ViewModel"
             ReferencedContainer = "container:Babylon.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

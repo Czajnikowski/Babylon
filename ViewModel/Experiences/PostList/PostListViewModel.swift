@@ -10,22 +10,35 @@ import Combine
 import Networking
 import View
 
+public final class PostListViewModelBuilder {
+    public static func buildViewModel(api: APIProviding) -> some ChangeReporting & PostListViewModelRepresenting {
+        return PostListViewModel(api: api)
+    }
+}
+
 final class PostListViewModel {
-    var alertMessage: String? {
+    var error: BabylonError? {
         didSet { sendChange() }
     }
     
-    var rowModels = [PostRowModel]() {
-        didSet { sendChange() }
+    var rowModels: [PostRowModel] {
+        return postDTOs.map(PostRowModel.init)
     }
     
     var didChange = PassthroughSubject<PostListViewModel, Never>()
     
-    private let api: API
+    private var postDTOs: [PostDTO] = [] {
+        didSet { sendChange() }
+    }
+    
     private var loadDataSubscriber: Cancellable?
     
-    init(api: API) {
+    private let api: APIProviding
+    private let didChangeReceivingQueue: DispatchQueue
+    
+    init(api: APIProviding, didChangeReceivingQueue: DispatchQueue = .main) {
         self.api = api
+        self.didChangeReceivingQueue = didChangeReceivingQueue
     }
     
     deinit {
@@ -45,18 +58,19 @@ extension PostListViewModel: PostListViewModelRepresenting {
         loadDataSubscriber?.cancel()
 
         loadDataSubscriber = api
-            .dataPublisher(for: "https://jsonplaceholder.typicode.com/posts")
+            .postsDataPublisher()
+            .mapError { return $0.toBabylonError(.networking) }
             .decode(type: [PostDTO].self, decoder: JSONDecoder())
-            .map { $0.map(PostRowModel.init) }
-            .receive(on: DispatchQueue.main)
+            .mapError { $0.toBabylonError(.parsing) }
+            .receive(on: didChangeReceivingQueue)
             .sink(
-                receiveCompletion: {
+                receiveCompletion: { [weak self] in
                     if case let .failure(error) = $0 {
-                        self.alertMessage = "\(error)"
+                        self?.error = error
                     }
                 },
                 receiveValue: { [weak self] in
-                    self?.rowModels = $0
+                    self?.postDTOs = $0
                 }
             )
     }
