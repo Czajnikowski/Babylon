@@ -44,7 +44,7 @@ final class PostListViewModel {
     }
 }
 
-extension PostListViewModel: ChangeReporting {
+extension PostListViewModel: ViewBindableObject {
 }
 
 extension PostListViewModel: PostListViewModelRepresenting {

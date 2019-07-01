@@ -1,5 +1,5 @@
 //
-//  ChangeReporting.swift
+//  ViewBindableObject.swift
 //  View
 //
 //  Created by Maciek on 25/06/2019.
@@ -8,4 +8,4 @@
 
 import SwiftUI
 
-public typealias ChangeReporting = BindableObject
+public typealias ViewBindableObject = BindableObject

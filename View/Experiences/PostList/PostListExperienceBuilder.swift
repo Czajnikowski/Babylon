@@ -13,8 +13,16 @@ public final class PostListExperienceBuilder {
         return buildViewController(viewModel: MockedPostListViewModel())
     }
     
-    public static func buildViewController<ViewModel>(viewModel: ViewModel) -> UIViewController
-    where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
-        return UIHostingController(rootView: PostListView(viewModel: viewModel))
+    public static func buildViewController<ViewModel>(
+        viewModel: ViewModel,
+        postDetailsViewModelBuilder: PostDetailsViewModelBuilder? = nil
+        ) -> UIViewController where ViewModel: PostListViewModelRepresenting {
+        
+        return UIHostingController(
+            rootView: PostListView(
+                viewModel: viewModel,
+                postDetailsViewModelBuilder: postDetailsViewModelBuilder
+            )
+        )
     }
 }

@@ -11,7 +11,7 @@ import View
 public final class PostListViewModelBuilder {
     public static func buildViewModel(
         api: APIProviding
-        ) -> some ChangeReporting & PostListViewModelRepresenting {
+        ) -> some PostListViewModelRepresenting {
         
         return PostListViewModel(api: api)
     }

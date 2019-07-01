@@ -18,7 +18,7 @@ public struct PostRowModel: Identifiable, Equatable {
     }
 }
 
-public protocol PostListViewModelRepresenting: class {
+public protocol PostListViewModelRepresenting: ViewBindableObject {
     var postRowModels: [PostRowModel] { get }
     var error: BabylonError? { get set }
     
@@ -27,15 +27,18 @@ public protocol PostListViewModelRepresenting: class {
 }
 
 struct PostListView<ViewModel>: View
-where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
+where ViewModel: PostListViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
+    
+    private let postDetailsViewModelBuilder: PostDetailsViewModelBuilder?
     
     var body: some View {
         NavigationView {
             List(viewModel.postRowModels) { postRowModel in
                 NavigationButton(
-                    destination: PostDetailsView(viewModel: MockedPostDetailsViewModel()),
-                    onTrigger: { print("yo"); return true }
+                    destination: PostDetailsView(
+                        viewModel: self.postDetailsViewModelBuilder!.build(forPostWithId: postRowModel.id)
+                    )
                 ) {
                     Text(postRowModel.title)
                 }
@@ -56,14 +59,15 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
             .onAppear(perform: viewModel.loadData)
     }
     
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
-    }
-    
     private var alertPresentationBinding: Binding<Bool> {
         return Binding(
             getValue: { self.viewModel.error != nil },
             setValue: { if !$0 { self.viewModel.error = nil } }
         )
+    }
+    
+    init(viewModel: ViewModel, postDetailsViewModelBuilder: PostDetailsViewModelBuilder?) {
+        self.viewModel = viewModel
+        self.postDetailsViewModelBuilder = postDetailsViewModelBuilder
     }
 }

@@ -35,7 +35,10 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             
             window.rootViewController = PostListExperienceBuilder.buildViewController(
-                viewModel: PostListViewModelBuilder.buildViewModel(api: api)
+                viewModel: PostListViewModelBuilder.buildViewModel(api: api),
+                postDetailsViewModelBuilder: PostDetailsViewModelBuilder { _ in
+                    return MockedPostDetailsViewModel()
+                }
             )
             
             self.window = window

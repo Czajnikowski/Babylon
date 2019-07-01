@@ -12,9 +12,20 @@ public struct PostDetailsViewState {
     let author: String
     let description: String
     let numberOfComments: Int
+    
+    public init(
+        author: String,
+        description: String,
+        numberOfComments: Int
+        ) {
+        
+        self.author = author
+        self.description = description
+        self.numberOfComments = numberOfComments
+    }
 }
 
-protocol PostDetailsViewModelRepresenting: class {
+public protocol PostDetailsViewModelRepresenting {
     var state: PostDetailsViewState? { get }
     
     func loadData()
@@ -25,13 +36,11 @@ where ViewModel: BindableObject, ViewModel: PostDetailsViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
-            viewModel.state.map { state in
-                Group {
-                    Text("Description: \(state.description)")
-                        .lineLimit(nil)
-                    Text("Number of comments: \(state.numberOfComments)")
-                }
+        viewModel.state.map { state in
+            Group {
+                Text("Description: \(state.description)")
+                    .lineLimit(nil)
+                Text("Number of comments: \(state.numberOfComments)")
             }
         }
             .navigationBarTitle(

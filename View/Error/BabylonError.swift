@@ -11,14 +11,3 @@ public enum BabylonError: Error {
     networking,
     parsing
 }
-
-extension BabylonError {
-    var alertMessage: String {
-        switch self {
-        case .networking:
-            return "Unable to download data"
-        case .parsing:
-            return "Unable to parse data"
-        }
-    }
-}
