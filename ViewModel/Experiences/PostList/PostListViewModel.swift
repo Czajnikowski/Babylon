@@ -10,12 +10,6 @@ import Combine
 import Networking
 import View
 
-public final class PostListViewModelBuilder {
-    public static func buildViewModel(api: APIProviding) -> some ChangeReporting & PostListViewModelRepresenting {
-        return PostListViewModel(api: api)
-    }
-}
-
 final class PostListViewModel {
     var error: BabylonError? {
         didSet { sendChange() }
@@ -54,11 +48,18 @@ extension PostListViewModel: ChangeReporting {
 }
 
 extension PostListViewModel: PostListViewModelRepresenting {
+    func loadData() {
+        loadData(using: api.loadedPostsDataPublisher())
+    }
+    
     func reloadData() {
+        loadData(using: api.reloadedPostsDataPublisher())
+    }
+    
+    private func loadData(using postsDataPublisher: AnyPublisher<Data, URLError>) {
         loadDataSubscriber?.cancel()
-
-        loadDataSubscriber = api
-            .postsDataPublisher()
+        
+        loadDataSubscriber = postsDataPublisher
             .mapError { return $0.toBabylonError(.networking) }
             .decode(type: [PostDTO].self, decoder: JSONDecoder())
             .mapError { $0.toBabylonError(.parsing) }

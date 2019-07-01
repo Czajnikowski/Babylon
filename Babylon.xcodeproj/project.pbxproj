@@ -27,6 +27,7 @@
 		AE8C075922C62631006F74E0 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE97779522C3B372003C943B /* Networking.framework */; };
 		AE8C075A22C62631006F74E0 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE97779522C3B372003C943B /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE8C075E22C628F5006F74E0 /* Error+BabylonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */; };
+		AE8C076022C646C6006F74E0 /* PostListViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C075F22C646C6006F74E0 /* PostListViewModelBuilder.swift */; };
 		AE97770422C2195F003C943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770322C2195F003C943B /* AppDelegate.swift */; };
 		AE97770622C2195F003C943B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770522C2195F003C943B /* SceneDelegate.swift */; };
 		AE97770A22C2195F003C943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE97770922C2195F003C943B /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		AE8C074C22C61887006F74E0 /* API+APIProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+APIProviding.swift"; sourceTree = "<group>"; };
 		AE8C075022C618F6006F74E0 /* ViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+BabylonError.swift"; sourceTree = "<group>"; };
+		AE8C075F22C646C6006F74E0 /* PostListViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModelBuilder.swift; sourceTree = "<group>"; };
 		AE97770122C2195F003C943B /* Babylon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Babylon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE97770322C2195F003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE97770522C2195F003C943B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,7 +208,7 @@
 		AE09045422C20A1000720EF9 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
-				AE97771B22C21FB3003C943B /* MockedPostListViewModel.swift */,
+				AE8C076122C6472E006F74E0 /* Mocks */,
 				AE4A4DB222C1059500CBEE46 /* PostListExperience.playground */,
 				AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */,
 				AE41ECE522C0DE3B00ADD251 /* PostListView.swift */,
@@ -280,6 +282,14 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		AE8C076122C6472E006F74E0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AE97771B22C21FB3003C943B /* MockedPostListViewModel.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		AE97770222C2195F003C943B /* Babylon */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				AE97772222C22203003C943B /* PostListViewModel.swift */,
+				AE8C075F22C646C6006F74E0 /* PostListViewModelBuilder.swift */,
 			);
 			path = PostList;
 			sourceTree = "<group>";
@@ -351,8 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				AE8C074C22C61887006F74E0 /* API+APIProviding.swift */,
-				AE97772A22C22573003C943B /* Model+DTO.swift */,
 				AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */,
+				AE97772A22C22573003C943B /* Model+DTO.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -621,6 +632,7 @@
 				AE8C074722C61479006F74E0 /* PostListViewModel.swift in Sources */,
 				AE8C074D22C61887006F74E0 /* API+APIProviding.swift in Sources */,
 				AE8C074922C61479006F74E0 /* Post.swift in Sources */,
+				AE8C076022C646C6006F74E0 /* PostListViewModelBuilder.swift in Sources */,
 				AE8C075E22C628F5006F74E0 /* Error+BabylonError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

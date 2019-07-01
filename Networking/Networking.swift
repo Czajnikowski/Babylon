@@ -24,18 +24,29 @@ public final class API {
         self.session = session
     }
     
-    public func postsDataPublisher() -> AnyPublisher<Data, URLError> {
-        return dataPublisher(for: .posts)
+    public func loadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+        return dataPublisher(for: .posts, reloadCache: false)
     }
     
-    private func dataPublisher(for endpoint: Endpoint) -> AnyPublisher<Data, URLError> {
+    public func reloadedPostsDataPublisher() -> AnyPublisher<Data, URLError> {
+        return dataPublisher(for: .posts, reloadCache: true)
+    }
+    
+    private func dataPublisher(
+        for endpoint: Endpoint,
+        reloadCache: Bool
+        ) -> AnyPublisher<Data, URLError> {
+        
         guard let url = URL(string: endpoint.urlString) else {
             return Publishers
                 .Fail(outputType: Data.self, failure: URLError(.badURL))
                 .eraseToAnyPublisher()
         }
         
-        let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+        let urlRequest = URLRequest(
+            url: url,
+            cachePolicy: reloadCache ? .reloadRevalidatingCacheData : .returnCacheDataElseLoad
+        )
         
         return session
             .dataTaskPublisher(for: urlRequest)

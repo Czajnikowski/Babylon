@@ -22,6 +22,7 @@ public protocol PostListViewModelRepresenting: class {
     var rowModels: [PostRowModel] { get }
     var error: BabylonError? { get set }
     
+    func loadData()
     func reloadData()
 }
 
@@ -47,7 +48,7 @@ where ViewModel: BindableObject, ViewModel: PostListViewModelRepresenting {
                     )
                 }
         }
-            .onAppear(perform: viewModel.reloadData)
+            .onAppear(perform: viewModel.loadData)
     }
     
     init(viewModel: ViewModel) {
