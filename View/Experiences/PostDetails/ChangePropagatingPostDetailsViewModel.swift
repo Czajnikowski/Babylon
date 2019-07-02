@@ -20,7 +20,7 @@ class ChangePropagatingPostDetailsViewModel: BindableObject {
         self.viewModel = viewModel
         
         changePropagation = viewModel.sendChange.sink { [weak self] in
-            self?.didChange.send(viewModel.state)
+            self.map { $0.didChange.send($0.viewModel.state) }
         }
     }
     

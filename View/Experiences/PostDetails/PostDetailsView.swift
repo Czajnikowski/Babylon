@@ -37,11 +37,24 @@ where ViewModel: BindableObject, ViewModel: PostDetailsViewModelRepresenting {
     
     var body: some View {
         viewModel.state.map { state in
-            Group {
-                Text("Description: \(state.description)")
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Description:")
+                    .font(.headline)
+                Text("\(state.description)")
                     .lineLimit(nil)
-                Text("Number of comments: \(state.numberOfComments)")
+                    .font(.body)
+                
+                Text("Number of comments:")
+                    .font(.headline)
+                Text("\(state.numberOfComments)")
+                    .font(.subheadline)
+                
+                GeometryReader { geometry in
+                    Spacer()
+                        .frame(width: geometry.size.width)
+                }
             }
+                .padding(16)
         }
             .navigationBarTitle(
                 Text((viewModel.state?.author).map { "by: \($0)" } ?? "Loading...")
