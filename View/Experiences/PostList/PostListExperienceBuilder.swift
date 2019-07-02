@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-public typealias PostDetailsViewModelForPostIdProvider = (Int) -> ChangeSending & PostDetailsViewModelRepresenting
-
 public final class PostListExperienceBuilder {
     public static func buildMockedViewController() -> UIViewController {
         return buildViewController(viewModel: MockedPostListViewModel())
@@ -17,13 +15,13 @@ public final class PostListExperienceBuilder {
     
     public static func buildViewController<ViewModel>(
         viewModel: ViewModel,
-        postDetailsViewModelProvider: Optional<PostDetailsViewModelForPostIdProvider> = nil
+        listDestinationViewBuilder: ViewForPostWithIdBuilding? = nil
         ) -> UIViewController where ViewModel: PostListViewModelRepresenting {
         
         return UIHostingController(
             rootView: PostListView(
                 viewModel: viewModel,
-                postDetailsViewModelBuilder: postDetailsViewModelProvider.map(ChangePropagatingPostDetailsViewModelBuilder.init)
+                listDestinationViewBuilder: listDestinationViewBuilder
             )
         )
     }

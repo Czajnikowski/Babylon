@@ -29,21 +29,19 @@ struct PostListView<ViewModel>: View
 where ViewModel: PostListViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
     
-    private let postDetailsViewModelBuilder: ChangePropagatingPostDetailsViewModelBuilder?
+    private let listDestinationViewBuilder: ViewForPostWithIdBuilding?
     
     var body: some View {
         NavigationView {
             List(viewModel.postRowModels) { postRowModel in
-                self.postDetailsViewModelBuilder.map { builder in
+                self.listDestinationViewBuilder.map { builder in
                     NavigationButton(
-                        destination: PostDetailsView(
-                            viewModel: builder.build(forPostWithId: postRowModel.id)
-                        )
+                        destination: builder.build(forPostWithId: postRowModel.id)
                     ) {
                         Text(postRowModel.title)
                     }
                 }
-                if self.postDetailsViewModelBuilder == nil {
+                if self.listDestinationViewBuilder == nil {
                     Text(postRowModel.title)
                 }
             }
@@ -70,8 +68,8 @@ where ViewModel: PostListViewModelRepresenting {
         )
     }
     
-    init(viewModel: ViewModel, postDetailsViewModelBuilder: ChangePropagatingPostDetailsViewModelBuilder?) {
+    init(viewModel: ViewModel, listDestinationViewBuilder: ViewForPostWithIdBuilding?) {
         self.viewModel = viewModel
-        self.postDetailsViewModelBuilder = postDetailsViewModelBuilder
+        self.listDestinationViewBuilder = listDestinationViewBuilder
     }
 }

@@ -36,6 +36,8 @@
 		AE8C076822C6537A006F74E0 /* PostDetailsExperienceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C076322C64E44006F74E0 /* PostDetailsExperienceBuilder.swift */; };
 		AE8C076922C6537E006F74E0 /* PostDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C076522C64E44006F74E0 /* PostDetailsView.swift */; };
 		AE8C076A22C65381006F74E0 /* MockedPostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */; };
+		AE8FBD1E22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */; };
+		AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */; };
 		AE97770422C2195F003C943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770322C2195F003C943B /* AppDelegate.swift */; };
 		AE97770622C2195F003C943B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770522C2195F003C943B /* SceneDelegate.swift */; };
 		AE97770A22C2195F003C943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE97770922C2195F003C943B /* Assets.xcassets */; };
@@ -43,10 +45,7 @@
 		AE97772822C22342003C943B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE97770E22C2195F003C943B /* LaunchScreen.storyboard */; };
 		AE97779922C3B372003C943B /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE97779722C3B372003C943B /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE9777A322C3B3F0003C943B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9777A222C3B3F0003C943B /* Networking.swift */; };
-		AEE5CE9922C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9822C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift */; };
-		AEE5CE9B22C9FF970083B790 /* ChangeSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9A22C9FF970083B790 /* ChangeSending.swift */; };
 		AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */; };
-		AEE5CEA022CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */; };
 		AEE5CEA222CA25450083B790 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CEA122CA25450083B790 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +134,8 @@
 		AE8C076522C64E44006F74E0 /* PostDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsView.swift; sourceTree = "<group>"; };
 		AE8C076622C64E44006F74E0 /* PostDetailsExperience.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PostDetailsExperience.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedPostDetailsViewModel.swift; sourceTree = "<group>"; };
+		AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForPostWithIdBuilding.swift; sourceTree = "<group>"; };
+		AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewBuilder.swift; sourceTree = "<group>"; };
 		AE97770122C2195F003C943B /* Babylon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Babylon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE97770322C2195F003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE97770522C2195F003C943B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,10 +150,7 @@
 		AE97779722C3B372003C943B /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		AE97779822C3B372003C943B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9777A222C3B3F0003C943B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		AEE5CE9822C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePropagatingPostDetailsViewModel.swift; sourceTree = "<group>"; };
-		AEE5CE9A22C9FF970083B790 /* ChangeSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSending.swift; sourceTree = "<group>"; };
 		AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
-		AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePropagatingPostDetailsViewModelBuilder.swift; sourceTree = "<group>"; };
 		AEE5CEA122CA25450083B790 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				AE09044E22C208A800720EF9 /* ViewBindableObject.swift */,
-				AEE5CE9A22C9FF970083B790 /* ChangeSending.swift */,
+				AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -341,12 +339,11 @@
 		AE8C076222C64E35006F74E0 /* PostDetails */ = {
 			isa = PBXGroup;
 			children = (
-				AEE5CE9822C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift */,
-				AEE5CE9F22CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift */,
 				AE8C076422C64E44006F74E0 /* Mocks */,
 				AE8C076622C64E44006F74E0 /* PostDetailsExperience.playground */,
 				AE8C076322C64E44006F74E0 /* PostDetailsExperienceBuilder.swift */,
 				AE8C076522C64E44006F74E0 /* PostDetailsView.swift */,
+				AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */,
 			);
 			path = PostDetails;
 			sourceTree = "<group>";
@@ -698,16 +695,15 @@
 			files = (
 				AE09044F22C208A800720EF9 /* ViewBindableObject.swift in Sources */,
 				AE8C076A22C65381006F74E0 /* MockedPostDetailsViewModel.swift in Sources */,
-				AEE5CEA022CA11500083B790 /* ChangePropagatingPostDetailsViewModelBuilder.swift in Sources */,
+				AE8FBD1E22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift in Sources */,
 				AE8C076922C6537E006F74E0 /* PostDetailsView.swift in Sources */,
 				AE41ECE622C0DE3B00ADD251 /* PostListView.swift in Sources */,
 				AE2980AA22C9FAF200DD2324 /* BabylonError+alertMessage.swift in Sources */,
 				AE8C076822C6537A006F74E0 /* PostDetailsExperienceBuilder.swift in Sources */,
 				AE97771C22C21FB3003C943B /* MockedPostListViewModel.swift in Sources */,
+				AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */,
 				AE8C075322C624B2006F74E0 /* BabylonError.swift in Sources */,
 				AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */,
-				AEE5CE9B22C9FF970083B790 /* ChangeSending.swift in Sources */,
-				AEE5CE9922C9FF1C0083B790 /* ChangePropagatingPostDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

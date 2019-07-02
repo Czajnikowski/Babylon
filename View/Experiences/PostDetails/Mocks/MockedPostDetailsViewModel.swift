@@ -11,10 +11,10 @@ import SwiftUI
 
 final class MockedPostDetailsViewModel {
     var state: PostDetailsViewState? {
-        didSet { sendChange.send() }
+        didSet { didChange.send(self) }
     }
     
-    var sendChange = PassthroughSubject<Void, Never>()
+    var didChange = PassthroughSubject<MockedPostDetailsViewModel, Never>()
 }
 
 extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
@@ -27,5 +27,5 @@ extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
     }
 }
 
-extension MockedPostDetailsViewModel: ChangeSending {
+extension MockedPostDetailsViewModel: BindableObject {
 }

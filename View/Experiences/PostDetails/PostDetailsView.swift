@@ -25,14 +25,14 @@ public struct PostDetailsViewState {
     }
 }
 
-public protocol PostDetailsViewModelRepresenting {
+public protocol PostDetailsViewModelRepresenting: ViewBindableObject {
     var state: PostDetailsViewState? { get }
     
     func loadData()
 }
 
 struct PostDetailsView<ViewModel>: View
-where ViewModel: BindableObject, ViewModel: PostDetailsViewModelRepresenting {
+where ViewModel: PostDetailsViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
     
     var body: some View {

@@ -21,7 +21,7 @@ public final class PostDetailsViewModelBuilder {
     public static func build(
         post: PostDTO,
         api: APIProviding
-        ) -> ChangeSending & PostDetailsViewModelRepresenting {
+        ) -> some PostDetailsViewModelRepresenting {
         
         return PostDetailsViewModel(post: post, api: api)
     }

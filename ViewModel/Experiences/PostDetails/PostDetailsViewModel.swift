@@ -11,7 +11,7 @@ import View
 
 final class PostDetailsViewModel {
     var error: BabylonError? {
-        didSet { sendChange.send() }
+        didSet { didChange.send(self) }
     }
     
     var state: PostDetailsViewState? {
@@ -24,7 +24,7 @@ final class PostDetailsViewModel {
         }
     }
     
-    var sendChange = PassthroughSubject<Void, Never>()
+    var didChange = PassthroughSubject<PostDetailsViewModel, Never>()
     
     private var loadDataSubscriber: Cancellable?
     
@@ -54,10 +54,12 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting {
                     }
                 },
                 receiveValue: { [weak self] (user, numberOfComments) in
-                    self?.user = user
-                    self?.numberOfComments = numberOfComments
+                    guard let strongSelf = self else { return }
                     
-                    self?.sendChange.send()
+                    strongSelf.user = user
+                    strongSelf.numberOfComments = numberOfComments
+                    
+                    strongSelf.didChange.send(strongSelf)
                 }
         )
     }
@@ -84,5 +86,5 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting {
     }
 }
 
-extension PostDetailsViewModel: ChangeSending {
+extension PostDetailsViewModel: ViewBindableObject {
 }

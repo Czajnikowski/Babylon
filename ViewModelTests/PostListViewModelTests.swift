@@ -11,9 +11,9 @@ import View
 @testable import ViewModel
 import XCTest
 
-class PostListViewModelTests: XCTestCase {
+final class PostListViewModelTests: XCTestCase {
     func testReloadData_From_FailingAPI_Generates_Error() {
-        class FailingAPIStub: APIProviding {
+        final class FailingAPIStub: APIProviding {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers
                     .Fail(
@@ -55,7 +55,7 @@ class PostListViewModelTests: XCTestCase {
     }
     
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
-        class SinglePostAPIStub: APIProviding {
+        final class SinglePostAPIStub: APIProviding {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers
                     //force!
