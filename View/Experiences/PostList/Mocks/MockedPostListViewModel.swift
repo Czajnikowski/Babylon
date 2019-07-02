@@ -14,7 +14,7 @@ final class MockedPostListViewModel {
         didSet { sendChange() }
     }
     
-    var postRowModels = [PostRowModel]() {
+    var postRowModels = [PostRowModel(id: 1, title: "Yo")] {
         didSet { sendChange() }
     }
     

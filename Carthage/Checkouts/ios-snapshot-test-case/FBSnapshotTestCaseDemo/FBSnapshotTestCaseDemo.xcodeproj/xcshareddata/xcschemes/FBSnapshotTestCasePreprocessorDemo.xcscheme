@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,24 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE97770022C2195F003C943B"
-               BuildableName = "Babylon.app"
-               BlueprintName = "Babylon"
-               ReferencedContainer = "container:Babylon.xcodeproj">
+               BlueprintIdentifier = "B30449011AB794320067C75D"
+               BuildableName = "FBSnapshotTestCaseDemo.app"
+               BlueprintName = "FBSnapshotTestCaseDemo"
+               ReferencedContainer = "container:FBSnapshotTestCaseDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
+            buildForTesting = "YES"
+            buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE8C072E22C6142B006F74E0"
-               BuildableName = "ViewModelTests.xctest"
-               BlueprintName = "ViewModelTests"
-               ReferencedContainer = "container:Babylon.xcodeproj">
+               BlueprintIdentifier = "30B49E6322C2D92000E19965"
+               BuildableName = "FBSnapshotTestCasePreprocessorDemoTests.xctest"
+               BlueprintName = "FBSnapshotTestCasePreprocessorDemoTests"
+               ReferencedContainer = "container:FBSnapshotTestCaseDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,26 +40,30 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "NO">
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "FB_REFERENCE_IMAGE_DIR"
-            value = "$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE161C8A22CA56B400A6D9F0"
-               BuildableName = "SnapshotTests.xctest"
-               BlueprintName = "SnapshotTests"
-               ReferencedContainer = "container:Babylon.xcodeproj">
+               BlueprintIdentifier = "308E5A2722C2E15600A0DAF9"
+               BuildableName = "FBSnapshotTestCasePreprocessorDemoTests.xctest"
+               BlueprintName = "FBSnapshotTestCasePreprocessorDemoTests"
+               ReferencedContainer = "container:FBSnapshotTestCaseDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B30449011AB794320067C75D"
+            BuildableName = "FBSnapshotTestCaseDemo.app"
+            BlueprintName = "FBSnapshotTestCaseDemo"
+            ReferencedContainer = "container:FBSnapshotTestCaseDemo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -75,12 +79,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE97770022C2195F003C943B"
-            BuildableName = "Babylon.app"
-            BlueprintName = "Babylon"
-            ReferencedContainer = "container:Babylon.xcodeproj">
+            BlueprintIdentifier = "B30449011AB794320067C75D"
+            BuildableName = "FBSnapshotTestCaseDemo.app"
+            BlueprintName = "FBSnapshotTestCaseDemo"
+            ReferencedContainer = "container:FBSnapshotTestCaseDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -92,10 +98,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE97770022C2195F003C943B"
-            BuildableName = "Babylon.app"
-            BlueprintName = "Babylon"
-            ReferencedContainer = "container:Babylon.xcodeproj">
+            BlueprintIdentifier = "B30449011AB794320067C75D"
+            BuildableName = "FBSnapshotTestCaseDemo.app"
+            BlueprintName = "FBSnapshotTestCaseDemo"
+            ReferencedContainer = "container:FBSnapshotTestCaseDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

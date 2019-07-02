@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */; };
 		AE161C8022CA502800A6D9F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C7F22CA502800A6D9F0 /* User.swift */; };
 		AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C8122CA503400A6D9F0 /* Comment.swift */; };
+		AE161C8E22CA56B400A6D9F0 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C8D22CA56B400A6D9F0 /* SnapshotTests.swift */; };
+		AE161C9522CA56C800A6D9F0 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE161C8522CA561500A6D9F0 /* FBSnapshotTestCase.framework */; platformFilter = ios; };
+		AE161C9A22CA590100A6D9F0 /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE161C8522CA561500A6D9F0 /* FBSnapshotTestCase.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE2980A522C65E9500DD2324 /* PostDTO+dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */; };
 		AE2980A722C77AD500DD2324 /* DispatchQueue+didChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A622C77AD500DD2324 /* DispatchQueue+didChange.swift */; };
 		AE2980AA22C9FAF200DD2324 /* BabylonError+alertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A922C9FAF200DD2324 /* BabylonError+alertMessage.swift */; };
@@ -51,6 +54,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AE161C9022CA56B400A6D9F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE41ECD122C0DE0F00ADD251 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE97770022C2195F003C943B;
+			remoteInfo = Babylon;
+		};
 		AE8C073122C6142B006F74E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE41ECD122C0DE0F00ADD251 /* Project object */;
@@ -82,6 +92,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AE161C9922CA58F800A6D9F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AE161C9A22CA590100A6D9F0 /* FBSnapshotTestCase.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE8C075822C6262D006F74E0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +133,10 @@
 		AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListExperienceBuilder.swift; sourceTree = "<group>"; };
 		AE161C7F22CA502800A6D9F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AE161C8122CA503400A6D9F0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		AE161C8522CA561500A6D9F0 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
+		AE161C8B22CA56B400A6D9F0 /* SnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE161C8D22CA56B400A6D9F0 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
+		AE161C8F22CA56B400A6D9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDTO+dummy.swift"; sourceTree = "<group>"; };
 		AE2980A622C77AD500DD2324 /* DispatchQueue+didChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+didChange.swift"; sourceTree = "<group>"; };
 		AE2980A922C9FAF200DD2324 /* BabylonError+alertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabylonError+alertMessage.swift"; sourceTree = "<group>"; };
@@ -157,6 +181,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AE161C8822CA56B400A6D9F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE161C9522CA56C800A6D9F0 /* FBSnapshotTestCase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE41ECD722C0DE0F00ADD251 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +277,15 @@
 			path = PostList;
 			sourceTree = "<group>";
 		};
+		AE161C8C22CA56B400A6D9F0 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE161C8D22CA56B400A6D9F0 /* SnapshotTests.swift */,
+				AE161C8F22CA56B400A6D9F0 /* Info.plist */,
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
 		AE2980A322C65E8600DD2324 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				AE97770222C2195F003C943B /* Babylon */,
+				AE161C8C22CA56B400A6D9F0 /* SnapshotTests */,
 				AE97771522C21978003C943B /* Frameworks */,
 				AE97779622C3B372003C943B /* Networking */,
 				AE41ECDB22C0DE0F00ADD251 /* Products */,
@@ -283,6 +325,7 @@
 				AE97779522C3B372003C943B /* Networking.framework */,
 				AE8C072722C6142B006F74E0 /* ViewModel.framework */,
 				AE8C072F22C6142B006F74E0 /* ViewModelTests.xctest */,
+				AE161C8B22CA56B400A6D9F0 /* SnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -372,6 +415,7 @@
 		AE97771522C21978003C943B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE161C8522CA561500A6D9F0 /* FBSnapshotTestCase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -505,6 +549,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		AE161C8A22CA56B400A6D9F0 /* SnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE161C9222CA56B400A6D9F0 /* Build configuration list for PBXNativeTarget "SnapshotTests" */;
+			buildPhases = (
+				AE161C8722CA56B400A6D9F0 /* Sources */,
+				AE161C8822CA56B400A6D9F0 /* Frameworks */,
+				AE161C8922CA56B400A6D9F0 /* Resources */,
+				AE161C9922CA58F800A6D9F0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE161C9122CA56B400A6D9F0 /* PBXTargetDependency */,
+			);
+			name = SnapshotTests;
+			productName = SnapshotTests;
+			productReference = AE161C8B22CA56B400A6D9F0 /* SnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AE41ECD922C0DE0F00ADD251 /* View */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE41ECE222C0DE0F00ADD251 /* Build configuration list for PBXNativeTarget "View" */;
@@ -609,6 +672,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = mczarnik.com;
 				TargetAttributes = {
+					AE161C8A22CA56B400A6D9F0 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = AE97770022C2195F003C943B;
+					};
 					AE41ECD922C0DE0F00ADD251 = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -647,11 +714,19 @@
 				AE97779422C3B372003C943B /* Networking */,
 				AE8C072622C6142B006F74E0 /* ViewModel */,
 				AE8C072E22C6142B006F74E0 /* ViewModelTests */,
+				AE161C8A22CA56B400A6D9F0 /* SnapshotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AE161C8922CA56B400A6D9F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE41ECD822C0DE0F00ADD251 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -692,6 +767,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AE161C8722CA56B400A6D9F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE161C8E22CA56B400A6D9F0 /* SnapshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE41ECD622C0DE0F00ADD251 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,6 +842,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AE161C9122CA56B400A6D9F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE97770022C2195F003C943B /* Babylon */;
+			targetProxy = AE161C9022CA56B400A6D9F0 /* PBXContainerItemProxy */;
+		};
 		AE8C073222C6142B006F74E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AE8C072622C6142B006F74E0 /* ViewModel */;
@@ -793,6 +881,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AE161C9322CA56B400A6D9F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QPFFKMSR5R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SnapshotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mczarnik.SnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Babylon.app/Babylon";
+			};
+			name = Debug;
+		};
+		AE161C9422CA56B400A6D9F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QPFFKMSR5R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SnapshotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mczarnik.SnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Babylon.app/Babylon";
+			};
+			name = Release;
+		};
 		AE41ECE022C0DE0F00ADD251 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1019,6 +1153,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPFFKMSR5R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ViewModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1040,6 +1178,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPFFKMSR5R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ViewModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1147,6 +1289,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AE161C9222CA56B400A6D9F0 /* Build configuration list for PBXNativeTarget "SnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE161C9322CA56B400A6D9F0 /* Debug */,
+				AE161C9422CA56B400A6D9F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE41ECD422C0DE0F00ADD251 /* Build configuration list for PBXProject "Babylon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
