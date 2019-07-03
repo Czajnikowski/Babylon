@@ -6,7 +6,9 @@
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
-extension BabylonError: AlertMessageProviding {
+import View
+
+extension BabylonError {
     var alertMessage: String {
         switch self {
         case .networking:

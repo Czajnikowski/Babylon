@@ -25,7 +25,7 @@ public struct PostDetailsViewState {
     }
 }
 
-public protocol PostDetailsViewModelRepresenting: ViewBindableObject {
+public protocol PostDetailsViewModelRepresenting: ViewBindableObject, AlertMessageControlling {
     var state: PostDetailsViewState? { get }
     
     func loadData()
@@ -60,6 +60,7 @@ where ViewModel: PostDetailsViewModelRepresenting {
                 Text((viewModel.state?.author).map { "by: \($0)" } ?? "Loading...")
             )
             .onAppear(perform: viewModel.loadData)
+            .handleAlert(with: viewModel)
     }
     
     init(viewModel: ViewModel) {

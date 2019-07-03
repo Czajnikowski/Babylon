@@ -41,12 +41,7 @@ where ViewModel: PostListViewModelRepresenting {
                         Image(systemName: "arrow.counterclockwise")
                     }
                 )
-                .presentation(viewModel.alertPresentationBinding) {
-                    Alert(
-                        title: Text("Error"),
-                        message: Text(viewModel.alertMessage ?? "Unknown error")
-                    )
-                }
+                .handleAlert(with: viewModel)
         }
             .onAppear(perform: viewModel.loadData)
     }
@@ -57,19 +52,14 @@ where ViewModel: PostListViewModelRepresenting {
     }
     
     private func listItemView(for postRowModel: PostRowModel) -> AnyView {
-        if let builder = listDestinationViewBuilder {
-            return AnyView(
-                NavigationButton(
+       return listDestinationViewBuilder.map { builder in
+            AnyView(
+                NavigationLink(
                     destination: builder.build(forPostWithId: postRowModel.id)
                 ) {
                     Text(postRowModel.title)
                 }
             )
-        }
-        else {
-            return AnyView(
-                Text(postRowModel.title)
-            )
-        }
+        } ?? AnyView(Text(postRowModel.title))
     }
 }

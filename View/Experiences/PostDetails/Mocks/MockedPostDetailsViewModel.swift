@@ -14,11 +14,15 @@ final class MockedPostDetailsViewModel {
         didSet { didChange.send(self) }
     }
     
+    var alertMessage: String? {
+        didSet { didChange.send(self) }
+    }
+    
     var didChange = PassthroughSubject<MockedPostDetailsViewModel, Never>()
 }
 
-extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
-     func loadData() {
+extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageConsuming {
+    func loadData() {
         state = PostDetailsViewState(
             author: "Some Author",
             description: "Some Description",

@@ -37,7 +37,9 @@
 		AE8FBD1E22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */; };
 		AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */; };
 		AE8FBD2222CC9CA600F5E895 /* BabylonError+AlertMessageProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A922C9FAF200DD2324 /* BabylonError+AlertMessageProviding.swift */; };
-		AE8FBD2422CC9CD400F5E895 /* AlertMessageProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2322CC9CD400F5E895 /* AlertMessageProviding.swift */; };
+		AE8FBD2422CC9CD400F5E895 /* AlertMessageControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2322CC9CD400F5E895 /* AlertMessageControlling.swift */; };
+		AE8FBD2722CCA3D600F5E895 /* SwiftUI+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2622CCA3D600F5E895 /* SwiftUI+Convenience.swift */; };
+		AE8FBD2A22CCA94200F5E895 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2922CCA94200F5E895 /* AlertHandler.swift */; };
 		AE97770422C2195F003C943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770322C2195F003C943B /* AppDelegate.swift */; };
 		AE97770622C2195F003C943B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770522C2195F003C943B /* SceneDelegate.swift */; };
 		AE97770A22C2195F003C943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE97770922C2195F003C943B /* Assets.xcassets */; };
@@ -46,6 +48,7 @@
 		AE97779922C3B372003C943B /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE97779722C3B372003C943B /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE9777A322C3B3F0003C943B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9777A222C3B3F0003C943B /* Networking.swift */; };
 		AEE0C4C822CCDCE400630A54 /* BabylonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05C97222C51A5100C0E22F /* BabylonError.swift */; };
+		AEE0C4CA22CCEAA500630A54 /* AlertMessageConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4C922CCEAA500630A54 /* AlertMessageConsuming.swift */; };
 		AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */; };
 		AEE5CEA222CA25450083B790 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CEA122CA25450083B790 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
@@ -137,7 +140,9 @@
 		AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedPostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForPostWithIdBuilding.swift; sourceTree = "<group>"; };
 		AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewBuilder.swift; sourceTree = "<group>"; };
-		AE8FBD2322CC9CD400F5E895 /* AlertMessageProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageProviding.swift; sourceTree = "<group>"; };
+		AE8FBD2322CC9CD400F5E895 /* AlertMessageControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageControlling.swift; sourceTree = "<group>"; };
+		AE8FBD2622CCA3D600F5E895 /* SwiftUI+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Convenience.swift"; sourceTree = "<group>"; };
+		AE8FBD2922CCA94200F5E895 /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		AE97770122C2195F003C943B /* Babylon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Babylon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE97770322C2195F003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE97770522C2195F003C943B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		AE97779722C3B372003C943B /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		AE97779822C3B372003C943B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9777A222C3B3F0003C943B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AEE0C4C922CCEAA500630A54 /* AlertMessageConsuming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageConsuming.swift; sourceTree = "<group>"; };
 		AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AEE5CEA122CA25450083B790 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,7 +208,8 @@
 		AE09044D22C2089A00720EF9 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				AE8FBD2322CC9CD400F5E895 /* AlertMessageProviding.swift */,
+				AEE0C4C922CCEAA500630A54 /* AlertMessageConsuming.swift */,
+				AE8FBD2322CC9CD400F5E895 /* AlertMessageControlling.swift */,
 				AE09044E22C208A800720EF9 /* ViewBindableObject.swift */,
 				AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */,
 			);
@@ -277,6 +284,8 @@
 			children = (
 				AE09044D22C2089A00720EF9 /* Abstract */,
 				AE09045022C2098D00720EF9 /* Experiences */,
+				AE8FBD2522CCA3B600F5E895 /* Extensions */,
+				AE8FBD2822CCA93200F5E895 /* Modifiers */,
 				AE09045322C209D600720EF9 /* Supporting */,
 			);
 			path = View;
@@ -348,6 +357,22 @@
 				AE05C97222C51A5100C0E22F /* BabylonError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		AE8FBD2522CCA3B600F5E895 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE8FBD2622CCA3D600F5E895 /* SwiftUI+Convenience.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE8FBD2822CCA93200F5E895 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				AE8FBD2922CCA94200F5E895 /* AlertHandler.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		AE97770222C2195F003C943B /* Babylon */ = {
@@ -696,8 +721,11 @@
 				AE8C076822C6537A006F74E0 /* PostDetailsExperienceBuilder.swift in Sources */,
 				AE97771C22C21FB3003C943B /* MockedPostListViewModel.swift in Sources */,
 				AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */,
-				AE8FBD2422CC9CD400F5E895 /* AlertMessageProviding.swift in Sources */,
+				AE8FBD2422CC9CD400F5E895 /* AlertMessageControlling.swift in Sources */,
 				AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */,
+				AEE0C4CA22CCEAA500630A54 /* AlertMessageConsuming.swift in Sources */,
+				AE8FBD2A22CCA94200F5E895 /* AlertHandler.swift in Sources */,
+				AE8FBD2722CCA3D600F5E895 /* SwiftUI+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
