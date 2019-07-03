@@ -35,7 +35,7 @@ where ViewModel: PostListViewModelRepresenting {
         NavigationView {
             List(viewModel.postRowModels) { postRowModel in
                 self.postDetailsViewModelBuilder.map { builder in
-                    NavigationButton(
+                    NavigationLink(
                         destination: PostDetailsView(
                             viewModel: builder.build(forPostWithId: postRowModel.id)
                         )
