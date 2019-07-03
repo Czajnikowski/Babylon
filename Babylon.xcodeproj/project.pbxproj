@@ -48,7 +48,7 @@
 		AE97779922C3B372003C943B /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE97779722C3B372003C943B /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE9777A322C3B3F0003C943B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9777A222C3B3F0003C943B /* Networking.swift */; };
 		AEE0C4C822CCDCE400630A54 /* BabylonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05C97222C51A5100C0E22F /* BabylonError.swift */; };
-		AEE0C4CA22CCEAA500630A54 /* AlertMessageConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4C922CCEAA500630A54 /* AlertMessageConsuming.swift */; };
+		AEE0C4CC22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */; };
 		AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */; };
 		AEE5CEA222CA25450083B790 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CEA122CA25450083B790 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
@@ -157,7 +157,7 @@
 		AE97779722C3B372003C943B /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		AE97779822C3B372003C943B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9777A222C3B3F0003C943B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		AEE0C4C922CCEAA500630A54 /* AlertMessageConsuming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageConsuming.swift; sourceTree = "<group>"; };
+		AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageErrorConsuming.swift; sourceTree = "<group>"; };
 		AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AEE5CEA122CA25450083B790 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,7 +208,6 @@
 		AE09044D22C2089A00720EF9 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				AEE0C4C922CCEAA500630A54 /* AlertMessageConsuming.swift */,
 				AE8FBD2322CC9CD400F5E895 /* AlertMessageControlling.swift */,
 				AE09044E22C208A800720EF9 /* ViewBindableObject.swift */,
 				AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */,
@@ -479,6 +478,7 @@
 		AE9777A422C3BF29003C943B /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
+				AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */,
 				AE8C074A22C61856006F74E0 /* APIProviding.swift */,
 			);
 			path = Abstract;
@@ -723,7 +723,6 @@
 				AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */,
 				AE8FBD2422CC9CD400F5E895 /* AlertMessageControlling.swift in Sources */,
 				AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */,
-				AEE0C4CA22CCEAA500630A54 /* AlertMessageConsuming.swift in Sources */,
 				AE8FBD2A22CCA94200F5E895 /* AlertHandler.swift in Sources */,
 				AE8FBD2722CCA3D600F5E895 /* SwiftUI+Convenience.swift in Sources */,
 			);
@@ -739,6 +738,7 @@
 				AE8C074722C61479006F74E0 /* PostListViewModel.swift in Sources */,
 				AE8C074D22C61887006F74E0 /* API+APIProviding.swift in Sources */,
 				AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */,
+				AEE0C4CC22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift in Sources */,
 				AE161C8022CA502800A6D9F0 /* User.swift in Sources */,
 				AE8C074922C61479006F74E0 /* Post.swift in Sources */,
 				AE8C076022C646C6006F74E0 /* PostListViewModelBuilder.swift in Sources */,

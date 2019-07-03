@@ -41,14 +41,14 @@ final class PostListViewModelTests: XCTestCase {
             didChangeDispatchQueue: .testQueue
         )
         
-        let expectation = XCTestExpectation(description: "ViewModel should send change")
+        let sendChangeExpectation = XCTestExpectation(description: "ViewModel should send change")
         let subscription = viewModel.didChange.sink { _ in
-            expectation.fulfill()
+            sendChangeExpectation.fulfill()
         }
         
         viewModel.loadData()
         
-        XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 0.1), .completed)
+        XCTAssertEqual(XCTWaiter().wait(for: [sendChangeExpectation], timeout: 0.1), .completed)
         XCTAssertEqual(viewModel.error, BabylonError.networking)
         
         subscription.cancel()
@@ -58,9 +58,7 @@ final class PostListViewModelTests: XCTestCase {
         final class SinglePostAPIStub: APIProviding {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
                 return Publishers
-                    //force!
-                    .Just(try! JSONEncoder().encode([PostDTO.dummy]))
-                    .mapError { _ in URLError(.badURL) }
+                    .Once<Data, URLError>(try! JSONEncoder().encode([PostDTO.dummy]))
                     .eraseToAnyPublisher()
             }
             
@@ -82,14 +80,14 @@ final class PostListViewModelTests: XCTestCase {
             didChangeDispatchQueue: .testQueue
         )
         
-        let expectation = XCTestExpectation(description: "ViewModel should have row model")
+        let sendChangeExpectation = XCTestExpectation(description: "ViewModel should send change")
         let subscription = viewModel.didChange.sink { _ in
-            expectation.fulfill()
+            sendChangeExpectation.fulfill()
         }
         
         viewModel.loadData()
         
-        XCTAssertEqual(XCTWaiter().wait(for: [expectation], timeout: 0.1), .completed)
+        XCTAssertEqual(XCTWaiter().wait(for: [sendChangeExpectation], timeout: 0.1), .completed)
         XCTAssertEqual(viewModel.postRowModels, [PostRowModel(with: .dummy)])
         
         subscription.cancel()

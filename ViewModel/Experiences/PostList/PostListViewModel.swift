@@ -11,12 +11,16 @@ import Networking
 import View
 
 final class PostListViewModel {
-    var error: BabylonError? {
-        didSet { sendChange() }
+    var alertMessage: String? {
+        return error?.alertMessage
     }
     
     var postRowModels: [PostRowModel] {
         return postDTOs.map(PostRowModel.init)
+    }
+    
+    var error: BabylonError? {
+        didSet { sendChange() }
     }
     
     var didChange = PassthroughSubject<PostListViewModel, Never>()
@@ -47,7 +51,7 @@ final class PostListViewModel {
 extension PostListViewModel: ViewBindableObject {
 }
 
-extension PostListViewModel: PostListViewModelRepresenting {
+extension PostListViewModel: PostListViewModelRepresenting, AlertMessageErrorConsuming {
     func loadData() {
         loadDataSubscriber?.cancel()
         

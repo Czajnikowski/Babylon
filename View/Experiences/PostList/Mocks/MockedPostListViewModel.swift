@@ -28,9 +28,13 @@ final class MockedPostListViewModel {
 extension MockedPostListViewModel: BindableObject {
 }
 
-extension MockedPostListViewModel: PostListViewModelRepresenting, AlertMessageConsuming {
+extension MockedPostListViewModel: PostListViewModelRepresenting {
     func loadData() {
         alertMessage = "Test message"
         postRowModels.append(PostRowModel(id: 1, title: "Yo"))
+    }
+    
+    func consumeAlertMessage() {
+        alertMessage = nil
     }
 }

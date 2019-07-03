@@ -10,6 +10,10 @@ import Combine
 import View
 
 final class PostDetailsViewModel {
+    var alertMessage: String? {
+        return error?.alertMessage
+    }
+    
     var error: BabylonError? {
         didSet { didChange.send(self) }
     }
@@ -41,7 +45,7 @@ final class PostDetailsViewModel {
     }
 }
 
-extension PostDetailsViewModel: PostDetailsViewModelRepresenting {
+extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageErrorConsuming {
     func loadData() {
         loadDataSubscriber?.cancel()
         

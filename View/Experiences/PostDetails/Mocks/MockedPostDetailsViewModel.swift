@@ -21,13 +21,17 @@ final class MockedPostDetailsViewModel {
     var didChange = PassthroughSubject<MockedPostDetailsViewModel, Never>()
 }
 
-extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageConsuming {
+extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
     func loadData() {
         state = PostDetailsViewState(
             author: "Some Author",
             description: "Some Description",
             numberOfComments: 30
         )
+    }
+    
+    func consumeAlertMessage() {
+        alertMessage = nil
     }
 }
 
