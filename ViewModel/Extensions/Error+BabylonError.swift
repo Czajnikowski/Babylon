@@ -6,8 +6,6 @@
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
-import View
-
 extension Error {
     func toBabylonError(_ targetError: BabylonError) -> BabylonError {
         return (self as? BabylonError) ?? targetError

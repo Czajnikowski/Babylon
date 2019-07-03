@@ -6,7 +6,7 @@
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
-public enum BabylonError: Error {
+enum BabylonError: Error {
     case
     networking,
     parsing

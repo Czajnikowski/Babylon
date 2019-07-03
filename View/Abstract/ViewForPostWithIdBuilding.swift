@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-//  Try to make it class...
 public protocol ViewForPostWithIdBuilding {
     func build(forPostWithId postId: Int) -> AnyView
 }

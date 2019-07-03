@@ -13,7 +13,6 @@
 		AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C8122CA503400A6D9F0 /* Comment.swift */; };
 		AE2980A522C65E9500DD2324 /* PostDTO+dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */; };
 		AE2980A722C77AD500DD2324 /* DispatchQueue+didChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A622C77AD500DD2324 /* DispatchQueue+didChange.swift */; };
-		AE2980AA22C9FAF200DD2324 /* BabylonError+alertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A922C9FAF200DD2324 /* BabylonError+alertMessage.swift */; };
 		AE41ECDF22C0DE0F00ADD251 /* View.h in Headers */ = {isa = PBXBuildFile; fileRef = AE41ECDD22C0DE0F00ADD251 /* View.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE41ECE622C0DE3B00ADD251 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41ECE522C0DE3B00ADD251 /* PostListView.swift */; };
 		AE8C073022C6142B006F74E0 /* ViewModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8C072722C6142B006F74E0 /* ViewModel.framework */; };
@@ -26,7 +25,6 @@
 		AE8C074B22C61856006F74E0 /* APIProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C074A22C61856006F74E0 /* APIProviding.swift */; };
 		AE8C074D22C61887006F74E0 /* API+APIProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C074C22C61887006F74E0 /* API+APIProviding.swift */; };
 		AE8C075122C618F6006F74E0 /* PostListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C075022C618F6006F74E0 /* PostListViewModelTests.swift */; };
-		AE8C075322C624B2006F74E0 /* BabylonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05C97222C51A5100C0E22F /* BabylonError.swift */; };
 		AE8C075422C6262D006F74E0 /* View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE41ECDA22C0DE0F00ADD251 /* View.framework */; };
 		AE8C075522C6262D006F74E0 /* View.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE41ECDA22C0DE0F00ADD251 /* View.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE8C075922C62631006F74E0 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE97779522C3B372003C943B /* Networking.framework */; };
@@ -38,6 +36,8 @@
 		AE8C076A22C65381006F74E0 /* MockedPostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */; };
 		AE8FBD1E22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */; };
 		AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */; };
+		AE8FBD2222CC9CA600F5E895 /* BabylonError+AlertMessageProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A922C9FAF200DD2324 /* BabylonError+AlertMessageProviding.swift */; };
+		AE8FBD2422CC9CD400F5E895 /* AlertMessageProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2322CC9CD400F5E895 /* AlertMessageProviding.swift */; };
 		AE97770422C2195F003C943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770322C2195F003C943B /* AppDelegate.swift */; };
 		AE97770622C2195F003C943B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770522C2195F003C943B /* SceneDelegate.swift */; };
 		AE97770A22C2195F003C943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE97770922C2195F003C943B /* Assets.xcassets */; };
@@ -45,6 +45,7 @@
 		AE97772822C22342003C943B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE97770E22C2195F003C943B /* LaunchScreen.storyboard */; };
 		AE97779922C3B372003C943B /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE97779722C3B372003C943B /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE9777A322C3B3F0003C943B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9777A222C3B3F0003C943B /* Networking.swift */; };
+		AEE0C4C822CCDCE400630A54 /* BabylonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05C97222C51A5100C0E22F /* BabylonError.swift */; };
 		AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */; };
 		AEE5CEA222CA25450083B790 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CEA122CA25450083B790 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
@@ -114,7 +115,7 @@
 		AE161C8122CA503400A6D9F0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDTO+dummy.swift"; sourceTree = "<group>"; };
 		AE2980A622C77AD500DD2324 /* DispatchQueue+didChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+didChange.swift"; sourceTree = "<group>"; };
-		AE2980A922C9FAF200DD2324 /* BabylonError+alertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabylonError+alertMessage.swift"; sourceTree = "<group>"; };
+		AE2980A922C9FAF200DD2324 /* BabylonError+AlertMessageProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BabylonError+AlertMessageProviding.swift"; sourceTree = "<group>"; };
 		AE41ECDA22C0DE0F00ADD251 /* View.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = View.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE41ECDD22C0DE0F00ADD251 /* View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		AE41ECDE22C0DE0F00ADD251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 		AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedPostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForPostWithIdBuilding.swift; sourceTree = "<group>"; };
 		AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewBuilder.swift; sourceTree = "<group>"; };
+		AE8FBD2322CC9CD400F5E895 /* AlertMessageProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageProviding.swift; sourceTree = "<group>"; };
 		AE97770122C2195F003C943B /* Babylon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Babylon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE97770322C2195F003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE97770522C2195F003C943B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,17 +199,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE05C97122C51A3C00C0E22F /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				AE05C97222C51A5100C0E22F /* BabylonError.swift */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
 		AE09044D22C2089A00720EF9 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
+				AE8FBD2322CC9CD400F5E895 /* AlertMessageProviding.swift */,
 				AE09044E22C208A800720EF9 /* ViewBindableObject.swift */,
 				AE8FBD1D22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift */,
 			);
@@ -252,14 +247,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		AE2980A822C9FACE00DD2324 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				AE2980A922C9FAF200DD2324 /* BabylonError+alertMessage.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		AE41ECD022C0DE0F00ADD251 = {
 			isa = PBXGroup;
 			children = (
@@ -289,9 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				AE09044D22C2089A00720EF9 /* Abstract */,
-				AE05C97122C51A3C00C0E22F /* Error */,
 				AE09045022C2098D00720EF9 /* Experiences */,
-				AE2980A822C9FACE00DD2324 /* Extensions */,
 				AE09045322C209D600720EF9 /* Supporting */,
 			);
 			path = View;
@@ -301,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				AE9777A422C3BF29003C943B /* Abstract */,
+				AE8FBD2122CC9C6400F5E895 /* Error */,
 				AE97772022C221E4003C943B /* Experiences */,
 				AE97772922C22568003C943B /* Extensions */,
 				AE97772422C22227003C943B /* Model */,
@@ -354,6 +340,14 @@
 				AE8C076722C64E4C006F74E0 /* MockedPostDetailsViewModel.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		AE8FBD2122CC9C6400F5E895 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				AE05C97222C51A5100C0E22F /* BabylonError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		AE97770222C2195F003C943B /* Babylon */ = {
@@ -431,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				AE8C074C22C61887006F74E0 /* API+APIProviding.swift */,
+				AE2980A922C9FAF200DD2324 /* BabylonError+AlertMessageProviding.swift */,
 				AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */,
 				AE97772A22C22573003C943B /* Model+DTO.swift */,
 			);
@@ -698,11 +693,10 @@
 				AE8FBD1E22CBA57500F5E895 /* ViewForPostWithIdBuilding.swift in Sources */,
 				AE8C076922C6537E006F74E0 /* PostDetailsView.swift in Sources */,
 				AE41ECE622C0DE3B00ADD251 /* PostListView.swift in Sources */,
-				AE2980AA22C9FAF200DD2324 /* BabylonError+alertMessage.swift in Sources */,
 				AE8C076822C6537A006F74E0 /* PostDetailsExperienceBuilder.swift in Sources */,
 				AE97771C22C21FB3003C943B /* MockedPostListViewModel.swift in Sources */,
 				AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */,
-				AE8C075322C624B2006F74E0 /* BabylonError.swift in Sources */,
+				AE8FBD2422CC9CD400F5E895 /* AlertMessageProviding.swift in Sources */,
 				AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -721,6 +715,8 @@
 				AE8C074922C61479006F74E0 /* Post.swift in Sources */,
 				AE8C076022C646C6006F74E0 /* PostListViewModelBuilder.swift in Sources */,
 				AE8C075E22C628F5006F74E0 /* Error+BabylonError.swift in Sources */,
+				AEE0C4C822CCDCE400630A54 /* BabylonError.swift in Sources */,
+				AE8FBD2222CC9CA600F5E895 /* BabylonError+AlertMessageProviding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

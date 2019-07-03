@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 final class MockedPostListViewModel {
-    var error: BabylonError? {
+    var alertMessage: String? {
         didSet { sendChange() }
     }
     
@@ -30,8 +30,7 @@ extension MockedPostListViewModel: BindableObject {
 
 extension MockedPostListViewModel: PostListViewModelRepresenting {
     func loadData() {
-        error = .networking
+        alertMessage = "Test message"
         postRowModels.append(PostRowModel(id: 1, title: "Yo"))
     }
 }
-

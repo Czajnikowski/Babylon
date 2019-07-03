@@ -1,12 +1,12 @@
 //
-//  BabylonError+alertMessage.swift
+//  BabylonError+AlertMessageProviding.swift
 //  View
 //
 //  Created by Maciek on 01/07/2019.
 //  Copyright © 2019 mczarnik.com. All rights reserved.
 //
 
-extension BabylonError {
+extension BabylonError: AlertMessageProviding {
     var alertMessage: String {
         switch self {
         case .networking:

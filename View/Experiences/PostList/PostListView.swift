@@ -18,9 +18,8 @@ public struct PostRowModel: Identifiable, Equatable {
     }
 }
 
-public protocol PostListViewModelRepresenting: ViewBindableObject {
+public protocol PostListViewModelRepresenting: ViewBindableObject, AlertMessageControlling {
     var postRowModels: [PostRowModel] { get }
-    var error: BabylonError? { get set }
     
     func loadData()
 }
@@ -34,16 +33,7 @@ where ViewModel: PostListViewModelRepresenting {
     var body: some View {
         NavigationView {
             List(viewModel.postRowModels) { postRowModel in
-                self.listDestinationViewBuilder.map { builder in
-                    NavigationButton(
-                        destination: builder.build(forPostWithId: postRowModel.id)
-                    ) {
-                        Text(postRowModel.title)
-                    }
-                }
-                if self.listDestinationViewBuilder == nil {
-                    Text(postRowModel.title)
-                }
+                self.listItemView(for: postRowModel)
             }
                 .navigationBarTitle(Text("Posts"))
                 .navigationBarItems(
@@ -51,25 +41,35 @@ where ViewModel: PostListViewModelRepresenting {
                         Image(systemName: "arrow.counterclockwise")
                     }
                 )
-                .presentation(alertPresentationBinding) {
+                .presentation(viewModel.alertPresentationBinding) {
                     Alert(
                         title: Text("Error"),
-                        message: Text(viewModel.error?.alertMessage ?? "Unknown error")
+                        message: Text(viewModel.alertMessage ?? "Unknown error")
                     )
                 }
         }
             .onAppear(perform: viewModel.loadData)
     }
     
-    private var alertPresentationBinding: Binding<Bool> {
-        return Binding(
-            getValue: { self.viewModel.error != nil },
-            setValue: { if !$0 { self.viewModel.error = nil } }
-        )
-    }
-    
     init(viewModel: ViewModel, listDestinationViewBuilder: ViewForPostWithIdBuilding?) {
         self.viewModel = viewModel
         self.listDestinationViewBuilder = listDestinationViewBuilder
+    }
+    
+    private func listItemView(for postRowModel: PostRowModel) -> AnyView {
+        if let builder = listDestinationViewBuilder {
+            return AnyView(
+                NavigationButton(
+                    destination: builder.build(forPostWithId: postRowModel.id)
+                ) {
+                    Text(postRowModel.title)
+                }
+            )
+        }
+        else {
+            return AnyView(
+                Text(postRowModel.title)
+            )
+        }
     }
 }
