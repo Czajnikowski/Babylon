@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Alert {
     static func errorAlert(withMessage message: String?) -> Alert {
-        return Alert(
+        Alert(
             title: Text("Error"),
             message: Text(message ?? "Unknown error")
         )

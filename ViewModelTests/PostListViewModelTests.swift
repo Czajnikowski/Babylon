@@ -15,7 +15,7 @@ final class PostListViewModelTests: XCTestCase {
     func testReloadData_From_FailingAPI_Generates_Error() {
         final class FailingAPIStub: APIProviding {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
-                return Publishers
+                Publishers
                     .Fail(
                         outputType: Data.self,
                         failure: URLError(.appTransportSecurityRequiresSecureConnection)
@@ -32,7 +32,7 @@ final class PostListViewModelTests: XCTestCase {
             }
             
             func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
-                return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
+                Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
         }
         
@@ -57,13 +57,13 @@ final class PostListViewModelTests: XCTestCase {
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
         final class SinglePostAPIStub: APIProviding {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
-                return Publishers
+                Publishers
                     .Once<Data, URLError>(try! JSONEncoder().encode([PostDTO.dummy]))
                     .eraseToAnyPublisher()
             }
             
             func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
-                return Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
+                Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
             
             func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {

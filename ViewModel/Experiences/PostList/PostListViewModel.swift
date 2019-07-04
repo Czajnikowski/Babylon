@@ -1,6 +1,6 @@
 //
 //  PostListViewModel.swift
-//  Controller
+//  ViewModel
 //
 //  Created by Maciek on 24/06/2019.
 //  Copyright © 2019 mczarnik.com. All rights reserved.
@@ -51,7 +51,7 @@ extension PostListViewModel: PostListViewModelRepresenting, AlertMessageErrorCon
         
         loadDataSubscriber = api
             .postsDataPublisher()
-            .mapError { return $0.toBabylonError(.networking) }
+            .mapError { $0.toBabylonError(.networking) }
             .decode(type: [PostDTO].self, decoder: JSONDecoder())
             .mapError { $0.toBabylonError(.parsing) }
             .receive(on: didChangeDispatchQueue)

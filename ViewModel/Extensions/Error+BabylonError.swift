@@ -8,6 +8,6 @@
 
 extension Error {
     func toBabylonError(_ targetError: BabylonError) -> BabylonError {
-        return (self as? BabylonError) ?? targetError
+        (self as? BabylonError) ?? targetError
     }
 }

@@ -66,9 +66,9 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
     }
     
     private func loadUser() -> AnyPublisher<UserDTO, BabylonError> {
-        return api
+        api
             .userDataPublisher(forUserWithId: post.userId)
-            .mapError { return $0.toBabylonError(.networking) }
+            .mapError { $0.toBabylonError(.networking) }
             .decode(type: UserDTO.self, decoder: JSONDecoder())
             .mapError { $0.toBabylonError(.parsing) }
             .receive(on: didChangeDispatchQueue)
@@ -76,9 +76,9 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
     }
     
     private func loadComments() -> AnyPublisher<Int, BabylonError> {
-        return api
+        api
             .commentDataPublisher(forPostWithId: post.id)
-            .mapError { return $0.toBabylonError(.networking) }
+            .mapError { $0.toBabylonError(.networking) }
             .decode(type: [CommentDTO].self, decoder: JSONDecoder())
             .mapError { $0.toBabylonError(.parsing) }
             .map { $0.count }

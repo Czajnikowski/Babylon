@@ -16,7 +16,7 @@ struct AlertHandler: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        return content
+        content
             .presentation(alertController.alertPresentationBinding) {
                 .errorAlert(withMessage: alertController.alertMessage)
             }
@@ -25,7 +25,7 @@ struct AlertHandler: ViewModifier {
 
 extension View {
     func handleAlert(with alertController: AlertMessageControlling) -> Self.Modified<AlertHandler> {
-        return Modified(
+        Modified(
             content: self,
             modifier: AlertHandler(with: alertController)
         )

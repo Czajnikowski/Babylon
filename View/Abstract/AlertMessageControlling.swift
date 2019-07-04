@@ -16,9 +16,9 @@ public protocol AlertMessageControlling {
 
 extension AlertMessageControlling {
     var alertPresentationBinding: Binding<Bool> {
-        return Binding(
+        Binding(
             getValue: {
-                return self.alertMessage != nil
+                self.alertMessage != nil
             },
             setValue: {
                 if !$0 { self.consumeAlertMessage() }

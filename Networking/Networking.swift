@@ -16,15 +16,15 @@ public final class API {
     }
     
     public func postsDataPublisher() -> AnyPublisher<Data, URLError> {
-        return dataPublisher(for: .posts)
+        dataPublisher(for: .posts)
     }
     
     public func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
-        return dataPublisher(for: .user(userId: userId))
+        dataPublisher(for: .user(userId: userId))
     }
     
     public func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError> {
-        return dataPublisher(for: .comment(postId: postId))
+        dataPublisher(for: .comment(postId: postId))
     }
     
     private func dataPublisher(

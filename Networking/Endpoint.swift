@@ -12,9 +12,7 @@ enum Endpoint {
     user(userId: Int),
     comment(postId: Int)
     
-    var url: URL? {
-        return urlComponents.url
-    }
+    var url: URL? { urlComponents.url }
     
     private var urlComponents: URLComponents {
         var urlComponents = URLComponents()
