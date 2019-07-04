@@ -69,7 +69,7 @@ extension PostListViewModel: PostListViewModelRepresenting, AlertMessageErrorCon
 }
 
 extension PostListViewModel: PostProviding {
-    public func providePost(forPostId postId: Int) -> PostDTO {
-        postDTOs.first { $0.id == postId }!
+    public func providePost(forPostId postId: Int) -> PostDTO? {
+        postDTOs.first { $0.id == postId }
     }
 }

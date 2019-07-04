@@ -7,5 +7,5 @@
 //
 
 public protocol PostProviding {
-    func providePost(forPostId postId: Int) -> PostDTO
+    func providePost(forPostId postId: Int) -> PostDTO?
 }

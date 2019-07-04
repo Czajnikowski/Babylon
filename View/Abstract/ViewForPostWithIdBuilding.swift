@@ -9,5 +9,5 @@
 import SwiftUI
 
 protocol ViewForPostWithIdBuilding {
-    func build(forPostWithId postId: Int) -> AnyView
+    func build(forPostWithId postId: Int) -> AnyView?
 }

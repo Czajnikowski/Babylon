@@ -28,7 +28,7 @@ struct PostListView<ViewModel>: View
 where ViewModel: PostListViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
     
-    private let listDestinationViewBuilder: ViewForPostWithIdBuilding?
+    private let listDestinationViewBuilder: ViewForPostWithIdBuilding
     
     var body: some View {
         NavigationView {
@@ -46,15 +46,19 @@ where ViewModel: PostListViewModelRepresenting {
             .onAppear(perform: viewModel.loadData)
     }
     
-    init(viewModel: ViewModel, listDestinationViewBuilder: ViewForPostWithIdBuilding? = nil) {
+    init(
+        viewModel: ViewModel,
+        listDestinationViewBuilder: ViewForPostWithIdBuilding
+        ) {
+        
         self.viewModel = viewModel
         self.listDestinationViewBuilder = listDestinationViewBuilder
     }
     
     private func listItemView(for postRowModel: PostRowModel) -> AnyView {
-       listDestinationViewBuilder.map { builder in
+        listDestinationViewBuilder.build(forPostWithId: postRowModel.id).map { destination in
             NavigationLink(
-                destination: builder.build(forPostWithId: postRowModel.id)
+                destination: destination
             ) {
                 Text(postRowModel.title)
             }

@@ -8,21 +8,35 @@
 
 import SwiftUI
 
-public final class PostListViewBuilder {
-    public static func buildMocked() -> some View {
-        PostListView(viewModel: MockedPostListViewModel())
+public final class MockedPostListViewBuilder {
+    private class NoListDestinationViewBuilder: ViewForPostWithIdBuilding {
+        fileprivate init() {}
+        
+        func build(forPostWithId postId: Int) -> AnyView? {
+            nil
+        }
     }
     
+    public static func buildMocked() -> some View {
+        PostListView(
+            viewModel: MockedPostListViewModel(),
+            listDestinationViewBuilder: NoListDestinationViewBuilder()
+        )
+    }
+}
+
+public final class PostListViewBuilder {
     public static func build<ViewModel, DetailsViewModel>(
         viewModel: ViewModel,
-        detailsViewModelForPostIdProvider provideDetailsViewModelForPostId: ((Int) -> DetailsViewModel)? = nil
+        detailsViewModelForPostIdProvider provideDetailsViewModelForPostId: @escaping (Int) -> DetailsViewModel?
         ) -> some View where ViewModel: PostListViewModelRepresenting,
         DetailsViewModel: PostDetailsViewModelRepresenting {
         
         PostListView(
             viewModel: viewModel,
-            listDestinationViewBuilder: provideDetailsViewModelForPostId
-                .map(PostDetailsViewBuilder.init)
+            listDestinationViewBuilder: PostDetailsViewBuilder(
+                viewModelForPostIdProvider: provideDetailsViewModelForPostId
+            )
         )
     }
 }

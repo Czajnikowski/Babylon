@@ -50,6 +50,7 @@
 		AEE0C4CC22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */; };
 		AEE0C4CE22CD542500630A54 /* View+EricaSadun.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4CD22CD542500630A54 /* View+EricaSadun.swift */; };
 		AEE0C4D122CD596600630A54 /* URLRequest+reloadCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4D022CD596600630A54 /* URLRequest+reloadCache.swift */; };
+		AEE0C4D322CE14EF00630A54 /* SwiftUI+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4D222CE14EF00630A54 /* SwiftUI+UIKit.swift */; };
 		AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */; };
 		AEE5CEA222CA25450083B790 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE5CEA122CA25450083B790 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
@@ -160,6 +161,7 @@
 		AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageErrorConsuming.swift; sourceTree = "<group>"; };
 		AEE0C4CD22CD542500630A54 /* View+EricaSadun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+EricaSadun.swift"; sourceTree = "<group>"; };
 		AEE0C4D022CD596600630A54 /* URLRequest+reloadCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+reloadCache.swift"; sourceTree = "<group>"; };
+		AEE0C4D222CE14EF00630A54 /* SwiftUI+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+UIKit.swift"; sourceTree = "<group>"; };
 		AEE5CE9C22CA03260083B790 /* PostDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AEE5CEA122CA25450083B790 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -364,6 +366,7 @@
 			children = (
 				AE8FBD2622CCA3D600F5E895 /* SwiftUI+Convenience.swift */,
 				AEE0C4CD22CD542500630A54 /* View+EricaSadun.swift */,
+				AEE0C4D222CE14EF00630A54 /* SwiftUI+UIKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				AE97771C22C21FB3003C943B /* MockedPostListViewModel.swift in Sources */,
 				AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */,
 				AE8FBD2422CC9CD400F5E895 /* AlertMessageControlling.swift in Sources */,
+				AEE0C4D322CE14EF00630A54 /* SwiftUI+UIKit.swift in Sources */,
 				AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */,
 				AE8FBD2A22CCA94200F5E895 /* AlertHandler.swift in Sources */,
 				AE8FBD2722CCA3D600F5E895 /* SwiftUI+Convenience.swift in Sources */,
