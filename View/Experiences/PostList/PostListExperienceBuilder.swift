@@ -1,5 +1,5 @@
 //
-//  PostListExperienceBuilder.swift
+//  PostListViewBuilder.swift
 //  View
 //
 //  Created by Maciek on 25/06/2019.
@@ -8,21 +8,21 @@
 
 import SwiftUI
 
-public final class PostListExperienceBuilder {
-    public static func buildMockedViewController() -> UIViewController {
-        return buildViewController(viewModel: MockedPostListViewModel())
+public final class PostListViewBuilder {
+    public static func buildMocked() -> some View {
+        PostListView(viewModel: MockedPostListViewModel())
     }
     
-    public static func buildViewController<ViewModel>(
+    public static func build<ViewModel, DetailsViewModel>(
         viewModel: ViewModel,
-        listDestinationViewBuilder: ViewForPostWithIdBuilding? = nil
-        ) -> UIViewController where ViewModel: PostListViewModelRepresenting {
+        detailsViewModelForPostIdProvider provideDetailsViewModelForPostId: ((Int) -> DetailsViewModel)? = nil
+        ) -> some View where ViewModel: PostListViewModelRepresenting,
+        DetailsViewModel: PostDetailsViewModelRepresenting {
         
-        return UIHostingController(
-            rootView: PostListView(
-                viewModel: viewModel,
-                listDestinationViewBuilder: listDestinationViewBuilder
-            )
+        PostListView(
+            viewModel: viewModel,
+            listDestinationViewBuilder: provideDetailsViewModelForPostId
+                .map(PostDetailsViewBuilder.init)
         )
     }
 }

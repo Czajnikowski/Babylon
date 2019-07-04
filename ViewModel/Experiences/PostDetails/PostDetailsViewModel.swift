@@ -9,17 +9,10 @@
 import Combine
 import View
 
-final class PostDetailsViewModel {
-    var alertMessage: String? {
-        return error?.alertMessage
-    }
-    
-    var error: BabylonError? {
-        didSet { didChange.send(self) }
-    }
-    
-    var state: PostDetailsViewState? {
-        return user.map {
+public final class PostDetailsViewModel {
+    public var alertMessage: String? { error?.alertMessage }
+    public var state: PostDetailsViewState? {
+        user.map {
             PostDetailsViewState(
                 author: $0.username,
                 description: post.body,
@@ -28,25 +21,29 @@ final class PostDetailsViewModel {
         }
     }
     
-    var didChange = PassthroughSubject<PostDetailsViewModel, Never>()
+    public var didChange = PassthroughSubject<PostDetailsViewModel, Never>()
+    
+    var error: BabylonError? {
+        didSet { didChange.send(self) }
+    }
     
     private var loadDataSubscriber: Cancellable?
-    
-    private let api: APIProviding
-    private let didChangeDispatchQueue: DispatchQueue = .main
     
     private let post: PostDTO
     private var user: UserDTO?
     private var numberOfComments: Int?
     
-    init(post: PostDTO, api: APIProviding) {
+    private let api: APIProviding
+    private let didChangeDispatchQueue: DispatchQueue = .main
+    
+    public init(post: PostDTO, api: APIProviding) {
         self.post = post
         self.api = api
     }
 }
 
 extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageErrorConsuming {
-    func loadData() {
+    public func loadData() {
         loadDataSubscriber?.cancel()
         
         loadDataSubscriber = Publishers

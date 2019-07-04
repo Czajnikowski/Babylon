@@ -3,5 +3,7 @@ import UIKit
 import View
 
 PlaygroundPage.current.liveView = UINavigationController(
-    rootViewController: PostDetailsExperienceBuilder.buildMockedViewController()
+    rootViewController: MockedPostDetailsViewBuilder
+        .buildMocked()
+        .wrappedInHostingController
 )

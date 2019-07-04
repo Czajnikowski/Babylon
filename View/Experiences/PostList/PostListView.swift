@@ -46,20 +46,20 @@ where ViewModel: PostListViewModelRepresenting {
             .onAppear(perform: viewModel.loadData)
     }
     
-    init(viewModel: ViewModel, listDestinationViewBuilder: ViewForPostWithIdBuilding?) {
+    init(viewModel: ViewModel, listDestinationViewBuilder: ViewForPostWithIdBuilding? = nil) {
         self.viewModel = viewModel
         self.listDestinationViewBuilder = listDestinationViewBuilder
     }
     
     private func listItemView(for postRowModel: PostRowModel) -> AnyView {
-       return listDestinationViewBuilder.map { builder in
-            AnyView(
-                NavigationLink(
-                    destination: builder.build(forPostWithId: postRowModel.id)
-                ) {
-                    Text(postRowModel.title)
-                }
-            )
-        } ?? AnyView(Text(postRowModel.title))
+       listDestinationViewBuilder.map { builder in
+            NavigationLink(
+                destination: builder.build(forPostWithId: postRowModel.id)
+            ) {
+                Text(postRowModel.title)
+            }
+                .typeErased
+        } ?? Text(postRowModel.title)
+            .typeErased
     }
 }

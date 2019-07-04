@@ -10,22 +10,16 @@ import Combine
 import Networking
 import View
 
-final class PostListViewModel {
-    var alertMessage: String? {
-        return error?.alertMessage
-    }
+public final class PostListViewModel {
+    public var alertMessage: String? { error?.alertMessage }
+    public var postRowModels: [PostRowModel] { postDTOs.map(PostRowModel.init) }
     
-    var postRowModels: [PostRowModel] {
-        return postDTOs.map(PostRowModel.init)
-    }
+    public var didChange = PassthroughSubject<PostListViewModel, Never>()
     
     var error: BabylonError? {
         didSet { sendChange() }
     }
-    
-    var didChange = PassthroughSubject<PostListViewModel, Never>()
-    
-    fileprivate var postDTOs: [PostDTO] = [] {
+    private var postDTOs: [PostDTO] = [] {
         didSet { sendChange() }
     }
     
@@ -34,7 +28,7 @@ final class PostListViewModel {
     private let api: APIProviding
     private let didChangeDispatchQueue: DispatchQueue
     
-    init(api: APIProviding, didChangeDispatchQueue: DispatchQueue = .main) {
+    public init(api: APIProviding, didChangeDispatchQueue: DispatchQueue = .main) {
         self.api = api
         self.didChangeDispatchQueue = didChangeDispatchQueue
     }
@@ -52,7 +46,7 @@ extension PostListViewModel: ViewBindableObject {
 }
 
 extension PostListViewModel: PostListViewModelRepresenting, AlertMessageErrorConsuming {
-    func loadData() {
+    public func loadData() {
         loadDataSubscriber?.cancel()
         
         loadDataSubscriber = api
@@ -75,7 +69,7 @@ extension PostListViewModel: PostListViewModelRepresenting, AlertMessageErrorCon
 }
 
 extension PostListViewModel: PostProviding {
-    func providePost(forPostId postId: Int) -> PostDTO {
-        return postDTOs.first { $0.id == postId }!
+    public func providePost(forPostId postId: Int) -> PostDTO {
+        postDTOs.first { $0.id == postId }!
     }
 }

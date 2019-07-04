@@ -8,19 +8,24 @@
 
 import SwiftUI
 
-public final class PostDetailsViewBuilder<ViewModel>
+final class PostDetailsViewBuilder<ViewModel>
 where ViewModel: PostDetailsViewModelRepresenting {
     private let provideViewModelForPostId: (Int) -> ViewModel
     
-    public init(viewModelForPostIdProvider provideViewModelForPostId: @escaping (Int) -> ViewModel) {
+    init(viewModelForPostIdProvider provideViewModelForPostId: @escaping (Int) -> ViewModel) {
         self.provideViewModelForPostId = provideViewModelForPostId
     }
 }
 
 extension PostDetailsViewBuilder: ViewForPostWithIdBuilding {
-    public func build(forPostWithId postId: Int) -> AnyView {
-        return AnyView(
-            PostDetailsView(viewModel: provideViewModelForPostId(postId))
-        )
+    func build(forPostWithId postId: Int) -> AnyView {
+        PostDetailsView(viewModel: provideViewModelForPostId(postId))
+            .typeErased
+    }
+}
+
+public final class MockedPostDetailsViewBuilder {
+    public static func buildMocked() -> some View {
+        PostDetailsView(viewModel: MockedPostDetailsViewModel())
     }
 }

@@ -16,3 +16,9 @@ extension Alert {
         )
     }
 }
+
+extension View {
+    public var wrappedInHostingController: UIHostingController<Self> {
+        UIHostingController(rootView: self)
+    }
+}

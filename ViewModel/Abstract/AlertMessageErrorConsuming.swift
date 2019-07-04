@@ -11,7 +11,7 @@ protocol AlertMessageErrorConsuming: class {
 }
 
 extension AlertMessageErrorConsuming {
-    func consumeAlertMessage() {
+    public func consumeAlertMessage() {
         error = nil
     }
 }

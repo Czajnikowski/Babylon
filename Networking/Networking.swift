@@ -48,12 +48,3 @@ public final class API {
             .eraseToAnyPublisher()
     }
 }
-
-extension URLRequest {
-    static func urlRequest(for url: URL, reloadCache: Bool = true) -> URLRequest {
-        return URLRequest(
-            url: url,
-            cachePolicy: reloadCache ? .reloadRevalidatingCacheData : .returnCacheDataElseLoad
-        )
-    }
-}
