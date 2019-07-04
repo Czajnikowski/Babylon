@@ -24,7 +24,7 @@ public final class PostDetailsViewModel {
     public var didChange = PassthroughSubject<PostDetailsViewModel, Never>()
     
     var error: BabylonError? {
-        didSet { didChange.send(self) }
+        didSet { sendChange() }
     }
     
     private var loadDataSubscriber: Cancellable?
@@ -60,7 +60,7 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
                     strongSelf.user = user
                     strongSelf.numberOfComments = numberOfComments
                     
-                    strongSelf.didChange.send(strongSelf)
+                    strongSelf.sendChange()
                 }
         )
     }
@@ -85,6 +85,9 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
             .receive(on: didChangeDispatchQueue)
             .eraseToAnyPublisher()
     }
+}
+
+extension PostDetailsViewModel: SelfChangeSending {
 }
 
 extension PostDetailsViewModel: ViewBindableObject {

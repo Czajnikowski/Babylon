@@ -12,7 +12,7 @@ import View
 
 public final class PostListViewModel {
     public var alertMessage: String? { error?.alertMessage }
-    public var postRowModels: [PostRowModel] { postDTOs.map(PostRowModel.init) }
+    public var postRowStates: [PostRowState] { postDTOs.map(PostRowState.init) }
     
     public var didChange = PassthroughSubject<PostListViewModel, Never>()
     
@@ -36,13 +36,6 @@ public final class PostListViewModel {
     deinit {
         loadDataSubscriber?.cancel()
     }
-    
-    private func sendChange() {
-        didChange.send(self)
-    }
-}
-
-extension PostListViewModel: ViewBindableObject {
 }
 
 extension PostListViewModel: PostListViewModelRepresenting, AlertMessageErrorConsuming {
@@ -72,4 +65,10 @@ extension PostListViewModel: PostProviding {
     public func providePost(forPostId postId: Int) -> PostDTO? {
         postDTOs.first { $0.id == postId }
     }
+}
+
+extension PostListViewModel: SelfChangeSending {
+}
+
+extension PostListViewModel: ViewBindableObject {
 }
