@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+//  It's my current attempt to solve the problem described here: http://bit.ly/2YwHLW5
+
 public protocol AlertMessageControlling {
     var alertMessage: String? { get }
     

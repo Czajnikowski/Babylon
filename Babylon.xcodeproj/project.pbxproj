@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE09044F22C208A800720EF9 /* ViewBindableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09044E22C208A800720EF9 /* ViewBindableObject.swift */; };
-		AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */; };
+		AE09045222C209B500720EF9 /* PostListViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09045122C209B500720EF9 /* PostListViewBuilder.swift */; };
 		AE161C8022CA502800A6D9F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C7F22CA502800A6D9F0 /* User.swift */; };
 		AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE161C8122CA503400A6D9F0 /* Comment.swift */; };
 		AE2980A522C65E9500DD2324 /* PostDTO+dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */; };
@@ -117,7 +117,7 @@
 /* Begin PBXFileReference section */
 		AE05C97222C51A5100C0E22F /* BabylonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonError.swift; sourceTree = "<group>"; };
 		AE09044E22C208A800720EF9 /* ViewBindableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBindableObject.swift; sourceTree = "<group>"; };
-		AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListExperienceBuilder.swift; sourceTree = "<group>"; };
+		AE09045122C209B500720EF9 /* PostListViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewBuilder.swift; sourceTree = "<group>"; };
 		AE161C7F22CA502800A6D9F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AE161C8122CA503400A6D9F0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		AE2980A422C65E9500DD2324 /* PostDTO+dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDTO+dummy.swift"; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 			children = (
 				AE8C076122C6472E006F74E0 /* Mocks */,
 				AE4A4DB222C1059500CBEE46 /* PostListExperience.playground */,
-				AE09045122C209B500720EF9 /* PostListExperienceBuilder.swift */,
+				AE09045122C209B500720EF9 /* PostListViewBuilder.swift */,
 				AE41ECE522C0DE3B00ADD251 /* PostListView.swift */,
 			);
 			path = PostList;
@@ -743,7 +743,7 @@
 				AE8FBD2022CBA66D00F5E895 /* PostDetailsViewBuilder.swift in Sources */,
 				AE8FBD2422CC9CD400F5E895 /* AlertMessageControlling.swift in Sources */,
 				AEE0C4D322CE14EF00630A54 /* SwiftUI+UIKit.swift in Sources */,
-				AE09045222C209B500720EF9 /* PostListExperienceBuilder.swift in Sources */,
+				AE09045222C209B500720EF9 /* PostListViewBuilder.swift in Sources */,
 				AE8FBD2A22CCA94200F5E895 /* AlertHandler.swift in Sources */,
 				AE8FBD2722CCA3D600F5E895 /* SwiftUI+Convenience.swift in Sources */,
 			);
