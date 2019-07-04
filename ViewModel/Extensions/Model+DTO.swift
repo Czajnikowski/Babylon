@@ -8,7 +8,7 @@
 
 import View
 
-extension PostRowModel {
+extension PostRowState {
     init(with post: PostDTO) {
         self.init(id: post.id, title: post.title)
     }

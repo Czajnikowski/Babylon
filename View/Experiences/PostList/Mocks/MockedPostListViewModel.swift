@@ -14,7 +14,7 @@ final class MockedPostListViewModel {
         didSet { sendChange() }
     }
     
-    var postRowModels = [PostRowModel]() {
+    var postRowStates = [PostRowState]() {
         didSet { sendChange() }
     }
     
@@ -31,7 +31,7 @@ extension MockedPostListViewModel: BindableObject {
 extension MockedPostListViewModel: PostListViewModelRepresenting {
     func loadData() {
         alertMessage = "Test message"
-        postRowModels.append(PostRowModel(id: 1, title: "Yo"))
+        postRowStates.append(PostRowState(id: 1, title: "Yo"))
     }
     
     func consumeAlertMessage() {

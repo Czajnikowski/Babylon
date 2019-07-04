@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct PostRowModel: Identifiable, Equatable {
+public struct PostRowState: Identifiable, Equatable {
     public let id: Int
     public let title: String
     
@@ -19,7 +19,7 @@ public struct PostRowModel: Identifiable, Equatable {
 }
 
 public protocol PostListViewModelRepresenting: ViewBindableObject, AlertMessageControlling {
-    var postRowModels: [PostRowModel] { get }
+    var postRowStates: [PostRowState] { get }
     
     func loadData()
 }
@@ -32,8 +32,8 @@ where ViewModel: PostListViewModelRepresenting {
     
     var body: some View {
         NavigationView {
-            List(viewModel.postRowModels) { postRowModel in
-                self.listItemView(for: postRowModel)
+            List(viewModel.postRowStates) { postRowState in
+                self.listItemView(for: postRowState)
             }
                 .navigationBarTitle(Text("Posts"))
                 .navigationBarItems(
@@ -55,15 +55,15 @@ where ViewModel: PostListViewModelRepresenting {
         self.listDestinationViewBuilder = listDestinationViewBuilder
     }
     
-    private func listItemView(for postRowModel: PostRowModel) -> AnyView {
-        listDestinationViewBuilder.build(forPostWithId: postRowModel.id).map { destination in
+    private func listItemView(for postRowState: PostRowState) -> AnyView {
+        listDestinationViewBuilder.build(forPostWithId: postRowState.id).map { destination in
             NavigationLink(
                 destination: destination
             ) {
-                Text(postRowModel.title)
+                Text(postRowState.title)
             }
                 .typeErased
-        } ?? Text(postRowModel.title)
+        } ?? Text(postRowState.title)
             .typeErased
     }
 }

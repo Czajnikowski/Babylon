@@ -88,7 +88,7 @@ final class PostListViewModelTests: XCTestCase {
         viewModel.loadData()
         
         XCTAssertEqual(XCTWaiter().wait(for: [sendChangeExpectation], timeout: 0.1), .completed)
-        XCTAssertEqual(viewModel.postRowModels, [PostRowModel(with: .dummy)])
+        XCTAssertEqual(viewModel.postRowStates, [PostRowState(with: .dummy)])
         
         subscription.cancel()
     }
