@@ -19,6 +19,7 @@ I decided to stick to the native frameworks, so there are no 3rd party depenenci
 
 - `Combine` for reactive programming
 - `SwiftUI` for the View layer
+- `Foundation` for networking and caching
 
 So to be able to compile and run the project you should have Xcode 11 beta 3 installed (no Catalina needed).
 
