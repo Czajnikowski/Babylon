@@ -33,10 +33,10 @@ public final class PostDetailsViewModel {
     private var user: UserDTO?
     private var numberOfComments: Int?
     
-    private let api: APIProviding
+    private let api: UserDataPublishing & CommentDataPublishing
     private let didChangeDispatchQueue: DispatchQueue = .main
     
-    public init(post: PostDTO, api: APIProviding) {
+    public init(post: PostDTO, api: UserDataPublishing & CommentDataPublishing) {
         self.post = post
         self.api = api
     }

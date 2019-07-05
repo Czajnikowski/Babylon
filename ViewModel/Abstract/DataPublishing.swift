@@ -8,8 +8,14 @@
 
 import Combine
 
-public protocol APIProviding {
+public protocol PostsDataPublishing {
     func postsDataPublisher() -> AnyPublisher<Data, URLError>
+}
+
+public protocol UserDataPublishing {
     func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError>
+}
+
+public protocol CommentDataPublishing {
     func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError>
 }

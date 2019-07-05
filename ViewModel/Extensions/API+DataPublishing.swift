@@ -8,4 +8,11 @@
 
 import Networking
 
-extension API: APIProviding {}
+extension API: PostsDataPublishing {
+}
+
+extension API: UserDataPublishing {
+}
+
+extension API: CommentDataPublishing {
+}

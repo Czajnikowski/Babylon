@@ -22,8 +22,8 @@
 		AE8C074722C61479006F74E0 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97772222C22203003C943B /* PostListViewModel.swift */; };
 		AE8C074822C61479006F74E0 /* Model+DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97772A22C22573003C943B /* Model+DTO.swift */; };
 		AE8C074922C61479006F74E0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97772622C2224E003C943B /* Post.swift */; };
-		AE8C074B22C61856006F74E0 /* APIProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C074A22C61856006F74E0 /* APIProviding.swift */; };
-		AE8C074D22C61887006F74E0 /* API+APIProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C074C22C61887006F74E0 /* API+APIProviding.swift */; };
+		AE8C074B22C61856006F74E0 /* DataPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C074A22C61856006F74E0 /* DataPublishing.swift */; };
+		AE8C074D22C61887006F74E0 /* API+DataPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C074C22C61887006F74E0 /* API+DataPublishing.swift */; };
 		AE8C075122C618F6006F74E0 /* PostListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C075022C618F6006F74E0 /* PostListViewModelTests.swift */; };
 		AE8C075422C6262D006F74E0 /* View.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE41ECDA22C0DE0F00ADD251 /* View.framework */; };
 		AE8C075522C6262D006F74E0 /* View.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE41ECDA22C0DE0F00ADD251 /* View.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -38,7 +38,7 @@
 		AE8FBD2222CC9CA600F5E895 /* BabylonError+AlertMessageProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2980A922C9FAF200DD2324 /* BabylonError+AlertMessageProviding.swift */; };
 		AE8FBD2422CC9CD400F5E895 /* AlertMessageControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2322CC9CD400F5E895 /* AlertMessageControlling.swift */; };
 		AE8FBD2722CCA3D600F5E895 /* SwiftUI+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2622CCA3D600F5E895 /* SwiftUI+Convenience.swift */; };
-		AE8FBD2A22CCA94200F5E895 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2922CCA94200F5E895 /* AlertHandler.swift */; };
+		AE8FBD2A22CCA94200F5E895 /* AlertPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBD2922CCA94200F5E895 /* AlertPresentation.swift */; };
 		AE97770422C2195F003C943B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770322C2195F003C943B /* AppDelegate.swift */; };
 		AE97770622C2195F003C943B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97770522C2195F003C943B /* SceneDelegate.swift */; };
 		AE97770A22C2195F003C943B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE97770922C2195F003C943B /* Assets.xcassets */; };
@@ -140,8 +140,8 @@
 		AE8C072A22C6142B006F74E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE8C072F22C6142B006F74E0 /* ViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE8C073822C6142B006F74E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE8C074A22C61856006F74E0 /* APIProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviding.swift; sourceTree = "<group>"; };
-		AE8C074C22C61887006F74E0 /* API+APIProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+APIProviding.swift"; sourceTree = "<group>"; };
+		AE8C074A22C61856006F74E0 /* DataPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPublishing.swift; sourceTree = "<group>"; };
+		AE8C074C22C61887006F74E0 /* API+DataPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+DataPublishing.swift"; sourceTree = "<group>"; };
 		AE8C075022C618F6006F74E0 /* PostListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewModelTests.swift; sourceTree = "<group>"; };
 		AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+BabylonError.swift"; sourceTree = "<group>"; };
 		AE8C075F22C646C6006F74E0 /* PostProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProviding.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		AE8FBD1F22CBA66D00F5E895 /* PostDetailsViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewBuilder.swift; sourceTree = "<group>"; };
 		AE8FBD2322CC9CD400F5E895 /* AlertMessageControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageControlling.swift; sourceTree = "<group>"; };
 		AE8FBD2622CCA3D600F5E895 /* SwiftUI+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Convenience.swift"; sourceTree = "<group>"; };
-		AE8FBD2922CCA94200F5E895 /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		AE8FBD2922CCA94200F5E895 /* AlertPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentation.swift; sourceTree = "<group>"; };
 		AE97770122C2195F003C943B /* Babylon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Babylon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE97770322C2195F003C943B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE97770522C2195F003C943B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		AE8FBD2822CCA93200F5E895 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				AE8FBD2922CCA94200F5E895 /* AlertHandler.swift */,
+				AE8FBD2922CCA94200F5E895 /* AlertPresentation.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 		AE97772922C22568003C943B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AE8C074C22C61887006F74E0 /* API+APIProviding.swift */,
+				AE8C074C22C61887006F74E0 /* API+DataPublishing.swift */,
 				AE2980A922C9FAF200DD2324 /* BabylonError+AlertMessageProviding.swift */,
 				AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */,
 				AE97772A22C22573003C943B /* Model+DTO.swift */,
@@ -508,7 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */,
-				AE8C074A22C61856006F74E0 /* APIProviding.swift */,
+				AE8C074A22C61856006F74E0 /* DataPublishing.swift */,
 				AE8C075F22C646C6006F74E0 /* PostProviding.swift */,
 				AEE0C4D422CE17D800630A54 /* SelfChangeSending.swift */,
 			);
@@ -784,7 +784,7 @@
 				AE8FBD2422CC9CD400F5E895 /* AlertMessageControlling.swift in Sources */,
 				AEE0C4D322CE14EF00630A54 /* SwiftUI+UIKit.swift in Sources */,
 				AE09045222C209B500720EF9 /* PostListViewBuilder.swift in Sources */,
-				AE8FBD2A22CCA94200F5E895 /* AlertHandler.swift in Sources */,
+				AE8FBD2A22CCA94200F5E895 /* AlertPresentation.swift in Sources */,
 				AE8FBD2722CCA3D600F5E895 /* SwiftUI+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,12 +793,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE8C074B22C61856006F74E0 /* APIProviding.swift in Sources */,
+				AE8C074B22C61856006F74E0 /* DataPublishing.swift in Sources */,
 				AE8C074822C61479006F74E0 /* Model+DTO.swift in Sources */,
 				AEE5CE9D22CA03260083B790 /* PostDetailsViewModel.swift in Sources */,
 				AE8C074722C61479006F74E0 /* PostListViewModel.swift in Sources */,
 				AEE0C4D522CE17D800630A54 /* SelfChangeSending.swift in Sources */,
-				AE8C074D22C61887006F74E0 /* API+APIProviding.swift in Sources */,
+				AE8C074D22C61887006F74E0 /* API+DataPublishing.swift in Sources */,
 				AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */,
 				AEE0C4F122CE3E6300630A54 /* Bundle+current.swift in Sources */,
 				AEE0C4F022CE3E5A00630A54 /* String+localized.swift in Sources */,

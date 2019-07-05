@@ -72,7 +72,7 @@ where ViewModel: PostDetailsViewModelRepresenting {
                 )
             )
             .onAppear(perform: viewModel.loadData)
-            .handleAlert(with: viewModel)
+            .alertPresentation(using: viewModel)
     }
     
     init(viewModel: ViewModel) {

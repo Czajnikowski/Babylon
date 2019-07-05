@@ -25,10 +25,10 @@ public final class PostListViewModel {
     
     private var loadDataSubscriber: Cancellable?
     
-    private let api: APIProviding
+    private let api: PostsDataPublishing
     private let didChangeDispatchQueue: DispatchQueue
     
-    public init(api: APIProviding, didChangeDispatchQueue: DispatchQueue = .main) {
+    public init(api: PostsDataPublishing, didChangeDispatchQueue: DispatchQueue = .main) {
         self.api = api
         self.didChangeDispatchQueue = didChangeDispatchQueue
     }

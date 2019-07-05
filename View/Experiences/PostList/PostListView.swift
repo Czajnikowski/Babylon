@@ -43,7 +43,7 @@ where ViewModel: PostListViewModelRepresenting {
                         Image(systemName: "arrow.counterclockwise")
                     }
                 )
-                .handleAlert(with: viewModel)
+                .alertPresentation(using: viewModel)
         }
             .onAppear(perform: viewModel.loadData)
     }

@@ -13,7 +13,7 @@ import XCTest
 
 final class PostListViewModelTests: XCTestCase {
     func testReloadData_From_FailingAPI_Generates_Error() {
-        final class FailingAPIStub: APIProviding {
+        final class FailingAPIStub: PostsDataPublishing {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
                 Publishers
                     .Fail(
@@ -21,18 +21,6 @@ final class PostListViewModelTests: XCTestCase {
                         failure: URLError(.appTransportSecurityRequiresSecureConnection)
                     )
                     .eraseToAnyPublisher()
-            }
-            
-            func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
-                fatalError()
-            }
-            
-            func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError> {
-                fatalError()
-            }
-            
-            func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
-                Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
             }
         }
         
@@ -48,23 +36,11 @@ final class PostListViewModelTests: XCTestCase {
     }
     
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
-        final class SinglePostAPIStub: APIProviding {
+        final class SinglePostAPIStub: PostsDataPublishing {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
                 Publishers
                     .Once<Data, URLError>(try! JSONEncoder().encode([PostDTO.dummy]))
                     .eraseToAnyPublisher()
-            }
-            
-            func repostsDataPublisher() -> AnyPublisher<Data, URLError> {
-                Publishers.Empty<Data, URLError>().eraseToAnyPublisher()
-            }
-            
-            func userDataPublisher(forUserWithId userId: Int) -> AnyPublisher<Data, URLError> {
-                fatalError()
-            }
-            
-            func commentDataPublisher(forPostWithId postId: Int) -> AnyPublisher<Data, URLError> {
-                fatalError()
             }
         }
         
