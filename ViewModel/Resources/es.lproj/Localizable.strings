@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Babylon
+
+  Created by Maciek on 04/07/2019.
+  Copyright © 2019 mczarnik.com. All rights reserved.
+*/
+
+"Unable to download data" = "No se pueden descargar datos";
+"Unable to parse data" = "No se pueden analizar datos";

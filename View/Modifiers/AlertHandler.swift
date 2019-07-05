@@ -18,7 +18,7 @@ struct AlertHandler: ViewModifier {
     func body(content: Content) -> some View {
         content
             .presentation(alertController.alertPresentationBinding) {
-                .errorAlert(withMessage: alertController.alertMessage)
+                .errorAlert(withLocalizedMessage: alertController.localizedAlertMessage)
             }
     }
 }

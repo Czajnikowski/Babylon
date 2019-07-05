@@ -11,7 +11,7 @@ import SwiftUI
 //  It's my current attempt to solve the problem described here: http://bit.ly/2YwHLW5
 
 public protocol AlertMessageControlling {
-    var alertMessage: String? { get }
+    var localizedAlertMessage: String? { get }
     
     func consumeAlertMessage()
 }
@@ -20,7 +20,7 @@ extension AlertMessageControlling {
     var alertPresentationBinding: Binding<Bool> {
         Binding(
             getValue: {
-                self.alertMessage != nil
+                self.localizedAlertMessage != nil
             },
             setValue: {
                 if !$0 { self.consumeAlertMessage() }

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Babylon
+
+  Created by Maciek on 04/07/2019.
+  Copyright © 2019 mczarnik.com. All rights reserved.
+*/
+
+"Posts" = "Mensajes";
+"Description:" = "Descripción:";
+"Number of comments:" = "Número de comentarios:";
+"Loading..." = "Cargando...";
+"by: %@" = "por: %@";
+"Error" = "Error";
+"Unknown error" = "Error desconocido";

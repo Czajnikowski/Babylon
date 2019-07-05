@@ -9,10 +9,15 @@
 import SwiftUI
 
 extension Alert {
-    static func errorAlert(withMessage message: String?) -> Alert {
+    static func errorAlert(withLocalizedMessage localizedMessage: String?) -> Alert {
         Alert(
-            title: Text("Error"),
-            message: Text(message ?? "Unknown error")
+            title: Text(
+                "Error"
+                    .localized(comment: "Alert title")
+            ),
+            message: Text(
+                localizedMessage ?? "Unknown error".localized(comment: "Alert message")
+            )
         )
     }
 }

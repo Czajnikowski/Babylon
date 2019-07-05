@@ -9,12 +9,12 @@
 import View
 
 extension BabylonError {
-    var alertMessage: String {
+    var localizedAlertMessage: String {
         switch self {
         case .networking:
-            return "Unable to download data"
+            return "Unable to download data".localized(comment: "Error message")
         case .parsing:
-            return "Unable to parse data"
+            return "Unable to parse data".localized(comment: "Error message")
         }
     }
 }

@@ -38,13 +38,17 @@ where ViewModel: PostDetailsViewModelRepresenting {
     var body: some View {
         viewModel.state.map { state in
             VStack(alignment: .leading, spacing: 8) {
-                Text("Description:")
+                Text(
+                    "Description:".localized(comment: "Post details section title")
+                )
                     .font(.headline)
                 Text("\(state.description)")
                     .lineLimit(nil)
                     .font(.body)
                 
-                Text("Number of comments:")
+                Text(
+                    "Number of comments:".localized(comment: "Post details section title")
+                )
                     .font(.headline)
                 Text("\(state.numberOfComments)")
                     .font(.subheadline)
@@ -57,7 +61,15 @@ where ViewModel: PostDetailsViewModelRepresenting {
                 .padding(16)
         }
             .navigationBarTitle(
-                Text((viewModel.state?.author).map { "by: \($0)" } ?? "Loading...")
+                Text(
+                    (viewModel.state?.author)
+                        .map {
+                            return "by: %@".localizedAsFormat(
+                                comment: "Navigation bar title - by: Author in post details",
+                                $0
+                            )
+                        } ?? ("Loading...".localized(comment: "Navigation bar title"))
+                )
             )
             .onAppear(perform: viewModel.loadData)
             .handleAlert(with: viewModel)

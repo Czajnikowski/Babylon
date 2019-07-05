@@ -14,7 +14,7 @@ final class MockedPostDetailsViewModel {
         didSet { didChange.send(self) }
     }
     
-    var alertMessage: String? {
+    var localizedAlertMessage: String? {
         didSet { didChange.send(self) }
     }
     
@@ -31,7 +31,7 @@ extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
     }
     
     func consumeAlertMessage() {
-        alertMessage = nil
+        localizedAlertMessage = nil
     }
 }
 

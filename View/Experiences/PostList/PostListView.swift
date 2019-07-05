@@ -35,7 +35,9 @@ where ViewModel: PostListViewModelRepresenting {
             List(viewModel.postRowStates) { postRowState in
                 self.listItemView(for: postRowState)
             }
-                .navigationBarTitle(Text("Posts"))
+                .navigationBarTitle(
+                    Text("Posts".localized(comment: "Navigation bar title"))
+                )
                 .navigationBarItems(
                     trailing: Button(action: viewModel.loadData) {
                         Image(systemName: "arrow.counterclockwise")

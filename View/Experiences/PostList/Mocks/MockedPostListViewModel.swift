@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 final class MockedPostListViewModel {
-    var alertMessage: String? {
+    var localizedAlertMessage: String? {
         didSet { sendChange() }
     }
     
@@ -30,11 +30,11 @@ extension MockedPostListViewModel: BindableObject {
 
 extension MockedPostListViewModel: PostListViewModelRepresenting {
     func loadData() {
-        alertMessage = "Test message"
+        localizedAlertMessage = "Test message"
         postRowStates.append(PostRowState(id: 1, title: "Yo"))
     }
     
     func consumeAlertMessage() {
-        alertMessage = nil
+        localizedAlertMessage = nil
     }
 }

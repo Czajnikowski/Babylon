@@ -10,7 +10,7 @@ import Combine
 import View
 
 public final class PostDetailsViewModel {
-    public var alertMessage: String? { error?.alertMessage }
+    public var localizedAlertMessage: String? { error?.localizedAlertMessage }
     public var state: PostDetailsViewState? {
         user.map {
             PostDetailsViewState(

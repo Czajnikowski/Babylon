@@ -11,7 +11,7 @@ import Networking
 import View
 
 public final class PostListViewModel {
-    public var alertMessage: String? { error?.alertMessage }
+    public var localizedAlertMessage: String? { error?.localizedAlertMessage }
     public var postRowStates: [PostRowState] { postDTOs.map(PostRowState.init) }
     
     public var didChange = PassthroughSubject<PostListViewModel, Never>()
