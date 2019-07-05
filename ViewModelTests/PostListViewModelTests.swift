@@ -41,17 +41,10 @@ final class PostListViewModelTests: XCTestCase {
             didChangeDispatchQueue: .testQueue
         )
         
-        let sendChangeExpectation = XCTestExpectation(description: "ViewModel should send change")
-        let subscription = viewModel.didChange.sink { _ in
-            sendChangeExpectation.fulfill()
-        }
-        
-        viewModel.loadData()
-        
-        XCTAssertEqual(XCTWaiter().wait(for: [sendChangeExpectation], timeout: 0.1), .completed)
-        XCTAssertEqual(viewModel.error, BabylonError.networking)
-        
-        subscription.cancel()
+        XCTAssertEqual(
+            viewModel.didChange.materializeOutput(triggeredBy: viewModel.loadData)?.error,
+            BabylonError.networking
+        )
     }
     
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
@@ -80,16 +73,9 @@ final class PostListViewModelTests: XCTestCase {
             didChangeDispatchQueue: .testQueue
         )
         
-        let sendChangeExpectation = XCTestExpectation(description: "ViewModel should send change")
-        let subscription = viewModel.didChange.sink { _ in
-            sendChangeExpectation.fulfill()
-        }
-        
-        viewModel.loadData()
-        
-        XCTAssertEqual(XCTWaiter().wait(for: [sendChangeExpectation], timeout: 0.1), .completed)
-        XCTAssertEqual(viewModel.postRowStates, [PostRowState(with: .dummy)])
-        
-        subscription.cancel()
+        XCTAssertEqual(
+            viewModel.didChange.materializeOutput(triggeredBy: viewModel.loadData)?.postRowStates,
+            [PostRowState(with: .dummy)]
+        )
     }
 }
