@@ -42,11 +42,11 @@
 		AE9FC0F022D338880095633E /* MockedPostDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedPostDetailsViewModel.swift; sourceTree = "<group>"; };
 		AE9FC0F122D338880095633E /* PostDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsView.swift; sourceTree = "<group>"; };
 		AE9FC0F222D338880095633E /* PostDetailsViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewBuilder.swift; sourceTree = "<group>"; };
-		AE9FC0F322D338880095633E /* PostDetailsExperience.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PostDetailsExperience.playground; sourceTree = "<group>"; };
+		AE9FC0F322D338880095633E /* PostDetailsExperience.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PostDetailsExperience.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE9FC0F622D338880095633E /* MockedPostListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedPostListViewModel.swift; sourceTree = "<group>"; };
 		AE9FC0F722D338880095633E /* PostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		AE9FC0F822D338880095633E /* PostListViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewBuilder.swift; sourceTree = "<group>"; };
-		AE9FC0F922D338880095633E /* PostListExperience.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PostListExperience.playground; sourceTree = "<group>"; };
+		AE9FC0F922D338880095633E /* PostListExperience.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PostListExperience.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AE9FC0FC22D338880095633E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AE9FC0FD22D338880095633E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */

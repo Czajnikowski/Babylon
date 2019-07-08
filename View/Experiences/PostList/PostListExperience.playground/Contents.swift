@@ -1,6 +1,6 @@
 import PlaygroundSupport
 import View
 
-PlaygroundPage.current.liveView = PostListViewBuilder
+PlaygroundPage.current.liveView = MockedPostListViewBuilder
     .buildMocked()
     .wrappedInHostingController

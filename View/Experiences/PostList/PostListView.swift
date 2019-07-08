@@ -28,6 +28,8 @@ struct PostListView<ViewModel>: View
 where ViewModel: PostListViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
     
+    @State private var isInfoPresented: Bool = false
+    
     private let listDestinationViewBuilder: ViewForPostWithIdBuilding
     
     var body: some View {
@@ -39,11 +41,28 @@ where ViewModel: PostListViewModelRepresenting {
                     Text("Posts".localized(comment: "Navigation bar title"))
                 )
                 .navigationBarItems(
+                    leading: Button(action: { self.isInfoPresented = true }) {
+                        Image(systemName: "info")
+                    },
                     trailing: Button(action: viewModel.loadData) {
                         Image(systemName: "arrow.counterclockwise")
                     }
                 )
                 .alertPresentation(using: viewModel)
+                .presentation($isInfoPresented) {
+                    return ActionSheet(
+                        title: Text(
+                            """
+                            \("Babylon health demo submision by Maciek Czarnik"
+                                .localized(
+                                    comment: "Info section"
+                                )
+                            )
+                            @czajnikowski
+                            """
+                        )
+                    )
+                }
         }
             .onAppear(perform: viewModel.loadData)
     }

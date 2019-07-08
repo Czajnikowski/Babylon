@@ -28,13 +28,6 @@
 			remoteGlobalIDString = AE9FC0D322D338060095633E;
 			remoteInfo = View;
 		};
-		AE9FC13822D340580095633E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE9FC11022D3396F0095633E /* View.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = AE9FC0D222D338060095633E;
-			remoteInfo = View;
-		};
 		AE9FC21F22D343E50095633E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE9FC21B22D343E50095633E /* Networking.xcodeproj */;
@@ -205,7 +198,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				AE9FC13922D340580095633E /* PBXTargetDependency */,
 			);
 			name = Babylon;
 			productName = Babylon;
@@ -315,14 +307,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AE9FC13922D340580095633E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = View;
-			targetProxy = AE9FC13822D340580095633E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE97770E22C2195F003C943B /* LaunchScreen.storyboard */ = {
