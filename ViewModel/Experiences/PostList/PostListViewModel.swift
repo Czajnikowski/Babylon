@@ -44,10 +44,7 @@ extension PostListViewModel: PostListViewModelRepresenting, AlertMessageErrorCon
         
         loadDataSubscriber = api
             .postsDataPublisher()
-            .mapError { $0.toBabylonError(.networking) }
-            .decode(type: [PostDTO].self, decoder: JSONDecoder())
-            .mapError { $0.toBabylonError(.parsing) }
-            .receive(on: didChangeDispatchQueue)
+            .transform(to: [PostDTO].self, on: didChangeDispatchQueue)
             .sink(
                 receiveCompletion: { [weak self] in
                     if case let .failure(error) = $0 {

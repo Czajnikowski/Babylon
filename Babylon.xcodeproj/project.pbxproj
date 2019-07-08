@@ -46,6 +46,7 @@
 		AE97772822C22342003C943B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE97770E22C2195F003C943B /* LaunchScreen.storyboard */; };
 		AE97779922C3B372003C943B /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE97779722C3B372003C943B /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE9777A322C3B3F0003C943B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9777A222C3B3F0003C943B /* Networking.swift */; };
+		AE9FC04122D32CB90095633E /* Publisher+Babylon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC04022D32CB90095633E /* Publisher+Babylon.swift */; };
 		AEE0C4C822CCDCE400630A54 /* BabylonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE05C97222C51A5100C0E22F /* BabylonError.swift */; };
 		AEE0C4CC22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */; };
 		AEE0C4CE22CD542500630A54 /* View+EricaSadun.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0C4CD22CD542500630A54 /* View+EricaSadun.swift */; };
@@ -167,6 +168,7 @@
 		AE97779722C3B372003C943B /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		AE97779822C3B372003C943B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9777A222C3B3F0003C943B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AE9FC04022D32CB90095633E /* Publisher+Babylon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Babylon.swift"; sourceTree = "<group>"; };
 		AEE0C4CB22CCFEAD00630A54 /* AlertMessageErrorConsuming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessageErrorConsuming.swift; sourceTree = "<group>"; };
 		AEE0C4CD22CD542500630A54 /* View+EricaSadun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+EricaSadun.swift"; sourceTree = "<group>"; };
 		AEE0C4D022CD596600630A54 /* URLRequest+reloadCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+reloadCache.swift"; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 				AE2980A922C9FAF200DD2324 /* BabylonError+AlertMessageProviding.swift */,
 				AE8C075D22C628F5006F74E0 /* Error+BabylonError.swift */,
 				AE97772A22C22573003C943B /* Model+DTO.swift */,
+				AE9FC04022D32CB90095633E /* Publisher+Babylon.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				AE8C074722C61479006F74E0 /* PostListViewModel.swift in Sources */,
 				AEE0C4D522CE17D800630A54 /* SelfChangeSending.swift in Sources */,
 				AE8C074D22C61887006F74E0 /* API+DataPublishing.swift in Sources */,
+				AE9FC04122D32CB90095633E /* Publisher+Babylon.swift in Sources */,
 				AE161C8222CA503400A6D9F0 /* Comment.swift in Sources */,
 				AEE0C4F122CE3E6300630A54 /* Bundle+current.swift in Sources */,
 				AEE0C4F022CE3E5A00630A54 /* String+localized.swift in Sources */,

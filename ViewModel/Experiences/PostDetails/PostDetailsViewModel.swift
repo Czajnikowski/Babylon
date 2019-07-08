@@ -68,21 +68,14 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
     private func loadUser() -> AnyPublisher<UserDTO, BabylonError> {
         api
             .userDataPublisher(forUserWithId: post.userId)
-            .mapError { $0.toBabylonError(.networking) }
-            .decode(type: UserDTO.self, decoder: JSONDecoder())
-            .mapError { $0.toBabylonError(.parsing) }
-            .receive(on: didChangeDispatchQueue)
-            .eraseToAnyPublisher()
+            .transform(to: UserDTO.self, on: didChangeDispatchQueue)
     }
     
     private func loadComments() -> AnyPublisher<Int, BabylonError> {
         api
             .commentDataPublisher(forPostWithId: post.id)
-            .mapError { $0.toBabylonError(.networking) }
-            .decode(type: [CommentDTO].self, decoder: JSONDecoder())
-            .mapError { $0.toBabylonError(.parsing) }
+            .transform(to: [CommentDTO].self, on: didChangeDispatchQueue)
             .map { $0.count }
-            .receive(on: didChangeDispatchQueue)
             .eraseToAnyPublisher()
     }
 }
