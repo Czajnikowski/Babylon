@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE41ECD922C0DE0F00ADD251"
+               BlueprintIdentifier = "AE9FC0D222D338060095633E"
                BuildableName = "View.framework"
                BlueprintName = "View"
-               ReferencedContainer = "container:Babylon.xcodeproj">
+               ReferencedContainer = "container:View.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,10 +50,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE41ECD922C0DE0F00ADD251"
+            BlueprintIdentifier = "AE9FC0D222D338060095633E"
             BuildableName = "View.framework"
             BlueprintName = "View"
-            ReferencedContainer = "container:Babylon.xcodeproj">
+            ReferencedContainer = "container:View.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
