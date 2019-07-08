@@ -45,7 +45,7 @@ I've been trying to incorporate snapshot testing as well (see `snapshot_testing`
 - [Eagerly evaluated destinations](https://twitter.com/chriseidhof/status/1144242544680849410)
 - [Problem with Alert binding](https://stackoverflow.com/questions/56762294/how-to-bind-presentation-of-swiftui-alert-when-triggered-outside-of-the-view)
 - [Unable to bind to animation](https://forums.developer.apple.com/thread/117824)
-- Unable to embed multiline Text in vertically scrollable ScrollView
+- [Unable to embed multiline Text in vertically scrollable ScrollView](https://stackoverflow.com/questions/56593120/how-do-you-create-a-multi-line-text-inside-a-scrollview-in-swiftui)
 
 ### Requirements checklist
 
