@@ -47,6 +47,7 @@ I've been trying to incorporate snapshot testing as well (see `snapshot_testing`
 - [Problem with Alert binding](https://stackoverflow.com/questions/56762294/how-to-bind-presentation-of-swiftui-alert-when-triggered-outside-of-the-view)
 - [Unable to bind to animation](https://forums.developer.apple.com/thread/117824)
 - [Unable to embed multiline Text in vertically scrollable ScrollView](https://stackoverflow.com/questions/56593120/how-do-you-create-a-multi-line-text-inside-a-scrollview-in-swiftui)
+- ["Reparenting nested renderer host -- preferences may be missing"](https://www.reddit.com/r/swift/comments/c1spxh/reparenting_nested_renderer_host_preferences_may/") while navigating to Details view
 
 ### Requirements checklist
 
