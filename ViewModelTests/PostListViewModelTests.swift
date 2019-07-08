@@ -38,8 +38,10 @@ final class PostListViewModelTests: XCTestCase {
     func testReloadData_From_SinglePostAPI_Generates_RowModel() {
         final class SinglePostAPIStub: PostsDataPublishing {
             func postsDataPublisher() -> AnyPublisher<Data, URLError> {
-                Publishers
-                    .Once<Data, URLError>(try! JSONEncoder().encode([PostDTO.dummy]))
+                let postData = try? JSONEncoder().encode([PostDTO.dummy])
+                
+                return Publishers
+                    .Once<Data, URLError>(postData ?? Data())
                     .eraseToAnyPublisher()
             }
         }

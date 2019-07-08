@@ -1,5 +1,5 @@
 //
-//  Networking.swift
+//  API.swift
 //  Networking
 //
 //  Created by Maciek on 26/06/2019.
