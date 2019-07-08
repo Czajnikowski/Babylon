@@ -5,6 +5,12 @@
       location = "container:Babylon.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Networking/Networking.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:View/View.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ViewModel/ViewModel.xcodeproj">
    </FileRef>
 </Workspace>

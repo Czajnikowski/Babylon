@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AE97779422C3B372003C943B"
+               BlueprintIdentifier = "AE9FC1FB22D342ED0095633E"
                BuildableName = "Networking.framework"
                BlueprintName = "Networking"
-               ReferencedContainer = "container:Babylon.xcodeproj">
+               ReferencedContainer = "container:Networking.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,10 +50,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AE97779422C3B372003C943B"
+            BlueprintIdentifier = "AE9FC1FB22D342ED0095633E"
             BuildableName = "Networking.framework"
             BlueprintName = "Networking"
-            ReferencedContainer = "container:Babylon.xcodeproj">
+            ReferencedContainer = "container:Networking.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
