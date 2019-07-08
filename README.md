@@ -7,15 +7,15 @@ Hello babylon
 ==================================
 
 
-Thank you for taking your time to consider my demo during the recruitment process for the iOS Developer position at your company. I'd be more than happy to join your impressing team.
+Thank you for taking the time to consider my demo during the recruitment process for the iOS Developer position at your company. I'd be more than happy to join your impressing team.
 
 # Demo
 
-As a demo project I've chosen [*The babylon demo project*](https://github.com/Babylonpartners/ios-playbook/blob/master/Interview/demo.md#1-the-babylon-demo-project).
+As a demo, I've chosen [*The babylon demo project*](https://github.com/Babylonpartners/ios-playbook/blob/master/Interview/demo.md#1-the-babylon-demo-project).
 
 ### Dependencies
 
-I decided to stick to the native frameworks, so there are no 3rd party depenencies by now. The main frameworks of my choice are:
+I decided to stick to the native frameworks, so there are no 3rd party dependencies by now. The main frameworks of my choice are:
 
 - `Combine` for reactive programming
 - `SwiftUI` for the View layer
@@ -28,12 +28,13 @@ So to be able to compile and run the project you should have Xcode 11 beta 3 ins
 The responsibilities of the app are split across three separate frameworks and the app target itself:
 
 1. `View` - leaf framework concerned just about the presentation layer.
-2. `Networking` - leaf framework concerned about the networking.
+2. `Networking` - leaf framework concerned about networking.
 3. `ViewModel` - framework depending on both `Networking` and `View` concerned about the bidirectional mapping of data between the `View` and underlying logic and services.
 4. `Babylon` app target - main target where dependency injection takes place via the `Coordinator`
 
-There is a subtle difference between *classic* MVVM and my approach. In *classic* MVVM the View layer depends on ViewModel, and in my approach the ViewModel depends on the View.  
-Such dependency graph makes `View` a decoupled, leaf framework making it easy to compile, develop and test independently. Thanks to it I've been able to leverage the Playground Driven Development technique to implement and trobuleshoot both view's implementations (see `*.playground` in the project).
+There is a subtle difference between *classic* MVVM and my approach. In *classic* MVVM the View layer depends on ViewModel and in my approach, the ViewModel depends on the View.  
+Such dependency graph makes `View` a decoupled, leaf framework making it easy to compile, develop and test independently. Thanks to it I've been able to leverage the Playground Driven Development technique to implement and troubleshoot both view's implementations (see `*.playground` in the project).  
+The frameworks are additionally extracted into separate projects. This makes presumable cross-team development less prone to merge conflicts.
 
 ### Tests
 
@@ -50,7 +51,7 @@ I've been trying to incorporate snapshot testing as well (see `snapshot_testing`
 ### Requirements checklist
 
 ✅ Swift 5.1.  
-✅ The information is available offline by leveraging the `URLCache`. The quickest-to-implement solution I can imagine for such a simple requirements.  
+✅ The information is available offline by leveraging the `URLCache`. The quickest-to-implement solution I can imagine for such simple requirements.  
 ✅ Reloading available as a navigation bar item in `PostListView`.  
 ✅ Have a point of synchronization in `PostDetailsViewModel.loadData()`, I used a `Zip` for that.  
 ✅ I find the code to be production grade. Not production ready though (uses iOS SDK beta 3).  
