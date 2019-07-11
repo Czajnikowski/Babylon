@@ -31,14 +31,15 @@ class Coordinator {
     
     func start() {
         let postListViewModel = PostListViewModel(api: api)
-        window.rootViewController = PostListViewBuilder.build(
+        window.rootViewController = PostListViewBuilder(
             viewModel: postListViewModel,
-            detailsViewModelForPostIdProvider: { [unowned self, unowned postListViewModel] in self.providePostDetailsViewModel(
-                    postId: $0,
-                    postProvider: postListViewModel
-                )
-            }
+            listDestinationViewBuilder: PostDetailsViewBuilder(
+                viewModelForPostIdProvider: { [unowned self, unowned postListViewModel] in
+                    self.providePostDetailsViewModel(postId: $0, postProvider: postListViewModel)
+                }
+            )
         )
+            .buildView()
             .wrappedInHostingController
         
         window.makeKeyAndVisible()

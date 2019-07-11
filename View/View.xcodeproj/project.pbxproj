@@ -13,7 +13,7 @@
 		AE9FC10222D338880095633E /* SwiftUI+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E422D338880095633E /* SwiftUI+Convenience.swift */; };
 		AE9FC10322D338880095633E /* Bundle+current.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E522D338880095633E /* Bundle+current.swift */; };
 		AE9FC10422D338880095633E /* SwiftUI+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E622D338880095633E /* SwiftUI+UIKit.swift */; };
-		AE9FC10522D338880095633E /* ViewForPostWithIdBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E822D338880095633E /* ViewForPostWithIdBuilding.swift */; };
+		AE9FC10522D338880095633E /* ViewForDependencyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E822D338880095633E /* ViewForDependencyBuilder.swift */; };
 		AE9FC10622D338880095633E /* ViewBindableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E922D338880095633E /* ViewBindableObject.swift */; };
 		AE9FC10722D338880095633E /* AlertMessageControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0EA22D338880095633E /* AlertMessageControlling.swift */; };
 		AE9FC10822D338880095633E /* AlertPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0EC22D338880095633E /* AlertPresentation.swift */; };
@@ -35,7 +35,7 @@
 		AE9FC0E422D338880095633E /* SwiftUI+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Convenience.swift"; sourceTree = "<group>"; };
 		AE9FC0E522D338880095633E /* Bundle+current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+current.swift"; sourceTree = "<group>"; };
 		AE9FC0E622D338880095633E /* SwiftUI+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftUI+UIKit.swift"; sourceTree = "<group>"; };
-		AE9FC0E822D338880095633E /* ViewForPostWithIdBuilding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewForPostWithIdBuilding.swift; sourceTree = "<group>"; };
+		AE9FC0E822D338880095633E /* ViewForDependencyBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewForDependencyBuilder.swift; sourceTree = "<group>"; };
 		AE9FC0E922D338880095633E /* ViewBindableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBindableObject.swift; sourceTree = "<group>"; };
 		AE9FC0EA22D338880095633E /* AlertMessageControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertMessageControlling.swift; sourceTree = "<group>"; };
 		AE9FC0EC22D338880095633E /* AlertPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresentation.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			children = (
 				AE9FC0EA22D338880095633E /* AlertMessageControlling.swift */,
 				AE9FC0E922D338880095633E /* ViewBindableObject.swift */,
-				AE9FC0E822D338880095633E /* ViewForPostWithIdBuilding.swift */,
+				AE9FC0E822D338880095633E /* ViewForDependencyBuilder.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 				AE9FC10822D338880095633E /* AlertPresentation.swift in Sources */,
 				AE9FC10222D338880095633E /* SwiftUI+Convenience.swift in Sources */,
 				AE9FC10322D338880095633E /* Bundle+current.swift in Sources */,
-				AE9FC10522D338880095633E /* ViewForPostWithIdBuilding.swift in Sources */,
+				AE9FC10522D338880095633E /* ViewForDependencyBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

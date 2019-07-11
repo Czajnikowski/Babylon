@@ -30,7 +30,7 @@ where ViewModel: PostListViewModelRepresenting {
     
     @State private var isInfoPresented: Bool = false
     
-    private let listDestinationViewBuilder: ViewForPostWithIdBuilding
+    private let listDestinationViewBuilder: ViewForDependencyBuilder<Int>
     
     var body: some View {
         NavigationView {
@@ -69,7 +69,7 @@ where ViewModel: PostListViewModelRepresenting {
     
     init(
         viewModel: ViewModel,
-        listDestinationViewBuilder: ViewForPostWithIdBuilding
+        listDestinationViewBuilder: ViewForDependencyBuilder<Int>
         ) {
         
         self.viewModel = viewModel
@@ -77,7 +77,7 @@ where ViewModel: PostListViewModelRepresenting {
     }
     
     private func listItemView(for postRowState: PostRowState) -> AnyView {
-        listDestinationViewBuilder.build(forPostWithId: postRowState.id).map { destination in
+        listDestinationViewBuilder.buildView(for: postRowState.id).map { destination in
             NavigationLink(
                 destination: destination
             ) {

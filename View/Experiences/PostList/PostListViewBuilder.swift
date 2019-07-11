@@ -9,34 +9,35 @@
 import SwiftUI
 
 public final class MockedPostListViewBuilder {
-    private class NoListDestinationViewBuilder: ViewForPostWithIdBuilding {
-        fileprivate init() {}
-        
-        func build(forPostWithId postId: Int) -> AnyView? {
-            nil
-        }
-    }
-    
     public static func buildMocked() -> some View {
         PostListView(
             viewModel: MockedPostListViewModel(),
-            listDestinationViewBuilder: NoListDestinationViewBuilder()
+            listDestinationViewBuilder: NoViewForDependencyBuilder<Int>()
         )
     }
 }
 
-public final class PostListViewBuilder {
-    public static func build<ViewModel, DetailsViewModel>(
+public final class PostListViewBuilder<ViewModel>
+where ViewModel: PostListViewModelRepresenting {
+    private let viewModel: ViewModel
+    private let listDestinationViewBuilder: ViewForDependencyBuilder<Int>
+    
+    public init(
         viewModel: ViewModel,
-        detailsViewModelForPostIdProvider provideDetailsViewModelForPostId: @escaping (Int) -> DetailsViewModel?
-        ) -> some View where ViewModel: PostListViewModelRepresenting,
-        DetailsViewModel: PostDetailsViewModelRepresenting {
+        listDestinationViewBuilder: ViewForDependencyBuilder<Int>
+        ) {
         
+        self.viewModel = viewModel
+        self.listDestinationViewBuilder = listDestinationViewBuilder
+    }
+}
+
+extension PostListViewBuilder {
+    public func buildView() -> AnyView? {
         PostListView(
             viewModel: viewModel,
-            listDestinationViewBuilder: PostDetailsViewBuilder(
-                viewModelForPostIdProvider: provideDetailsViewModelForPostId
-            )
+            listDestinationViewBuilder: listDestinationViewBuilder
         )
+            .typeErased
     }
 }

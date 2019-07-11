@@ -14,17 +14,15 @@ public final class MockedPostDetailsViewBuilder {
     }
 }
 
-final class PostDetailsViewBuilder<ViewModel>
+public final class PostDetailsViewBuilder<ViewModel>: ViewForDependencyBuilder<Int>
 where ViewModel: PostDetailsViewModelRepresenting {
     private let provideViewModelForPostId: (Int) -> ViewModel?
     
-    init(viewModelForPostIdProvider provideViewModelForPostId: @escaping (Int) -> ViewModel?) {
+    public init(viewModelForPostIdProvider provideViewModelForPostId: @escaping (Int) -> ViewModel?) {
         self.provideViewModelForPostId = provideViewModelForPostId
     }
-}
 
-extension PostDetailsViewBuilder: ViewForPostWithIdBuilding {
-    func build(forPostWithId postId: Int) -> AnyView? {
+    override func buildView(for postId: Int) -> AnyView? {
         provideViewModelForPostId(postId)
             .map(PostDetailsView.init)
             .typeErased
