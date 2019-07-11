@@ -35,13 +35,22 @@ struct PostDetailsView<ViewModel>: View
 where ViewModel: PostDetailsViewModelRepresenting {
     @ObjectBinding private var viewModel: ViewModel
     
+    private let descriptionDestinationViewBuilder: ViewForDependencyBuilder<Int>
+    
     var body: some View {
         viewModel.state.map { state in
             VStack(alignment: .leading, spacing: 8) {
-                Text(
-                    "Description:".localized(comment: "Post details section title")
-                )
-                    .font(.headline)
+                NavigationLink(
+                    destination: descriptionDestinationViewBuilder.buildView(
+                        for: 10
+                    )!
+                ) {
+                    Text(
+                        "Description:".localized(comment: "Post details section title")
+                    )
+                        .font(.headline)
+                }
+                
                 Text("\(state.description)")
                     .lineLimit(nil)
                     .font(.body)
@@ -75,7 +84,12 @@ where ViewModel: PostDetailsViewModelRepresenting {
             .alertPresentation(using: viewModel)
     }
     
-    init(viewModel: ViewModel) {
+    init(
+        viewModel: ViewModel,
+        destinationViewBuilder: ViewForDependencyBuilder<Int>
+        ) {
+        
         self.viewModel = viewModel
+        self.descriptionDestinationViewBuilder = destinationViewBuilder
     }
 }

@@ -10,21 +10,35 @@ import SwiftUI
 
 public final class MockedPostDetailsViewBuilder {
     public static func buildMocked() -> some View {
-        PostDetailsView(viewModel: MockedPostDetailsViewModel())
+        PostDetailsView(
+            viewModel: MockedPostDetailsViewModel(),
+            destinationViewBuilder: NoViewForDependencyBuilder<Int>()
+        )
     }
 }
 
 public final class PostDetailsViewBuilder<ViewModel>: ViewForDependencyBuilder<Int>
 where ViewModel: PostDetailsViewModelRepresenting {
     private let provideViewModelForPostId: (Int) -> ViewModel?
+    private let detailsDestinationViewBuilder: ViewForDependencyBuilder<Int>
     
-    public init(viewModelForPostIdProvider provideViewModelForPostId: @escaping (Int) -> ViewModel?) {
+    public init(
+        viewModelForPostIdProvider provideViewModelForPostId: @escaping (Int) -> ViewModel?,
+        detailsDestinationViewBuilder: ViewForDependencyBuilder<Int>
+        ) {
+        
         self.provideViewModelForPostId = provideViewModelForPostId
+        self.detailsDestinationViewBuilder = detailsDestinationViewBuilder
     }
 
     override func buildView(for postId: Int) -> AnyView? {
         provideViewModelForPostId(postId)
-            .map(PostDetailsView.init)
+            .map {
+                PostDetailsView(
+                    viewModel: $0,
+                    destinationViewBuilder: detailsDestinationViewBuilder
+                )
+            }
             .typeErased
     }
 }

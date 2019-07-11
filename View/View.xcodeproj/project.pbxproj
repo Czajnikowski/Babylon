@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0A65D722D62A34006284AF /* MoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0A65D622D62A34006284AF /* MoreDetailsView.swift */; };
+		AE6EC33222D68F9E00ED0752 /* MoreDetailsViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6EC33122D68F9E00ED0752 /* MoreDetailsViewBuilder.swift */; };
 		AE9FC0FE22D338880095633E /* View.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9FC0DF22D338880095633E /* View.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE9FC10022D338880095633E /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E222D338880095633E /* String+localized.swift */; };
 		AE9FC10122D338880095633E /* View+EricaSadun.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC0E322D338880095633E /* View+EricaSadun.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE0A65D622D62A34006284AF /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
+		AE6EC33122D68F9E00ED0752 /* MoreDetailsViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewBuilder.swift; sourceTree = "<group>"; };
 		AE9FC0D322D338060095633E /* View.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = View.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9FC0DF22D338880095633E /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		AE9FC0E022D338880095633E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0A65D522D629FA006284AF /* MoreDetails */ = {
+			isa = PBXGroup;
+			children = (
+				AE0A65D622D62A34006284AF /* MoreDetailsView.swift */,
+				AE6EC33122D68F9E00ED0752 /* MoreDetailsViewBuilder.swift */,
+			);
+			path = MoreDetails;
+			sourceTree = "<group>";
+		};
 		AE9FC0C922D338060095633E = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 		AE9FC0ED22D338880095633E /* Experiences */ = {
 			isa = PBXGroup;
 			children = (
+				AE0A65D522D629FA006284AF /* MoreDetails */,
 				AE9FC0EE22D338880095633E /* PostDetails */,
 				AE9FC0F422D338880095633E /* PostList */,
 			);
@@ -263,10 +277,12 @@
 				AE9FC10B22D338880095633E /* PostDetailsViewBuilder.swift in Sources */,
 				AE9FC10E22D338880095633E /* PostListViewBuilder.swift in Sources */,
 				AE9FC10422D338880095633E /* SwiftUI+UIKit.swift in Sources */,
+				AE0A65D722D62A34006284AF /* MoreDetailsView.swift in Sources */,
 				AE9FC10022D338880095633E /* String+localized.swift in Sources */,
 				AE9FC10622D338880095633E /* ViewBindableObject.swift in Sources */,
 				AE9FC10D22D338880095633E /* PostListView.swift in Sources */,
 				AE9FC10A22D338880095633E /* PostDetailsView.swift in Sources */,
+				AE6EC33222D68F9E00ED0752 /* MoreDetailsViewBuilder.swift in Sources */,
 				AE9FC10922D338880095633E /* MockedPostDetailsViewModel.swift in Sources */,
 				AE9FC10122D338880095633E /* View+EricaSadun.swift in Sources */,
 				AE9FC10822D338880095633E /* AlertPresentation.swift in Sources */,
