@@ -40,16 +40,13 @@ where ViewModel: PostDetailsViewModelRepresenting {
     var body: some View {
         viewModel.state.map { state in
             VStack(alignment: .leading, spacing: 8) {
-                NavigationLink(
-                    destination: descriptionDestinationViewBuilder.buildView(
-                        for: 10
-                    )!
-                ) {
-                    Text(
-                        "Description:".localized(comment: "Post details section title")
+                Text("Description:".localized(comment: "Post details section title"))
+                    .font(.headline)
+                    .wrapped(
+                        using: OptionalNavigationLinkWrapper {
+                            self.descriptionDestinationViewBuilder.buildView(for: 10)
+                        }
                     )
-                        .font(.headline)
-                }
                 
                 Text("\(state.description)")
                     .lineLimit(nil)

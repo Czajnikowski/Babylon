@@ -15,7 +15,3 @@ public class ViewForDependencyBuilder<Dependency> {
         nil
     }
 }
-
-public final class NoViewForDependencyBuilder<Dependency>: ViewForDependencyBuilder<Dependency> {
-    override public init() {}
-}

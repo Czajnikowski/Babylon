@@ -35,7 +35,12 @@ where ViewModel: PostListViewModelRepresenting {
     var body: some View {
         NavigationView {
             List(viewModel.postRowStates) { postRowState in
-                self.listItemView(for: postRowState)
+                Text(postRowState.title)
+                    .wrapped(
+                        using: OptionalNavigationLinkWrapper {
+                            self.listDestinationViewBuilder.buildView(for: postRowState.id)
+                        }
+                    )
             }
                 .navigationBarTitle(
                     Text("Posts".localized(comment: "Navigation bar title"))
@@ -74,17 +79,5 @@ where ViewModel: PostListViewModelRepresenting {
         
         self.viewModel = viewModel
         self.listDestinationViewBuilder = listDestinationViewBuilder
-    }
-    
-    private func listItemView(for postRowState: PostRowState) -> AnyView {
-        listDestinationViewBuilder.buildView(for: postRowState.id).map { destination in
-            NavigationLink(
-                destination: destination
-            ) {
-                Text(postRowState.title)
-            }
-                .typeErased
-        } ?? Text(postRowState.title)
-            .typeErased
     }
 }
