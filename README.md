@@ -1,17 +1,24 @@
 <p align="center">
-<img src="https://github.com/Babylonpartners/ios-playbook/raw/master/logo.png">
+<img src="https://github.com/Czajnikowski/Babylon/raw/master/logo.png">
 </p>
 
 
-Hello babylon
+Hello ~~Babylon~~
 ==================================
 
 
-Thank you for taking the time to consider my demo during the recruitment process for the iOS Developer position at your company. I'd be more than happy to join your impressing team.
+~~Thank you for taking the time to consider my demo during the recruitment process for the Remote Senior iOS Developer position at your company. I'd be more than happy to join your impressing team.~~
+
+Initially I prepared the demo as an assignment in the [interview process](https://github.com/Babylonpartners/ios-playbook/blob/master/Interview/README.md) for Babylon Health. I actually passed the demo stage and scored "very well", but the company decided to pause on hiring new remote engineers just a day before my Skype interview. Well 🤷🏼‍♂️
+
 
 # Demo
 
 As a demo, I've chosen [*The babylon demo project*](https://github.com/Babylonpartners/ios-playbook/blob/master/Interview/demo.md#1-the-babylon-demo-project).
+
+### Requirements
+
+Xcode 11 Beta 3, no Catalina needed.
 
 ### Dependencies
 
@@ -20,8 +27,6 @@ I decided to stick to the native frameworks, so there are no 3rd party dependenc
 - `Combine` for reactive programming
 - `SwiftUI` for the View layer
 - `Foundation` for networking and caching
-
-So to be able to compile and run the project you should have Xcode 11 beta 3 installed (no Catalina needed).
 
 ### Architecture
 
@@ -52,7 +57,7 @@ I've been trying to incorporate snapshot testing as well (see `snapshot_testing`
 ### Requirements checklist
 
 ✅ Swift 5.1.  
-✅ The information is available offline by leveraging the `URLCache`. The quickest-to-implement solution I can imagine for such simple requirements.  
+✅ The information is available offline by leveraging the `URLCache`. The quickest-to-implement solution I can imagine.  
 ✅ Reloading available as a navigation bar item in `PostListView`.  
 ✅ Have a point of synchronization in `PostDetailsViewModel.loadData()`, I used a `Zip` for that.  
 ✅ I find the code to be production grade. Not production ready though (uses iOS SDK beta 3).  
