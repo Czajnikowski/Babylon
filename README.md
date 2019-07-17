@@ -2,15 +2,14 @@
 <img src="https://github.com/Czajnikowski/Babylon/raw/master/logo.png">
 </p>
 
-
 Hello ~~Babylon~~
 ==================================
-
 
 ~~Thank you for taking the time to consider my demo during the recruitment process for the Remote Senior iOS Developer position at your company. I'd be more than happy to join your impressing team.~~
 
 Initially I prepared the demo as an assignment in the [interview process](https://github.com/Babylonpartners/ios-playbook/blob/master/Interview/README.md) for Babylon Health. I actually passed the demo stage and scored "very well", but the company decided to pause on hiring new remote engineers just a day before my Skype interview. Well 🤷🏼‍♂️
 
+It's a pretty generic demo though. You may find some interesting bits there if you're interested in `SwiftUI`, `Combine`, Playground Driven Development or architecture. I appreciate constructive critique as well 🙂
 
 # Demo
 
