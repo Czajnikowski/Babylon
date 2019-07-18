@@ -36,10 +36,7 @@ class Coordinator {
             listDestinationViewBuilder: PostDetailsViewBuilder(
                 viewModelForPostIdProvider: { [unowned self, unowned postListViewModel] in
                     self.providePostDetailsViewModel(postId: $0, postProvider: postListViewModel)
-                },
-                detailsDestinationViewBuilder: MoreDetailsViewBuilder(
-                    viewModelForSomeIntProvider: provideMoreDetailsViewModel
-                )
+                }
             )
         )
             .buildView()
@@ -60,12 +57,5 @@ class Coordinator {
             post: post,
             api: self.api
         )
-    }
-    
-    private func provideMoreDetailsViewModel(
-        someInt: Int
-        ) -> MoreDetailsViewModel {
-        
-        return MoreDetailsViewModel()
     }
 }

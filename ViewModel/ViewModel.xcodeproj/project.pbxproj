@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE6EC33722D69A0B00ED0752 /* MoreDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6EC33622D69A0B00ED0752 /* MoreDetailsViewModel.swift */; };
 		AE9FC14E22D340F60095633E /* ViewModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FC14422D340F60095633E /* ViewModel.framework */; };
 		AE9FC1C022D341620095633E /* DataPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC1A222D341620095633E /* DataPublishing.swift */; };
 		AE9FC1C122D341620095633E /* SelfChangeSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC1A322D341620095633E /* SelfChangeSending.swift */; };
@@ -78,7 +77,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE6EC33622D69A0B00ED0752 /* MoreDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsViewModel.swift; sourceTree = "<group>"; };
 		AE9FC14422D340F60095633E /* ViewModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9FC14D22D340F60095633E /* ViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9FC1A222D341620095633E /* DataPublishing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPublishing.swift; sourceTree = "<group>"; };
@@ -132,14 +130,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE6EC33322D699F900ED0752 /* MoreDetails */ = {
-			isa = PBXGroup;
-			children = (
-				AE6EC33622D69A0B00ED0752 /* MoreDetailsViewModel.swift */,
-			);
-			path = MoreDetails;
-			sourceTree = "<group>";
-		};
 		AE9FC13A22D340F60095633E = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +183,6 @@
 		AE9FC1AE22D341620095633E /* Experiences */ = {
 			isa = PBXGroup;
 			children = (
-				AE6EC33322D699F900ED0752 /* MoreDetails */,
 				AE9FC1AF22D341620095633E /* PostDetails */,
 				AE9FC1B122D341620095633E /* PostList */,
 			);
@@ -451,7 +440,6 @@
 				AE9FC1D322D341620095633E /* BabylonError.swift in Sources */,
 				AE9FC1C322D341620095633E /* PostProviding.swift in Sources */,
 				AE9FC1D022D341620095633E /* User.swift in Sources */,
-				AE6EC33722D69A0B00ED0752 /* MoreDetailsViewModel.swift in Sources */,
 				AE9FC1D122D341620095633E /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
