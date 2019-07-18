@@ -11,6 +11,7 @@
 		AE9FC21422D3430D0095633E /* URLRequest+reloadCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC20C22D3430D0095633E /* URLRequest+reloadCache.swift */; };
 		AE9FC21522D3430D0095633E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9FC20D22D3430D0095633E /* Endpoint.swift */; };
 		AE9FC21622D3430D0095633E /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9FC20F22D3430D0095633E /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AEC8841022E07F3D00ED967C /* Publishers+Fail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC8840F22E07F3D00ED967C /* Publishers+Fail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		AE9FC20D22D3430D0095633E /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		AE9FC20F22D3430D0095633E /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		AE9FC21022D3430D0095633E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEC8840F22E07F3D00ED967C /* Publishers+Fail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+Fail.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				AE9FC20C22D3430D0095633E /* URLRequest+reloadCache.swift */,
+				AEC8840F22E07F3D00ED967C /* Publishers+Fail.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC8841022E07F3D00ED967C /* Publishers+Fail.swift in Sources */,
 				AE9FC21122D3430D0095633E /* API.swift in Sources */,
 				AE9FC21522D3430D0095633E /* Endpoint.swift in Sources */,
 				AE9FC21422D3430D0095633E /* URLRequest+reloadCache.swift in Sources */,

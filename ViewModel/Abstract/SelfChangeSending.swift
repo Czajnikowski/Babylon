@@ -9,14 +9,14 @@
 import Combine
 
 protocol SelfChangeSending {
-    associatedtype SubjectType: Subject
-        where SubjectType.Output == Self, SubjectType.Failure == Never
+    associatedtype WillChangeSubject: Subject
+        where WillChangeSubject.Output == Self, WillChangeSubject.Failure == Never
     
-    var didChange: SubjectType { get }
+    var willChange: WillChangeSubject { get }
 }
 
 extension SelfChangeSending {
-    func sendChange() {
-        didChange.send(self)
+    func willChange() {
+        willChange.send(self)
     }
 }

@@ -10,7 +10,7 @@ import Combine
 import View
 
 public class MoreDetailsViewModel: MoreDetailsViewModelRepresenting, ViewBindableObject, SelfChangeSending {
-    public var didChange = PassthroughSubject<MoreDetailsViewModel, Never>()
+    public var willChange = PassthroughSubject<MoreDetailsViewModel, Never>()
     public let moreDetails: String = "yo"
     
     public init() {}

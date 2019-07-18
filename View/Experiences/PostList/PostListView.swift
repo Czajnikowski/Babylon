@@ -54,14 +54,12 @@ where ViewModel: PostListViewModelRepresenting {
                     }
                 )
                 .alertPresentation(using: viewModel)
-                .presentation($isInfoPresented) {
-                    return ActionSheet(
+                .actionSheet(isPresented: $isInfoPresented) {
+                    ActionSheet(
                         title: Text(
                             """
                             \("Babylon health demo submision by Maciek Czarnik"
-                                .localized(
-                                    comment: "Info section"
-                                )
+                                .localized(comment: "Info section")
                             )
                             @czajnikowski
                             """

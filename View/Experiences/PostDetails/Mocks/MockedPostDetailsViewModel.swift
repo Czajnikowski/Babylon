@@ -11,14 +11,14 @@ import SwiftUI
 
 final class MockedPostDetailsViewModel {
     var state: PostDetailsViewState? {
-        didSet { didChange.send(self) }
+        willSet { willChange.send(self) }
     }
     
     var localizedAlertMessage: String? {
-        didSet { didChange.send(self) }
+        willSet { willChange.send(self) }
     }
     
-    var didChange = PassthroughSubject<MockedPostDetailsViewModel, Never>()
+    var willChange = PassthroughSubject<MockedPostDetailsViewModel, Never>()
 }
 
 extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {

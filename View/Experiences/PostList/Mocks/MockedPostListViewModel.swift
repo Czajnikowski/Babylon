@@ -11,17 +11,17 @@ import SwiftUI
 
 final class MockedPostListViewModel {
     var localizedAlertMessage: String? {
-        didSet { sendChange() }
+        willSet { sendChange() }
     }
     
     var postRowStates = [PostRowState]() {
-        didSet { sendChange() }
+        willSet { sendChange() }
     }
     
-    var didChange = PassthroughSubject<MockedPostListViewModel, Never>()
+    var willChange = PassthroughSubject<MockedPostListViewModel, Never>()
     
     private func sendChange() {
-        didChange.send(self)
+        willChange.send(self)
     }
 }
 

@@ -21,10 +21,10 @@ public final class PostDetailsViewModel {
         }
     }
     
-    public var didChange = PassthroughSubject<PostDetailsViewModel, Never>()
+    public var willChange = PassthroughSubject<PostDetailsViewModel, Never>()
     
     var error: BabylonError? {
-        didSet { sendChange() }
+        willSet { willChange() }
     }
     
     private var loadDataSubscriber: Cancellable?
@@ -57,10 +57,10 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
                 receiveValue: { [weak self] (user, numberOfComments) in
                     guard let strongSelf = self else { return }
                     
+                    strongSelf.willChange()
+                    
                     strongSelf.user = user
                     strongSelf.numberOfComments = numberOfComments
-                    
-                    strongSelf.sendChange()
                 }
         )
     }

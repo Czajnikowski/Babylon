@@ -14,13 +14,13 @@ public final class PostListViewModel {
     public var localizedAlertMessage: String? { error?.localizedAlertMessage }
     public var postRowStates: [PostRowState] { postDTOs.map(PostRowState.init) }
     
-    public var didChange = PassthroughSubject<PostListViewModel, Never>()
+    public var willChange = PassthroughSubject<PostListViewModel, Never>()
     
     var error: BabylonError? {
-        didSet { sendChange() }
+        willSet { willChange() }
     }
     private var postDTOs: [PostDTO] = [] {
-        didSet { sendChange() }
+        willSet { willChange() }
     }
     
     private var loadDataSubscriber: Cancellable?
