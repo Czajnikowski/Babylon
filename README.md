@@ -17,7 +17,7 @@ As a demo, I've chosen [*The babylon demo project*](https://github.com/Babylonpa
 
 ### Requirements
 
-Xcode 11 Beta 4, no Catalina needed.
+Xcode 11 Beta 5, no Catalina needed.
 
 ### Dependencies
 
