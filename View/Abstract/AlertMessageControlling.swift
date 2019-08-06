@@ -19,10 +19,10 @@ public protocol AlertMessageControlling {
 extension AlertMessageControlling {
     var alertPresentationBinding: Binding<Bool> {
         Binding(
-            getValue: {
+            get: {
                 self.localizedAlertMessage != nil
             },
-            setValue: {
+            set: {
                 if !$0 { self.consumeAlertMessage() }
             }
         )

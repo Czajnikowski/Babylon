@@ -21,11 +21,7 @@ public final class PostDetailsViewModel {
         }
     }
     
-    public var willChange = PassthroughSubject<PostDetailsViewModel, Never>()
-    
-    var error: BabylonError? {
-        willSet { willChange() }
-    }
+    @Published var error: BabylonError? = nil
     
     private var loadDataSubscriber: Cancellable?
     
@@ -57,7 +53,7 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
                 receiveValue: { [weak self] (user, numberOfComments) in
                     guard let strongSelf = self else { return }
                     
-                    strongSelf.willChange()
+                    strongSelf.objectWillChange.send()
                     
                     strongSelf.user = user
                     strongSelf.numberOfComments = numberOfComments
@@ -80,8 +76,5 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
     }
 }
 
-extension PostDetailsViewModel: SelfChangeSending {
-}
-
-extension PostDetailsViewModel: ViewBindableObject {
+extension PostDetailsViewModel: ViewObservableObject {
 }

@@ -35,5 +35,5 @@ extension MockedPostDetailsViewModel: PostDetailsViewModelRepresenting {
     }
 }
 
-extension MockedPostDetailsViewModel: BindableObject {
+extension MockedPostDetailsViewModel: ObservableObject {
 }

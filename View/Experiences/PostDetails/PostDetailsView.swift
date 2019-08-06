@@ -25,7 +25,7 @@ public struct PostDetailsViewState {
     }
 }
 
-public protocol PostDetailsViewModelRepresenting: ViewBindableObject, AlertMessageControlling {
+public protocol PostDetailsViewModelRepresenting: ViewObservableObject, AlertMessageControlling {
     var state: PostDetailsViewState? { get }
     
     func loadData()
@@ -33,7 +33,7 @@ public protocol PostDetailsViewModelRepresenting: ViewBindableObject, AlertMessa
 
 struct PostDetailsView<ViewModel>: View
 where ViewModel: PostDetailsViewModelRepresenting {
-    @ObjectBinding private var viewModel: ViewModel
+    @ObservedObject private var viewModel: ViewModel
     
     var body: some View {
         viewModel.state.map { state in

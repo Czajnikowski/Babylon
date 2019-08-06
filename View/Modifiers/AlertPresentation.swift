@@ -24,8 +24,8 @@ struct AlertPresentation: ViewModifier {
 }
 
 extension View {
-    func alertPresentation(using alertMessageController: AlertMessageControlling) -> Self.Modified<AlertPresentation> {
-        Modified(
+    func alertPresentation(using alertMessageController: AlertMessageControlling) -> ModifiedContent<Self, AlertPresentation> {
+        ModifiedContent(
             content: self,
             modifier: AlertPresentation(with: alertMessageController)
         )

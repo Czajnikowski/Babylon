@@ -18,7 +18,7 @@ public struct PostRowState: Identifiable, Equatable {
     }
 }
 
-public protocol PostListViewModelRepresenting: ViewBindableObject, AlertMessageControlling {
+public protocol PostListViewModelRepresenting: ViewObservableObject, AlertMessageControlling {
     var postRowStates: [PostRowState] { get }
     
     func loadData()
@@ -26,7 +26,7 @@ public protocol PostListViewModelRepresenting: ViewBindableObject, AlertMessageC
 
 struct PostListView<ViewModel>: View
 where ViewModel: PostListViewModelRepresenting {
-    @ObjectBinding private var viewModel: ViewModel
+    @ObservedObject private var viewModel: ViewModel
     
     @State private var isInfoPresented: Bool = false
     

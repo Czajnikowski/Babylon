@@ -7,16 +7,4 @@
 //
 
 import Combine
-
-protocol SelfChangeSending {
-    associatedtype WillChangeSubject: Subject
-        where WillChangeSubject.Output == Self, WillChangeSubject.Failure == Never
-    
-    var willChange: WillChangeSubject { get }
-}
-
-extension SelfChangeSending {
-    func willChange() {
-        willChange.send(self)
-    }
-}
+import View

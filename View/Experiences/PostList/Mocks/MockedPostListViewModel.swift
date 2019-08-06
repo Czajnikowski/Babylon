@@ -25,7 +25,7 @@ final class MockedPostListViewModel {
     }
 }
 
-extension MockedPostListViewModel: BindableObject {
+extension MockedPostListViewModel: ObservableObject {
 }
 
 extension MockedPostListViewModel: PostListViewModelRepresenting {

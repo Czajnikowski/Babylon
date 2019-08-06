@@ -14,14 +14,8 @@ public final class PostListViewModel {
     public var localizedAlertMessage: String? { error?.localizedAlertMessage }
     public var postRowStates: [PostRowState] { postDTOs.map(PostRowState.init) }
     
-    public var willChange = PassthroughSubject<PostListViewModel, Never>()
-    
-    var error: BabylonError? {
-        willSet { willChange() }
-    }
-    private var postDTOs: [PostDTO] = [] {
-        willSet { willChange() }
-    }
+    @Published var error: BabylonError? = nil
+    @Published private var postDTOs: [PostDTO] = []
     
     private var loadDataSubscriber: Cancellable?
     
@@ -64,8 +58,5 @@ extension PostListViewModel: PostProviding {
     }
 }
 
-extension PostListViewModel: SelfChangeSending {
-}
-
-extension PostListViewModel: ViewBindableObject {
+extension PostListViewModel: ViewObservableObject {
 }

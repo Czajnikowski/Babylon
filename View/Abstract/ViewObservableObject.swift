@@ -1,5 +1,5 @@
 //
-//  ViewBindableObject.swift
+//  ViewObservableObject.swift
 //  View
 //
 //  Created by Maciek on 25/06/2019.
@@ -8,4 +8,4 @@
 
 import SwiftUI
 
-public typealias ViewBindableObject = BindableObject
+public typealias ViewObservableObject = ObservableObject
