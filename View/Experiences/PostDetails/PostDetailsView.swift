@@ -25,7 +25,7 @@ public struct PostDetailsViewState {
     }
 }
 
-public protocol PostDetailsViewModelRepresenting: ViewObservableObject, AlertMessageControlling {
+public protocol PostDetailsViewModelRepresenting: ObservableObject, AlertMessageControlling {
     var state: PostDetailsViewState? { get }
     
     func loadData()

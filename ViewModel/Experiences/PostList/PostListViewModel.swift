@@ -58,5 +58,5 @@ extension PostListViewModel: PostProviding {
     }
 }
 
-extension PostListViewModel: ViewObservableObject {
+extension PostListViewModel: ObservableObject {
 }

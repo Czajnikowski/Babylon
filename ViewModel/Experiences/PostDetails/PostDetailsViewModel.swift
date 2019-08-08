@@ -76,5 +76,5 @@ extension PostDetailsViewModel: PostDetailsViewModelRepresenting, AlertMessageEr
     }
 }
 
-extension PostDetailsViewModel: ViewObservableObject {
+extension PostDetailsViewModel: ObservableObject {
 }

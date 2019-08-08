@@ -18,7 +18,7 @@ public struct PostRowState: Identifiable, Equatable {
     }
 }
 
-public protocol PostListViewModelRepresenting: ViewObservableObject, AlertMessageControlling {
+public protocol PostListViewModelRepresenting: ObservableObject, AlertMessageControlling {
     var postRowStates: [PostRowState] { get }
     
     func loadData()
